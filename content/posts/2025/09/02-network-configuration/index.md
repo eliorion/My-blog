@@ -1,7 +1,7 @@
 ---
 title: 'Network Configuration'
 date: 2025-08-31T22:19:31+02:00
-draft: true
+draft: false
 topics: ["Homelab"]
 tags: ["talos.linux", "K8S", "K9S", "K3S", "talosctl", "proxmox", "hardware", "homelab", "network"]
 projects: ["HomeLab gitDevSecOps"]

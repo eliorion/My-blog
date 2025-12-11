@@ -1,16 +1,17 @@
 ---
 title: 'New Homelab Workflow'
 date: 2025-12-11T09:38:10+01:00
-draft: true
+draft: false
 topics: ["Homelab"]
 tags: ["talos.linux", "K8S", "K9S", "K3S", "talosctl", "proxmox", "hardware", "homelab", "network"]
 projects: ["HomeLab gitDevSecOps"]
 categories: ["IT", "Homelab"]
+weight: 2 # Lower number = toper in the list
 cover:
   image: "cover.svg"
   alt: 'New Homelab Workflow'
   caption: ""
-  relative: true  
+  relative: true
   hidden: true            # si true → pas de cover sur la page du post
   hiddenInList: true      # si true → pas de cover dans la liste des posts
   hiddenInSingle: false    # si true → pas de cover sur la page individuelle
@@ -59,7 +60,7 @@ This meant he had to watch tool versions carefully, reinstall things when someth
 Nothing was isolated, nothing was reproducible, and the smallest change could corrupt the whole environment.
 It worked… but it wasn’t stable, and it certainly wasn’t enjoyable.
 
-![Homelab Diagram](diagram.png)
+![Homelab Diagram](homelab_v0-v1excalidraw.png)
 
 ### What Changed in Homelab V1
 
