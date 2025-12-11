@@ -16,4 +16,4 @@ git add .
 git commit -m "$COMMIT_MESSAGE"
 
 # Pousse les changements vers le dépôt distant
-git push --set-upstream git@github.com:KharitonoffSamuel/My-blog.git dev
+git push --set-upstream git@github.com:eliorion/My-blog.git dev
