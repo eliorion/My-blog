@@ -17,59 +17,74 @@ cover:
   hiddenInSingle: false    # si true → pas de cover sur la page individuelle
 ---
 
+## **Why I needed to step back**
 
-## Why I need to step back ?
-It's been a month I subscribe to the KubeCraft Career Accelerator program. I realise how I was lost in the Linux basics utilisation and commands. I use to develop on Linux embedded system, but I used only 10 % of the real capacity of the linux CLI.  
+It’s been a month since I subscribed to the KubeCraft Career Accelerator program. I quickly realized how lost I was when it came to Linux basics, especially everyday usage and command-line fundamentals. I used to develop on embedded Linux systems, but I was probably using only 10% of the real power of the Linux CLI.
 
-So, I decided to become a beginner again to master the linux CLI first, and use full development process only in CLI on a terminal. This way I can become a beast on the fondamentals, and in few months, I will be able to learn any thing with just a terminal, or manage and administrate any linux server around the world with just a basic terminal and `bash`.
+So I decided to become a beginner again and truly master the Linux command line first, using the full development process directly in the terminal. The goal is to become extremely strong on the fundamentals so that, in a few months, I’ll be able to learn anything using only a terminal, and manage or administer any Linux server anywhere in the world with just a basic shell and bash.
+  
 
-## What I curently learn
-1. Use 100 % the keyboard with the typing method
-2. Use `tmux` as a terminal multiplexor
-3. Use `vim` as text editor
-4. Use `MacOs X shortcuts` to navigate between my desks
+## **What I am currently learning**
 
-## Basics workflow
+1. Using 100% of the keyboard with proper touch typing
+    
+2. Using tmux as a terminal multiplexer
+    
+3. Using vim as a text editor
+    
+4. Using macOS shortcuts to navigate between desktops
+    
 
-I decided to become a full keyboard developer with the minimum mouse usage in my workflow. 
-Also, because I decided to use the right typing method, I actualy typing like my grand-mother, but it's a trad of time right now to become more productif in the future. 
+## **Basic workflow**
 
-## My note taking system
+I decided to become a keyboard-first developer, with minimal mouse usage in my workflow.
 
-I also use a note taking system to track my progress and set to myself vision and goals. This way I have no excuses to spend time in untertainment or in a wrong rabbit hole. 
+At the same time, because I chose to learn proper touch typing, I am currently typing like my grandmother. It feels like a waste of time right now, but it’s an investment to become much more productive in the future.
 
-I use Obsidian with the `vim` keys binding to develop my habit using this tool as long as it's possible for me. 
+## **My note-taking system**
 
-### Daily note
+I also use a note-taking system to track my progress and define my vision and goals. This helps me avoid excuses, unnecessary entertainment, or falling into the wrong rabbit holes.
 
-Each day I have template create for mi the daily routine I build for the week. With this method I can have nice to do list of the day and log my day here to track if any thing particular happend. 
+I use Obsidian with vim key bindings to build strong habits and stay consistent with this tool as much as possible.
 
-### Weekly note 
+### **Daily notes**
 
-This way eatch weekend I can have a review of my progress and track is I am on the right trick or if I need to become werred about my tasks who is not done. I also add specific tasks for the weekly note to do like clean my email box, set my next weekly goals.
+### **Weekly notes**
 
-### Monthly note
+Every weekend, I review my progress and check whether I’m on the right track or if I should be concerned about unfinished tasks. I also add specific weekly tasks such as cleaning my email inbox and setting goals for the next week.
 
-One time per month I review where I am in my goals and make a deeper analysis of my statut progress and personnal feeling. I also need to set the goals of the next month and make the to do list.
+### **Monthly notes**
 
-### Anualy note
+Once a month, I review where I stand with my goals and perform a deeper analysis of my progress and personal feelings. I also define the goals for the next month and create a dedicated to-do list.
 
-This note isn't about review all the monthly note but to setup the vision of the year. It's more like the main quests, the stat where you want to be. This is the first step, set the desire stat I want, and then I used all the previews types of note with the same question : How can I reach this vision, stat ? 
+### **Yearly note**
 
-### How to set a goal ?
+This note is not about reviewing all the monthly notes, but about defining the vision for the year. It’s more about the main quests—the state I want to reach. This is the first step: defining the desired state, then using all the previous types of notes to answer one recurring question:
 
-On my monthly, weekly, and daily notes I set goals with the method SMART :
-1. `S` : Specific. What will be accomplished ? What action will you take ?
-2. `M` : Mesurable. What data will mesure the goal ? How much? How well?
-3. `A` : Achivable. Is the goal doable? Do you have the necessary skills and ressources? 
-4. `R` : Relevante. How does the goal align with you broader goals? Why is the result important?
-5. `T` : Time-bound. What is the time frame for accomplishing the goal?
+How can I reach this vision and this state?
 
-### Results
+### **How I set goals**
 
-In two months, I feel like I learn more then the 10 previews months. I feel very confident and become more and more productive eatch day. The vision set up is really powerfull, because even you can feel discourageous, you know you are on the right path and just do the work. I don't know why this process isn't teach in school, because it's a very powerfull tool.
+In my monthly, weekly, and daily notes, I use the SMART method:
 
-## Conclusion
+1. **S – Specific**: What will be accomplished? What action will be taken?
+    
+2. **M – Measurable**: What data will measure the goal? How much? How well?
+    
+3. **A – Achievable**: Is the goal doable? Do I have the necessary skills and resources?
+    
+4. **R – Relevant**: How does the goal align with broader objectives? Why is the result important?
+    
+5. **T – Time-bound**: What is the timeframe for accomplishing the goal?
+    
+### **Results**
 
-With my new workflow, note taking system, I am confident I will reach my desire stat in no time. However, the danjeur here is the burnout, or the lack of discipline who can completly stop the machine and break all the work done. I am very aware of this danger, so I make some whatchdogs in place to be relax, manage my stress, and don't over book myself.
+In two months, I feel like I’ve learned more than in the previous ten months combined. I feel much more confident and increasingly productive every day. Having a clear vision is extremely powerful: even when motivation drops, I know I’m on the right path and just need to do the work.
+  
+I honestly don’t know why this process isn’t taught in school, because it’s an incredibly powerful tool.
 
+## **Conclusion**
+
+With my new workflow and note-taking system, I’m confident I will reach my desired state over time. The real danger, however, is burnout or a lack of discipline, which could completely stop the momentum and undo the progress made.
+
+I’m very aware of this risk, so I’ve put some safeguards in place to relax, manage stress, and avoid overloading myself.
