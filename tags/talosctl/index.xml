@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Talosctl on Eliorion blog</title><link>https://eliorion/test/tags/talosctl/</link><description>Recent content in Talosctl on Eliorion blog</description><generator>Hugo</generator><language>en</language><lastBuildDate>Thu, 11 Dec 2025 09:38:10 +0100</lastBuildDate><atom:link href="https://eliorion/test/tags/talosctl/index.xml" rel="self" type="application/rss+xml"/><item><title>New Homelab Workflow</title><link>https://eliorion/test/posts/new-homelab-workflow/</link><pubDate>Thu, 11 Dec 2025 09:38:10 +0100</pubDate><guid>https://eliorion/test/posts/new-homelab-workflow/</guid><description>&lt;h2 id="my-first-homelab-for-the-second-attempt"&gt;My First Homelab (for the second attempt)&lt;/h2&gt;
+&lt;p&gt;This homelab is the first real infrastructure I’m building—although technically, it’s already my second attempt.&lt;/p&gt;
+&lt;h3 id="why-a-second-attempt"&gt;Why a Second Attempt?&lt;/h3&gt;
+&lt;p&gt;The first time I tried to set everything up, I used Proxmox running on a VM provider and Talos Linux for my Kubernetes nodes.
+I experimented with countless configurations, trying to understand how Talos works behind the scenes. Each time a node failed or something didn’t behave the way I expected, I had to rebuild everything manually, one node at a time. It was painful, slow, and sometimes discouraging… but I learned a lot from it.&lt;/p&gt;</description></item><item><title>Persistence volume in Kubernetes</title><link>https://eliorion/test/posts/persistence-volume-in-kubernetes/</link><pubDate>Thu, 11 Dec 2025 09:38:10 +0100</pubDate><guid>https://eliorion/test/posts/persistence-volume-in-kubernetes/</guid><description>&lt;h2 id="learn-persistent-volume-on-kubernetes"&gt;Learn persistent volume on kubernetes&lt;/h2&gt;
+&lt;p&gt;My status in my learning session on kubernetes :&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Name&lt;/th&gt;
+&lt;th&gt;Learning stat&lt;/th&gt;
+&lt;th&gt;Commentary&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Pods&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;Create, delete, logs&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Deployment&lt;/td&gt;
+&lt;td&gt;🟢&lt;/td&gt;
+&lt;td&gt;Consepts understood&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;nfs-driver&lt;/td&gt;
+&lt;td&gt;🟢&lt;/td&gt;
+&lt;td&gt;In place to use TrueNAS NFS shared storage&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Calico&lt;/td&gt;
+&lt;td&gt;🟠&lt;/td&gt;
+&lt;td&gt;Basic functionality; not fully mastered but operational&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Service&lt;/td&gt;
+&lt;td&gt;🟠&lt;/td&gt;
+&lt;td&gt;ClusterIP and NodePort understood; LoadBalancer and ExternalName not yet used&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Traefix&lt;/td&gt;
+&lt;td&gt;🟠&lt;/td&gt;
+&lt;td&gt;Learning, used with Service LoadBalancer&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;API gateway&lt;/td&gt;
+&lt;td&gt;🟠&lt;/td&gt;
+&lt;td&gt;Learning, used with Service LoadBalancer&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;PV&lt;/td&gt;
+&lt;td&gt;🔴&lt;/td&gt;
+&lt;td&gt;Persistent volumes not yet required&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;PVC&lt;/td&gt;
+&lt;td&gt;🔴&lt;/td&gt;
+&lt;td&gt;Persistent volume claims not yet required&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;I hadn&amp;rsquo;t needed to create a PV and a PVC. So, I had to learn how to access this ressource in my Talos Kubernetes cluster.&lt;/p&gt;</description></item><item><title>Homelab architecture Learning Project</title><link>https://eliorion/test/posts/homelab-architecture-learning-project/</link><pubDate>Mon, 15 Sep 2025 22:50:16 +0200</pubDate><guid>https://eliorion/test/posts/homelab-architecture-learning-project/</guid><description>&lt;h2 id="building-a-home-lab-to-learn-kubernetes"&gt;Building a Home Lab to Learn Kubernetes&lt;/h2&gt;
+&lt;p&gt;I wanted to learn Kubernetes—really learn it, not just follow a few tutorials.
+While researching, I noticed many people build their own home labs to run cloud services or custom applications.
+That inspired me to set up a complete home lab myself: first to run basic services like Nextcloud or OpenProject, and then to experiment with a full DevSecOps pipeline.&lt;/p&gt;
+&lt;h2 id="first-step"&gt;First Step&lt;/h2&gt;
+&lt;p&gt;To understand Kubernetes properly, I needed something close to real-world infrastructure.
+Buying three or more physical servers wasn’t possible, so I decided to create everything on a single machine using multiple virtual machines (VMs).
+This way I can spin up as many servers as I need and quickly learn how to build a cluster.&lt;/p&gt;</description></item><item><title>Network Configuration</title><link>https://eliorion/test/posts/network-configuration/</link><pubDate>Sun, 31 Aug 2025 22:19:31 +0200</pubDate><guid>https://eliorion/test/posts/network-configuration/</guid><description>&lt;h2 id="first-issue"&gt;First issue&lt;/h2&gt;
+&lt;h3 id="multiples-environnements"&gt;Multiples environnements&lt;/h3&gt;
+&lt;p&gt;First, I need to connect to my server in SSH and in http to manage Proxmox.
+&lt;img alt="Homelab Diagram" loading="lazy" src="https://eliorion/test/posts/network-configuration/diagram.png"&gt;
+With this diagram you can see a simple usage of VM machine. But, I have personal conditions.&lt;br&gt;
+I need to have a virtual network to have a stable IP of my node in my cluster. But, as you can see, in default with proxmox, you have one bridge created connect to the physical Ethernet port in the server. And, I change environnement to work in my office, and my home because I don&amp;rsquo;t have an internet box in there, so for connect my server to my PC, I need to connect the Ethernet ports of the server and my PC in direct.&lt;/p&gt;</description></item><item><title>First Step in Homelab world</title><link>https://eliorion/test/posts/first-step-in-homelab-world/</link><pubDate>Sun, 31 Aug 2025 14:51:29 +0200</pubDate><guid>https://eliorion/test/posts/first-step-in-homelab-world/</guid><description>&lt;h2 id="create-a-home-lab-to-learn-kubernetes"&gt;Create a Home Lab to Learn Kubernetes&lt;/h2&gt;
+&lt;h3 id="why-learn-kubernetes"&gt;Why Learn Kubernetes?&lt;/h3&gt;
+&lt;p&gt;swit
+As a software engineer focused on low-level implementations, I realized I didn’t fully understand how modern cloud systems work, or how millions of users can access massive amounts of services without interruption. What fascinates me most is the elasticity of resource allocation.&lt;/p&gt;
+&lt;p&gt;Think about Netflix: every evening, millions of people connect at the same time to watch their favorite series. This creates a huge traffic peak. Yet, everything runs smoothly without downtime.&lt;/p&gt;</description></item></channel></rss>
