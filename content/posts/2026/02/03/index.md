@@ -8,7 +8,7 @@ topics:
   - GitOps
 tags:
   - GitOps
-  - blo
+  - blog
   - homelab
   - hardware
   - K3S
@@ -40,17 +40,16 @@ The final goal is to deploy a self-hosted **Linkding** application accessible fr
 To achieve this setup, the following components are required:
 
 - A domain name (I use OVH as the provider, with DNS managed by Cloudflare)
-    
+
 - A server (Raspberry Pi, old laptop, VM, etc.)
-    
+
 - A Cloudflare account (for tunnel access)
-    
+
 - A K3s cluster (running on my VM in this case)
-    
+
 - A complete monitoring stack (Prometheus, Grafana, etc.)
-    
+
 - A remote Git repository provider (I use GitHub)
-    
 
 ---
 
@@ -61,11 +60,10 @@ This project is designed for learning purposes. My real homelab architecture wil
 For this learning project, I use:
 
 - A single Kubernetes node
-    
+
 - A single Git repository
-    
+
 - A simplified GitOps architecture
-    
 
 This approach allows me to build strong foundations in GitOps principles before scaling further.
 
@@ -78,9 +76,8 @@ For now, I use my Proxmox server to deploy a K3s instance.
 I created a single VM with:
 
 - 50 GB of storage
-    
+
 - 2 GB of RAM
-    
 
 Since I am only deploying lightweight self-hosted applications, powerful hardware is not required at this stage.
 
@@ -93,11 +90,10 @@ I chose Debian for the VM because I personally prefer it over Ubuntu.
 I do not use a graphical interface. A Debian CLI installation is sufficient to:
 
 - Install K3s
-    
+
 - Perform Kubernetes configuration
-    
+
 - Troubleshoot at the system level
-    
 
 One important objective of this setup is to retain full root access so I can deeply understand how K3s works internally, inspect processes, and observe how the system behaves in a production-like environment.
 
@@ -117,7 +113,7 @@ For learning Kubernetes fundamentals without unnecessary complexity, K3s is an e
 
 As mentioned earlier, this project uses a single Git repository following the official Flux recommendation for structuring repositories:
 
-https://fluxcd.io/flux/guides/repository-structure/
+<https://fluxcd.io/flux/guides/repository-structure/>
 
 This architecture keeps everything declarative and centralized in Git.
 
@@ -142,13 +138,12 @@ kubectl apply -f ...
 Flux automatically:
 
 - Monitors the Git repository
-    
+
 - Detects changes
-    
+
 - Applies them to the cluster
-    
+
 - Removes resources that were deleted from Git
-    
 
 Git becomes the single source of truth.
 
@@ -191,28 +186,28 @@ Here is the base directory structure of my learning GitOps cluster:
 The logic works as follows:
 
 1. Flux is bootstrapped in clusters/staging/flux-system and watches this Git repository.
-    
+
 2. Git is the single source of truth; the cluster only reflects what is declared in Git.
-    
+
 3. In clusters/staging/, three Flux Kustomization objects are defined:
-    
+
     - apps.yaml
     - infrastructure.yaml
     - monitoring.yaml
-    
+
 4. Each Flux Kustomization points to a specific path in the repository.
-    
+
 5. Flux reads that path and executes a Kustomize build.
-    
+
 6. The kustomization.yaml files inside those directories define which resources belong together.
-    
+
 7. The base folders contain generic manifests.
-    
+
 8. The staging folders override base configurations.
-    
+
 9. Flux applies the rendered manifests to the cluster.
-    
+
 10. With prune: true, resources removed from Git are also deleted from the cluster.
-    
 
 This reconciliation loop runs continuously, ensuring that the cluster always matches the Git repository.
+

@@ -1,6 +1,6 @@
 ---
 title: Containerise Python application
-date: 2025-12-11T09:38:10+01:00
+date: 2026-03-27T09:38:10+01:00
 draft: false
 topics:
   - Homelab
