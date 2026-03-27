@@ -1,77 +1,78 @@
-name: "Translation"
+#name: "Translation"
+#
+#on:
+#  push:
+#    branches:
+#      - dev
+#  workflow_dispatch:
+#    inputs:
+#      force_retranslate:
+#        description: "Force retranslation of existing .fr.md files"
+#        required: false
+#        default: "false"
+#
+#permissions:
+#  contents: write
+#
+#jobs:
+#  translate:
+#    runs-on: ubuntu-latest
+#    steps:
+#      - name: Checkout dev
+#        uses: actions/checkout@v3
+#        with:
+#          ref: dev
+#
+#      - name: Set up Python
+#        uses: actions/setup-python@v4
+#        with:
+#          python-version: '3.10'
+#
+#      - name: Cache pip
+#        uses: actions/cache@v3
+#        with:
+#          path: ~/.cache/pip
+#          key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
+#          restore-keys: |
+#            ${{ runner.os }}-pip-
+#
+#      - name: Cache Hugging Face models
+#        uses: actions/cache@v3
+#        with:
+#          path: ~/.cache/huggingface
+#          key: ${{ runner.os }}-huggingface-${{ hashFiles('translate_hf.py') }}
+#          restore-keys: |
+#            ${{ runner.os }}-huggingface-
+#
+#      - name: Install dependencies
+#        run: pip install -r requirements.txt
+#
+#      - name: Run translation
+#        env:
+#          FORCE_RETRANSLATE: ${{ github.event.inputs.force_retranslate }}
+#        run: |
+#          find content/posts -type f -name "*.md" ! -name "*.fr.md" | while read -r file; do
+#            fr_file="${file%.md}.fr.md"
+#            if [ "$FORCE_RETRANSLATE" = "true" ] || [ ! -f "$fr_file" ]; then
+#              echo "Translating $file -> $fr_file"
+#              python3 translate_hf.py "$file"
+#            else
+#              echo "Skipping $file (already translated)"
+#            fi
+#          done
+#
+#      - name: Commit translations to dev
+#        run: |
+#          git config user.name "github-actions"
+#          git config user.email "actions@github.com"
+#          git add content/posts
+#          git diff --cached --quiet || git commit -m "Auto-translate new posts (EN→FR)"
+#          git push origin dev
+#
+#      - name: Sync main with dev
+#        run: |
+#          git fetch origin dev
+#          git checkout main || git checkout -b main
+#          git reset --hard origin/dev
+#          git push origin main --force
 
-on:
-  push:
-    branches:
-      - dev
-  workflow_dispatch:
-    inputs:
-      force_retranslate:
-        description: "Force retranslation of existing .fr.md files"
-        required: false
-        default: "false"
-
-permissions:
-  contents: write
-
-jobs:
-  translate:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout dev
-        uses: actions/checkout@v3
-        with:
-          ref: dev
-
-      - name: Set up Python
-        uses: actions/setup-python@v4
-        with:
-          python-version: '3.10'
-
-      - name: Cache pip
-        uses: actions/cache@v3
-        with:
-          path: ~/.cache/pip
-          key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
-          restore-keys: |
-            ${{ runner.os }}-pip-
-
-      - name: Cache Hugging Face models
-        uses: actions/cache@v3
-        with:
-          path: ~/.cache/huggingface
-          key: ${{ runner.os }}-huggingface-${{ hashFiles('translate_hf.py') }}
-          restore-keys: |
-            ${{ runner.os }}-huggingface-
-
-      - name: Install dependencies
-        run: pip install -r requirements.txt
-
-      - name: Run translation
-        env:
-          FORCE_RETRANSLATE: ${{ github.event.inputs.force_retranslate }}
-        run: |
-          find content/posts -type f -name "*.md" ! -name "*.fr.md" | while read -r file; do
-            fr_file="${file%.md}.fr.md"
-            if [ "$FORCE_RETRANSLATE" = "true" ] || [ ! -f "$fr_file" ]; then
-              echo "Translating $file -> $fr_file"
-              python3 translate_hf.py "$file"
-            else
-              echo "Skipping $file (already translated)"
-            fi
-          done
-
-      - name: Commit translations to dev
-        run: |
-          git config user.name "github-actions"
-          git config user.email "actions@github.com"
-          git add content/posts
-          git diff --cached --quiet || git commit -m "Auto-translate new posts (EN→FR)"
-          git push origin dev
-
-      - name: Sync main with dev
-        run: |
-          git fetch origin dev
-          git checkout main || git checkout -b main
-          git reset --hard origin/dev
-          git push origin main --force
