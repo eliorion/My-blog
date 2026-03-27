@@ -1,5 +1,5 @@
 theme = "PaperMod"
-baseURL = "https://Eliorion/"
+baseURL = "https://eliorion/test"
 title = 'Eliorion blog'
 
 [params]
