@@ -1,7 +1,0 @@
-transformers==4.44.0
-torch==2.3.0
-sentencepiece
-sacremoses
-tokenizers
-torch
-huggingface-hub
