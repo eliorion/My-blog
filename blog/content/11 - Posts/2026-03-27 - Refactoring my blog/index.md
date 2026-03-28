@@ -14,7 +14,7 @@ projects:
 categories:
 weight: 10 # Lower number = toper in the list
 cover:
-  image: "cover.svg"
+  image: "cover.png"
   alt: 'Refactoring My Blog'
   caption: ""
   relative: true
