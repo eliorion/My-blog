@@ -3,5 +3,8 @@ pre-commit = "latest"
 python = "3.13"
 hugo = "0.153.0"
 
+[settings]
+experimental = true
+
 [hooks]
 enter = "bash ./scripts/setup_project"
