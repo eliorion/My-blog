@@ -1,6 +1,18 @@
 #!/bin/bash
 
-/usr/local/bin/mise trust /workspaces/"$DEVPOD_WORKSPACE_ID"/mise.toml && /usr/local/bin/mise install
+/usr/local/bin/mise trust /workspaces/$DEVPOD_WORKSPACE_ID/mise.toml && /usr/local/bin/mise install
+
+export PATH="$HOME/.local/bin:$PATH"
 
 # Claude Code installation
 curl -fsSL https://claude.ai/install.sh | bash
+
+# RTK - token-optimizing CLI proxy (installs the Bash PreToolUse hook)
+curl -fsSL https://raw.githubusercontent.com/rtk-ai/rtk/refs/heads/master/install.sh | sh
+rtk init -g --auto-patch
+
+# Caveman - plugin + SessionStart/UserPromptSubmit hooks + statusline
+curl -fsSL https://raw.githubusercontent.com/JuliusBrussee/caveman/main/install.sh | bash
+
+# Reassert chezmoi-managed ~/.claude/CLAUDE.md (rtk init -g overwrites it with @RTK.md only)
+command -v chezmoi >/dev/null && chezmoi apply "$HOME/.claude/CLAUDE.md"
