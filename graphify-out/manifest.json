@@ -1,0 +1,937 @@
+{
+  "/workspaces/my-blog/.devcontainer/devcontainer.json": {
+    "mtime": 1774599666.926759,
+    "ast_hash": "eb94d75a26ecd4808b282cefba507f5c",
+    "semantic_hash": "eb94d75a26ecd4808b282cefba507f5c"
+  },
+  "/workspaces/my-blog/blog/themes/PaperMod/layouts/_default/index.json": {
+    "mtime": 1774619335.7027297,
+    "ast_hash": "38d2fef0b4461d39225162f5e3ea0d3b",
+    "semantic_hash": "38d2fef0b4461d39225162f5e3ea0d3b"
+  },
+  "/workspaces/my-blog/blog/themes/PaperMod/assets/js/fastsearch.js": {
+    "mtime": 1774619335.6299706,
+    "ast_hash": "b05d9e04cd15486bedd99d6293907943",
+    "semantic_hash": "b05d9e04cd15486bedd99d6293907943"
+  },
+  "/workspaces/my-blog/blog/themes/PaperMod/assets/js/fuse.basic.min.js": {
+    "mtime": 1774619335.6313887,
+    "ast_hash": "a3e7da04afd6bacdc24f443947472857",
+    "semantic_hash": "a3e7da04afd6bacdc24f443947472857"
+  },
+  "/workspaces/my-blog/blog/themes/PaperMod/assets/js/license.js": {
+    "mtime": 1774619335.6325717,
+    "ast_hash": "28fabdb7d5f06ea0a23b75dc6c780e32",
+    "semantic_hash": "28fabdb7d5f06ea0a23b75dc6c780e32"
+  },
+  "/workspaces/my-blog/scripts/setup_project": {
+    "mtime": 1779802714.4414694,
+    "ast_hash": "798d0d83cb4114c64f2f8ae1df3e18e3",
+    "semantic_hash": "798d0d83cb4114c64f2f8ae1df3e18e3"
+  },
+  "/workspaces/my-blog/scripts/setup": {
+    "mtime": 1779740312.5730033,
+    "ast_hash": "df3f17c4de329f9e01a50cfd6e4dfaf0",
+    "semantic_hash": "df3f17c4de329f9e01a50cfd6e4dfaf0"
+  },
+  "/workspaces/my-blog/linkedin/conftest.py": {
+    "mtime": 1779802584.5897045,
+    "ast_hash": "118b94a7cbfa93e4a2d48ed83ff671b2",
+    "semantic_hash": "118b94a7cbfa93e4a2d48ed83ff671b2"
+  },
+  "/workspaces/my-blog/linkedin/generate.py": {
+    "mtime": 1779805650.0595312,
+    "ast_hash": "e551731df0b2fb2b3cb2980c72c6ea68",
+    "semantic_hash": "e551731df0b2fb2b3cb2980c72c6ea68"
+  },
+  "/workspaces/my-blog/linkedin/__init__.py": {
+    "mtime": 1779800020.4216917,
+    "ast_hash": "d41d8cd98f00b204e9800998ecf8427e",
+    "semantic_hash": "d41d8cd98f00b204e9800998ecf8427e"
+  },
+  "/workspaces/my-blog/linkedin/coverage-html/coverage_html_cb_dd2e7eb5.js": {
+    "mtime": 1779812812.3570652,
+    "ast_hash": "47d6ea8f87058d0cea6b52102adf1b13",
+    "semantic_hash": "47d6ea8f87058d0cea6b52102adf1b13"
+  },
+  "/workspaces/my-blog/linkedin/coverage-html/status.json": {
+    "mtime": 1779812812.3737416,
+    "ast_hash": "cf4b37322826299cded2060d8953beb1",
+    "semantic_hash": "cf4b37322826299cded2060d8953beb1"
+  },
+  "/workspaces/my-blog/linkedin/tests/__init__.py": {
+    "mtime": 1779800027.092693,
+    "ast_hash": "d41d8cd98f00b204e9800998ecf8427e",
+    "semantic_hash": "d41d8cd98f00b204e9800998ecf8427e"
+  },
+  "/workspaces/my-blog/linkedin/tests/test_unit.py": {
+    "mtime": 1779812872.3474817,
+    "ast_hash": "274c514529c9217a069b5dabd34ad2d4",
+    "semantic_hash": "274c514529c9217a069b5dabd34ad2d4"
+  },
+  "/workspaces/my-blog/linkedin/tests/test_e2e.py": {
+    "mtime": 1779805697.3158653,
+    "ast_hash": "bf5294ddaa7d9df2b0af6c5003829dc2",
+    "semantic_hash": "bf5294ddaa7d9df2b0af6c5003829dc2"
+  },
+  "/workspaces/my-blog/.pre-commit-config.yaml": {
+    "mtime": 1774609233.0361028,
+    "ast_hash": "b866aae46ec1fb2a6afbfdbe6798d6fa",
+    "semantic_hash": "b866aae46ec1fb2a6afbfdbe6798d6fa"
+  },
+  "/workspaces/my-blog/README.md": {
+    "mtime": 1774716338.7270787,
+    "ast_hash": "fe2b3280da18bb2afe9db411884961a4",
+    "semantic_hash": "fe2b3280da18bb2afe9db411884961a4"
+  },
+  "/workspaces/my-blog/CLAUDE.md": {
+    "mtime": 1779809144.483121,
+    "ast_hash": "1ff928a88fd620b5493151c9acd5eb2c",
+    "semantic_hash": "1ff928a88fd620b5493151c9acd5eb2c"
+  },
+  "/workspaces/my-blog/blog/archetypes/kubernetes.md": {
+    "mtime": 1774641357.0466163,
+    "ast_hash": "b6dd62bde08b0d2228f9c87bbe067e18",
+    "semantic_hash": "b6dd62bde08b0d2228f9c87bbe067e18"
+  },
+  "/workspaces/my-blog/blog/archetypes/thinking.md": {
+    "mtime": 1774641631.2438018,
+    "ast_hash": "871154f614352bcb98a756ee4218ae7b",
+    "semantic_hash": "871154f614352bcb98a756ee4218ae7b"
+  },
+  "/workspaces/my-blog/blog/archetypes/default.md": {
+    "mtime": 1774641186.1567492,
+    "ast_hash": "871154f614352bcb98a756ee4218ae7b",
+    "semantic_hash": "871154f614352bcb98a756ee4218ae7b"
+  },
+  "/workspaces/my-blog/blog/archetypes/homelab.md": {
+    "mtime": 1774641239.9573467,
+    "ast_hash": "f34cd3f0355127a06b17b588e464dd67",
+    "semantic_hash": "f34cd3f0355127a06b17b588e464dd67"
+  },
+  "/workspaces/my-blog/blog/content/11 - Posts/2025-09-01 - First-step-in-homelab/index.md": {
+    "mtime": 1774611502.256672,
+    "ast_hash": "1c0f96c5a7aeea92d83b5665c7bb6858",
+    "semantic_hash": "1c0f96c5a7aeea92d83b5665c7bb6858"
+  },
+  "/workspaces/my-blog/blog/content/11 - Posts/2025-12-11 - Persistent-volume-with-nfs/index.md": {
+    "mtime": 1774640432.9877877,
+    "ast_hash": "6f2639b15b1bd05dcd83bddee2a44cdc",
+    "semantic_hash": "6f2639b15b1bd05dcd83bddee2a44cdc"
+  },
+  "/workspaces/my-blog/blog/content/11 - Posts/2026-05-24 - mve-itguard/index.md": {
+    "mtime": 1779726437.0856528,
+    "ast_hash": "f4842f9c84fb6b03e42d637ffa93526f",
+    "semantic_hash": "f4842f9c84fb6b03e42d637ffa93526f"
+  },
+  "/workspaces/my-blog/blog/content/11 - Posts/2025-09-15 - Architecture-learning-project/index.md": {
+    "mtime": 1774611801.4973154,
+    "ast_hash": "132614cdf8c9f853010403d1272a6a05",
+    "semantic_hash": "132614cdf8c9f853010403d1272a6a05"
+  },
+  "/workspaces/my-blog/blog/content/11 - Posts/2025-08-31 - Intro/index.md": {
+    "mtime": 1774611386.5969162,
+    "ast_hash": "17ae9257e0c2f147d875c4ac268e3638",
+    "semantic_hash": "17ae9257e0c2f147d875c4ac268e3638"
+  },
+  "/workspaces/my-blog/blog/content/11 - Posts/2026-05-25 - mve-itguard-gitops/index.md": {
+    "mtime": 1779726437.0872326,
+    "ast_hash": "c8c9bed256705498277f2eb59ee9e310",
+    "semantic_hash": "c8c9bed256705498277f2eb59ee9e310"
+  },
+  "/workspaces/my-blog/blog/content/11 - Posts/2026-03-24 - Containerise Python application/index.md": {
+    "mtime": 1774617387.506029,
+    "ast_hash": "25089166fc6ff3b92a94845f20e44b03",
+    "semantic_hash": "25089166fc6ff3b92a94845f20e44b03"
+  },
+  "/workspaces/my-blog/blog/content/11 - Posts/2026-02-23 - Why learn linux before containerisation/index.md": {
+    "mtime": 1774617241.5880399,
+    "ast_hash": "7787d8fc88c73a22ba8c52995c31dc37",
+    "semantic_hash": "7787d8fc88c73a22ba8c52995c31dc37"
+  },
+  "/workspaces/my-blog/blog/content/11 - Posts/2026-05-14 - OpenClaw setup and security/index.md": {
+    "mtime": 1779726437.0836399,
+    "ast_hash": "1fc5c0a4b6cecb9e475cb8e13b69adb3",
+    "semantic_hash": "1fc5c0a4b6cecb9e475cb8e13b69adb3"
+  },
+  "/workspaces/my-blog/blog/content/11 - Posts/2025-09-02 - Network-configuration/index.md": {
+    "mtime": 1774619770.9955113,
+    "ast_hash": "7936c31d8ea9fd49804f95e887bf8fc8",
+    "semantic_hash": "7936c31d8ea9fd49804f95e887bf8fc8"
+  },
+  "/workspaces/my-blog/blog/content/11 - Posts/2026-03-27 - Refactoring my blog/index.md": {
+    "mtime": 1774716813.9020777,
+    "ast_hash": "60de1de522a6b8ce638445157aae5a23",
+    "semantic_hash": "60de1de522a6b8ce638445157aae5a23"
+  },
+  "/workspaces/my-blog/blog/content/11 - Posts/2026-02-26 - First GitOps implementation/index.md": {
+    "mtime": 1774617325.4196165,
+    "ast_hash": "fc3560b0cdc4a32d330a35e3a0d3502e",
+    "semantic_hash": "fc3560b0cdc4a32d330a35e3a0d3502e"
+  },
+  "/workspaces/my-blog/blog/content/11 - Posts/2026-01-01 - Become-beginer-again/index.md": {
+    "mtime": 1774612088.3554428,
+    "ast_hash": "3471d90af11e39b9ac60a4c6c8ec5f08",
+    "semantic_hash": "3471d90af11e39b9ac60a4c6c8ec5f08"
+  },
+  "/workspaces/my-blog/blog/content/11 - Posts/2025-12-11 - New-homelab-workflow/index.md": {
+    "mtime": 1774617475.2464762,
+    "ast_hash": "4081bb46b61e5c2357ddcb328dd14ffc",
+    "semantic_hash": "4081bb46b61e5c2357ddcb328dd14ffc"
+  },
+  "/workspaces/my-blog/blog/themes/PaperMod/README.md": {
+    "mtime": 1774619335.599258,
+    "ast_hash": "089bf76ea81359009c324bb82ce5b23a",
+    "semantic_hash": "089bf76ea81359009c324bb82ce5b23a"
+  },
+  "/workspaces/my-blog/blog/themes/PaperMod/layouts/robots.txt": {
+    "mtime": 1774619335.7476194,
+    "ast_hash": "abd7d9a64dd0c5c5fe8b056733bd6280",
+    "semantic_hash": "abd7d9a64dd0c5c5fe8b056733bd6280"
+  },
+  "/workspaces/my-blog/blog/themes/PaperMod/layouts/_default/llms.txt": {
+    "mtime": 1774619335.7055938,
+    "ast_hash": "9f65847388cd453acaabee8c678c5a54",
+    "semantic_hash": "9f65847388cd453acaabee8c678c5a54"
+  },
+  "/workspaces/my-blog/blog/themes/PaperMod/.github/PULL_REQUEST_TEMPLATE.md": {
+    "mtime": 1774619335.5941522,
+    "ast_hash": "88bf4e8c9cbc092a7a89bbe353629c21",
+    "semantic_hash": "88bf4e8c9cbc092a7a89bbe353629c21"
+  },
+  "/workspaces/my-blog/blog/themes/PaperMod/.github/workflows/gh-pages.yml": {
+    "mtime": 1774619335.5974052,
+    "ast_hash": "aabcc96c9daa94a85b7afb57ed3ab07c",
+    "semantic_hash": "aabcc96c9daa94a85b7afb57ed3ab07c"
+  },
+  "/workspaces/my-blog/blog/themes/PaperMod/.github/ISSUE_TEMPLATE/bug.yaml": {
+    "mtime": 1774619335.590461,
+    "ast_hash": "72a8f822059a76c498c9417363b7ec5f",
+    "semantic_hash": "72a8f822059a76c498c9417363b7ec5f"
+  },
+  "/workspaces/my-blog/blog/themes/PaperMod/.github/ISSUE_TEMPLATE/enhancement.yaml": {
+    "mtime": 1774619335.5936031,
+    "ast_hash": "c877586606bd57789172353e6a9cea5a",
+    "semantic_hash": "c877586606bd57789172353e6a9cea5a"
+  },
+  "/workspaces/my-blog/blog/themes/PaperMod/.github/ISSUE_TEMPLATE/config.yml": {
+    "mtime": 1774619335.5922055,
+    "ast_hash": "559932560f6d9a0bf5560c637316ca7b",
+    "semantic_hash": "559932560f6d9a0bf5560c637316ca7b"
+  },
+  "/workspaces/my-blog/blog/themes/PaperMod/i18n/ms.yaml": {
+    "mtime": 1774619335.6658573,
+    "ast_hash": "f4748187f3999fbd8da5ff9709933005",
+    "semantic_hash": "f4748187f3999fbd8da5ff9709933005"
+  },
+  "/workspaces/my-blog/blog/themes/PaperMod/i18n/nl.yaml": {
+    "mtime": 1774619335.666811,
+    "ast_hash": "84aa4af5e39c2b7eedbc5ad4b285880b",
+    "semantic_hash": "84aa4af5e39c2b7eedbc5ad4b285880b"
+  },
+  "/workspaces/my-blog/blog/themes/PaperMod/i18n/ja.yaml": {
+    "mtime": 1774619335.6608193,
+    "ast_hash": "d7946846c9b37da5b6e17a15be151345",
+    "semantic_hash": "d7946846c9b37da5b6e17a15be151345"
+  },
+  "/workspaces/my-blog/blog/themes/PaperMod/i18n/tr.yaml": {
+    "mtime": 1774619335.682575,
+    "ast_hash": "5e17f2cef3bc655834444024e93f4cf8",
+    "semantic_hash": "5e17f2cef3bc655834444024e93f4cf8"
+  },
+  "/workspaces/my-blog/blog/themes/PaperMod/i18n/zh.yaml": {
+    "mtime": 1774619335.6886084,
+    "ast_hash": "65f3784fd8990f4f7f7054431118bc31",
+    "semantic_hash": "65f3784fd8990f4f7f7054431118bc31"
+  },
+  "/workspaces/my-blog/blog/themes/PaperMod/i18n/bn.yaml": {
+    "mtime": 1774619335.6390676,
+    "ast_hash": "3becd95d2ee6df9d774a324406e1c1ab",
+    "semantic_hash": "3becd95d2ee6df9d774a324406e1c1ab"
+  },
+  "/workspaces/my-blog/blog/themes/PaperMod/i18n/hu.yaml": {
+    "mtime": 1774619335.6545973,
+    "ast_hash": "8b377b43dd2da8eb00613b8cf202aff2",
+    "semantic_hash": "8b377b43dd2da8eb00613b8cf202aff2"
+  },
+  "/workspaces/my-blog/blog/themes/PaperMod/i18n/pa.yaml": {
+    "mtime": 1774619335.6697218,
+    "ast_hash": "f8c86394f6225a589e7e3f6ef16a1328",
+    "semantic_hash": "f8c86394f6225a589e7e3f6ef16a1328"
+  },
+  "/workspaces/my-blog/blog/themes/PaperMod/i18n/en.yaml": {
+    "mtime": 1774619335.6482844,
+    "ast_hash": "3c6df75140c1a4a83eb57105c81530bd",
+    "semantic_hash": "3c6df75140c1a4a83eb57105c81530bd"
+  },
+  "/workspaces/my-blog/blog/themes/PaperMod/i18n/be.yaml": {
+    "mtime": 1774619335.636284,
+    "ast_hash": "f31a4e7ae69f543b3a627c905937ff7e",
+    "semantic_hash": "f31a4e7ae69f543b3a627c905937ff7e"
+  },
+  "/workspaces/my-blog/blog/themes/PaperMod/i18n/pt.yaml": {
+    "mtime": 1774619335.6753342,
+    "ast_hash": "c511b186e782f7d04340e74fe256b1cc",
+    "semantic_hash": "c511b186e782f7d04340e74fe256b1cc"
+  },
+  "/workspaces/my-blog/blog/themes/PaperMod/i18n/ckb.yaml": {
+    "mtime": 1774619335.641075,
+    "ast_hash": "288f030701099299336e9ea3016157ba",
+    "semantic_hash": "288f030701099299336e9ea3016157ba"
+  },
+  "/workspaces/my-blog/blog/themes/PaperMod/i18n/sk.yaml": {
+    "mtime": 1774619335.678562,
+    "ast_hash": "0d2681eeaa0f470d6304caedb48c8171",
+    "semantic_hash": "0d2681eeaa0f470d6304caedb48c8171"
+  },
+  "/workspaces/my-blog/blog/themes/PaperMod/i18n/hr.yaml": {
+    "mtime": 1774619335.6534648,
+    "ast_hash": "7032a3bdc7f7d2987c667b3d0eae2ce5",
+    "semantic_hash": "7032a3bdc7f7d2987c667b3d0eae2ce5"
+  },
+  "/workspaces/my-blog/blog/themes/PaperMod/i18n/it.yaml": {
+    "mtime": 1774619335.6603487,
+    "ast_hash": "9098ad28c953670d90a78225ae4a7b9f",
+    "semantic_hash": "9098ad28c953670d90a78225ae4a7b9f"
+  },
+  "/workspaces/my-blog/blog/themes/PaperMod/i18n/fi.yaml": {
+    "mtime": 1774619335.6503446,
+    "ast_hash": "681a68170692f8fbb20b169b0795a572",
+    "semantic_hash": "681a68170692f8fbb20b169b0795a572"
+  },
+  "/workspaces/my-blog/blog/themes/PaperMod/i18n/uk.yaml": {
+    "mtime": 1774619335.683409,
+    "ast_hash": "6b1b8ff490bc9eeb095cac38669b7e61",
+    "semantic_hash": "6b1b8ff490bc9eeb095cac38669b7e61"
+  },
+  "/workspaces/my-blog/blog/themes/PaperMod/i18n/ru.yaml": {
+    "mtime": 1774619335.6776705,
+    "ast_hash": "2b64e465696963b26ad17ee0fc0bc812",
+    "semantic_hash": "2b64e465696963b26ad17ee0fc0bc812"
+  },
+  "/workspaces/my-blog/blog/themes/PaperMod/i18n/pl.yaml": {
+    "mtime": 1774619335.672657,
+    "ast_hash": "32482116ec52d4cc812d5e7f7fc2c843",
+    "semantic_hash": "32482116ec52d4cc812d5e7f7fc2c843"
+  },
+  "/workspaces/my-blog/blog/themes/PaperMod/i18n/de.yaml": {
+    "mtime": 1774619335.645499,
+    "ast_hash": "4eb2336eaee282af019e41dd3743068f",
+    "semantic_hash": "4eb2336eaee282af019e41dd3743068f"
+  },
+  "/workspaces/my-blog/blog/themes/PaperMod/i18n/ku.yaml": {
+    "mtime": 1774619335.6618373,
+    "ast_hash": "fbc6515fb44ce0e1780c075ecc7fde78",
+    "semantic_hash": "fbc6515fb44ce0e1780c075ecc7fde78"
+  },
+  "/workspaces/my-blog/blog/themes/PaperMod/i18n/eo.yaml": {
+    "mtime": 1774619335.648497,
+    "ast_hash": "ae42451daf7ca256abbe9a7270e44669",
+    "semantic_hash": "ae42451daf7ca256abbe9a7270e44669"
+  },
+  "/workspaces/my-blog/blog/themes/PaperMod/i18n/mn.yaml": {
+    "mtime": 1774619335.6634364,
+    "ast_hash": "7495d75ba48bbd10b67044be75d75fa8",
+    "semantic_hash": "7495d75ba48bbd10b67044be75d75fa8"
+  },
+  "/workspaces/my-blog/blog/themes/PaperMod/i18n/ca.yaml": {
+    "mtime": 1774619335.6393254,
+    "ast_hash": "00a725591d1081aa02e2deaed42169d7",
+    "semantic_hash": "00a725591d1081aa02e2deaed42169d7"
+  },
+  "/workspaces/my-blog/blog/themes/PaperMod/i18n/hi.yaml": {
+    "mtime": 1774619335.6525562,
+    "ast_hash": "effc6678b6d676beab4d52bda0d217d4",
+    "semantic_hash": "effc6678b6d676beab4d52bda0d217d4"
+  },
+  "/workspaces/my-blog/blog/themes/PaperMod/i18n/ro.yaml": {
+    "mtime": 1774619335.6770499,
+    "ast_hash": "f249060ff84da01283957975009b4591",
+    "semantic_hash": "f249060ff84da01283957975009b4591"
+  },
+  "/workspaces/my-blog/blog/themes/PaperMod/i18n/bg.yaml": {
+    "mtime": 1774619335.6375885,
+    "ast_hash": "9b034c211506531aa1a25484d0be8c85",
+    "semantic_hash": "9b034c211506531aa1a25484d0be8c85"
+  },
+  "/workspaces/my-blog/blog/themes/PaperMod/i18n/el.yaml": {
+    "mtime": 1774619335.646787,
+    "ast_hash": "c0a4262dbf03e776ea5a30aa54f4b608",
+    "semantic_hash": "c0a4262dbf03e776ea5a30aa54f4b608"
+  },
+  "/workspaces/my-blog/blog/themes/PaperMod/i18n/zh-tw.yaml": {
+    "mtime": 1774619335.6867433,
+    "ast_hash": "0299836aa3fe505d33696a3abde59307",
+    "semantic_hash": "0299836aa3fe505d33696a3abde59307"
+  },
+  "/workspaces/my-blog/blog/themes/PaperMod/i18n/he.yaml": {
+    "mtime": 1774619335.651894,
+    "ast_hash": "0a74f4dfbf08b7655ea0a634817c3cc6",
+    "semantic_hash": "0a74f4dfbf08b7655ea0a634817c3cc6"
+  },
+  "/workspaces/my-blog/blog/themes/PaperMod/i18n/ko.yaml": {
+    "mtime": 1774619335.661145,
+    "ast_hash": "83fe303ba8ca062b0044e0c86c80b433",
+    "semantic_hash": "83fe303ba8ca062b0044e0c86c80b433"
+  },
+  "/workspaces/my-blog/blog/themes/PaperMod/i18n/fr.yaml": {
+    "mtime": 1774619335.65092,
+    "ast_hash": "e9ac484c7cb2179888f3f2af5d17ff53",
+    "semantic_hash": "e9ac484c7cb2179888f3f2af5d17ff53"
+  },
+  "/workspaces/my-blog/blog/themes/PaperMod/i18n/oc.yaml": {
+    "mtime": 1774619335.6685278,
+    "ast_hash": "e7968bb84dba40ad497678de840fcf16",
+    "semantic_hash": "e7968bb84dba40ad497678de840fcf16"
+  },
+  "/workspaces/my-blog/blog/themes/PaperMod/i18n/ar.yaml": {
+    "mtime": 1774619335.6359994,
+    "ast_hash": "6f40d4873fe1332c5b946fc140576438",
+    "semantic_hash": "6f40d4873fe1332c5b946fc140576438"
+  },
+  "/workspaces/my-blog/blog/themes/PaperMod/i18n/es.yaml": {
+    "mtime": 1774619335.648719,
+    "ast_hash": "efddd3b1572b1c1d3962bf221d380593",
+    "semantic_hash": "efddd3b1572b1c1d3962bf221d380593"
+  },
+  "/workspaces/my-blog/blog/themes/PaperMod/i18n/sv.yaml": {
+    "mtime": 1774619335.6792655,
+    "ast_hash": "a71664def8ec3db190cc25934e4ba7ed",
+    "semantic_hash": "a71664def8ec3db190cc25934e4ba7ed"
+  },
+  "/workspaces/my-blog/blog/themes/PaperMod/i18n/th.yaml": {
+    "mtime": 1774619335.6813266,
+    "ast_hash": "4fb669d89c444634ed22cab54c75d002",
+    "semantic_hash": "4fb669d89c444634ed22cab54c75d002"
+  },
+  "/workspaces/my-blog/blog/themes/PaperMod/i18n/cs.yaml": {
+    "mtime": 1774619335.6426103,
+    "ast_hash": "74f6ece88bed0cc69283be57fc65a28d",
+    "semantic_hash": "74f6ece88bed0cc69283be57fc65a28d"
+  },
+  "/workspaces/my-blog/blog/themes/PaperMod/i18n/pnb.yaml": {
+    "mtime": 1774619335.6740005,
+    "ast_hash": "4819c88120982d7c7fe3461caca3732a",
+    "semantic_hash": "4819c88120982d7c7fe3461caca3732a"
+  },
+  "/workspaces/my-blog/blog/themes/PaperMod/i18n/fa.yaml": {
+    "mtime": 1774619335.6500401,
+    "ast_hash": "5b8a144aad1a14dc1c326ac694290a35",
+    "semantic_hash": "5b8a144aad1a14dc1c326ac694290a35"
+  },
+  "/workspaces/my-blog/blog/themes/PaperMod/i18n/vi.yaml": {
+    "mtime": 1774619335.6858342,
+    "ast_hash": "10eab352d61ef0c570093550c681932d",
+    "semantic_hash": "10eab352d61ef0c570093550c681932d"
+  },
+  "/workspaces/my-blog/blog/themes/PaperMod/i18n/da.yaml": {
+    "mtime": 1774619335.6437213,
+    "ast_hash": "279fd48f2d0766ad8783b85fecafbfba",
+    "semantic_hash": "279fd48f2d0766ad8783b85fecafbfba"
+  },
+  "/workspaces/my-blog/blog/themes/PaperMod/i18n/sw.yaml": {
+    "mtime": 1774619335.6794553,
+    "ast_hash": "4e9cde95a547b3ee359419e2eaf9e35c",
+    "semantic_hash": "4e9cde95a547b3ee359419e2eaf9e35c"
+  },
+  "/workspaces/my-blog/blog/themes/PaperMod/i18n/no.yaml": {
+    "mtime": 1774619335.6669958,
+    "ast_hash": "836ac3b47502a968e7c587a9f5abe178",
+    "semantic_hash": "836ac3b47502a968e7c587a9f5abe178"
+  },
+  "/workspaces/my-blog/blog/themes/PaperMod/i18n/uz.yaml": {
+    "mtime": 1774619335.6852527,
+    "ast_hash": "7e0ea6d97a7b8e9b44cbfaac9144ca9b",
+    "semantic_hash": "7e0ea6d97a7b8e9b44cbfaac9144ca9b"
+  },
+  "/workspaces/my-blog/blog/themes/PaperMod/i18n/id.yaml": {
+    "mtime": 1774619335.6577046,
+    "ast_hash": "146e910f1133b00110e21eb36d22d5f8",
+    "semantic_hash": "146e910f1133b00110e21eb36d22d5f8"
+  },
+  "/workspaces/my-blog/.github/workflows/hugo.yaml": {
+    "mtime": 1774680553.8319361,
+    "ast_hash": "520c10eb168f8c49038fbfd4a941c7ae",
+    "semantic_hash": "520c10eb168f8c49038fbfd4a941c7ae"
+  },
+  "/workspaces/my-blog/.github/workflows/linkedin.yaml": {
+    "mtime": 1779804463.0455759,
+    "ast_hash": "4ec282389b216fa16cdea45c2c9a0ef8",
+    "semantic_hash": "4ec282389b216fa16cdea45c2c9a0ef8"
+  },
+  "/workspaces/my-blog/linkedin/drafts/2026-03-27---refactoring-my-blog/post_1.md": {
+    "mtime": 1779805559.6766157,
+    "ast_hash": "09304e49e283027c3c9d36c15fdfdd45",
+    "semantic_hash": "09304e49e283027c3c9d36c15fdfdd45"
+  },
+  "/workspaces/my-blog/linkedin/drafts/2026-03-27---refactoring-my-blog/post_4.md": {
+    "mtime": 1779805559.6780033,
+    "ast_hash": "ea7d4d6c5a9e7e870ca5183ed1d791cd",
+    "semantic_hash": "ea7d4d6c5a9e7e870ca5183ed1d791cd"
+  },
+  "/workspaces/my-blog/linkedin/drafts/2026-03-27---refactoring-my-blog/post_3.md": {
+    "mtime": 1779805559.6774585,
+    "ast_hash": "ea1b9354131e449d7e3dbf7f63ecec7b",
+    "semantic_hash": "ea1b9354131e449d7e3dbf7f63ecec7b"
+  },
+  "/workspaces/my-blog/linkedin/drafts/2026-03-27---refactoring-my-blog/post_2.md": {
+    "mtime": 1779805559.6771815,
+    "ast_hash": "5547df0a710f42dd5fba28943ad64704",
+    "semantic_hash": "5547df0a710f42dd5fba28943ad64704"
+  },
+  "/workspaces/my-blog/linkedin/drafts/2026-05-24---mve-itguard/post_1.md": {
+    "mtime": 1779805683.163979,
+    "ast_hash": "056b56d2630acd9471e43bfb15596058",
+    "semantic_hash": "056b56d2630acd9471e43bfb15596058"
+  },
+  "/workspaces/my-blog/linkedin/drafts/2026-05-24---mve-itguard/post_5.md": {
+    "mtime": 1779805683.1685045,
+    "ast_hash": "1a8f1440328d66550e4074c7f50da717",
+    "semantic_hash": "1a8f1440328d66550e4074c7f50da717"
+  },
+  "/workspaces/my-blog/linkedin/drafts/2026-05-24---mve-itguard/post_4.md": {
+    "mtime": 1779805683.1679025,
+    "ast_hash": "9a1c4b89b97224d6d8f25e57323c3836",
+    "semantic_hash": "9a1c4b89b97224d6d8f25e57323c3836"
+  },
+  "/workspaces/my-blog/linkedin/drafts/2026-05-24---mve-itguard/post_3.md": {
+    "mtime": 1779805683.1671445,
+    "ast_hash": "de813a2861d3165053cd8c7497e1bac8",
+    "semantic_hash": "de813a2861d3165053cd8c7497e1bac8"
+  },
+  "/workspaces/my-blog/linkedin/drafts/2026-05-24---mve-itguard/post_2.md": {
+    "mtime": 1779805683.166565,
+    "ast_hash": "ff97d4d1a4adcf69742c0b89062a5709",
+    "semantic_hash": "ff97d4d1a4adcf69742c0b89062a5709"
+  },
+  "/workspaces/my-blog/linkedin/drafts/2025-09-15---architecture-learning-project/post_1.md": {
+    "mtime": 1779805019.9422688,
+    "ast_hash": "ec0e9ee5759ed3cc0b30d793b1744e5d",
+    "semantic_hash": "ec0e9ee5759ed3cc0b30d793b1744e5d"
+  },
+  "/workspaces/my-blog/linkedin/drafts/2025-09-15---architecture-learning-project/post_4.md": {
+    "mtime": 1779805019.9434443,
+    "ast_hash": "bcd6a9ae27abcc46c8eb42344b14df30",
+    "semantic_hash": "bcd6a9ae27abcc46c8eb42344b14df30"
+  },
+  "/workspaces/my-blog/linkedin/drafts/2025-09-15---architecture-learning-project/post_3.md": {
+    "mtime": 1779805019.9430811,
+    "ast_hash": "1f809b4e2cbe87ea11bcb4b01e8f6f99",
+    "semantic_hash": "1f809b4e2cbe87ea11bcb4b01e8f6f99"
+  },
+  "/workspaces/my-blog/linkedin/drafts/2025-09-15---architecture-learning-project/post_2.md": {
+    "mtime": 1779805019.942705,
+    "ast_hash": "3bb6fd3e69623be52a155c0f47bf2424",
+    "semantic_hash": "3bb6fd3e69623be52a155c0f47bf2424"
+  },
+  "/workspaces/my-blog/linkedin/drafts/2026-02-23---why-learn-linux-before-containerisation/post_1.md": {
+    "mtime": 1779805315.3985868,
+    "ast_hash": "810a4e1d573bdedf73e94aabfc408601",
+    "semantic_hash": "810a4e1d573bdedf73e94aabfc408601"
+  },
+  "/workspaces/my-blog/linkedin/drafts/2026-02-23---why-learn-linux-before-containerisation/post_5.md": {
+    "mtime": 1779805315.4049747,
+    "ast_hash": "e1ae42fd632928380cc0e07a8786348a",
+    "semantic_hash": "e1ae42fd632928380cc0e07a8786348a"
+  },
+  "/workspaces/my-blog/linkedin/drafts/2026-02-23---why-learn-linux-before-containerisation/post_4.md": {
+    "mtime": 1779805315.4036248,
+    "ast_hash": "ed23ef9c4b80d85848fc5f3019563170",
+    "semantic_hash": "ed23ef9c4b80d85848fc5f3019563170"
+  },
+  "/workspaces/my-blog/linkedin/drafts/2026-02-23---why-learn-linux-before-containerisation/post_3.md": {
+    "mtime": 1779805315.4014323,
+    "ast_hash": "be3a50fc62897e7b0918148381aaa23e",
+    "semantic_hash": "be3a50fc62897e7b0918148381aaa23e"
+  },
+  "/workspaces/my-blog/linkedin/drafts/2026-02-23---why-learn-linux-before-containerisation/post_2.md": {
+    "mtime": 1779805315.3998091,
+    "ast_hash": "30d634a958f0dceafe22044eb5c0cecb",
+    "semantic_hash": "30d634a958f0dceafe22044eb5c0cecb"
+  },
+  "/workspaces/my-blog/linkedin/drafts/2026-01-01---become-beginer-again/post_1.md": {
+    "mtime": 1779805213.9765508,
+    "ast_hash": "5382d3c115d2d5bc51f8191cbc1ac419",
+    "semantic_hash": "5382d3c115d2d5bc51f8191cbc1ac419"
+  },
+  "/workspaces/my-blog/linkedin/drafts/2026-01-01---become-beginer-again/post_5.md": {
+    "mtime": 1779805213.9809997,
+    "ast_hash": "1a26226269545187b70efe7db17f22d7",
+    "semantic_hash": "1a26226269545187b70efe7db17f22d7"
+  },
+  "/workspaces/my-blog/linkedin/drafts/2026-01-01---become-beginer-again/post_4.md": {
+    "mtime": 1779805213.980264,
+    "ast_hash": "b94fd6c91e5b401a96076326cd0284f7",
+    "semantic_hash": "b94fd6c91e5b401a96076326cd0284f7"
+  },
+  "/workspaces/my-blog/linkedin/drafts/2026-01-01---become-beginer-again/post_3.md": {
+    "mtime": 1779805213.9796443,
+    "ast_hash": "ead54e195ee78f19614607ebf91ceb1f",
+    "semantic_hash": "ead54e195ee78f19614607ebf91ceb1f"
+  },
+  "/workspaces/my-blog/linkedin/drafts/2026-01-01---become-beginer-again/post_2.md": {
+    "mtime": 1779805213.979355,
+    "ast_hash": "3c14ab950e493883cdd3fa317497475d",
+    "semantic_hash": "3c14ab950e493883cdd3fa317497475d"
+  },
+  "/workspaces/my-blog/linkedin/drafts/2025-12-11---new-homelab-workflow/post_1.md": {
+    "mtime": 1779805070.610275,
+    "ast_hash": "c889f0f9286b76452690cc282de05e6e",
+    "semantic_hash": "c889f0f9286b76452690cc282de05e6e"
+  },
+  "/workspaces/my-blog/linkedin/drafts/2025-12-11---new-homelab-workflow/post_4.md": {
+    "mtime": 1779805070.6128273,
+    "ast_hash": "8d090fb2319ad8e2d17ecfdb2a20ae46",
+    "semantic_hash": "8d090fb2319ad8e2d17ecfdb2a20ae46"
+  },
+  "/workspaces/my-blog/linkedin/drafts/2025-12-11---new-homelab-workflow/post_3.md": {
+    "mtime": 1779805070.6121836,
+    "ast_hash": "920cccb802759e75f63cc808ec8f6a52",
+    "semantic_hash": "920cccb802759e75f63cc808ec8f6a52"
+  },
+  "/workspaces/my-blog/linkedin/drafts/2025-12-11---new-homelab-workflow/post_2.md": {
+    "mtime": 1779805070.6109989,
+    "ast_hash": "7a44630d71826ad309f664390352ccc1",
+    "semantic_hash": "7a44630d71826ad309f664390352ccc1"
+  },
+  "/workspaces/my-blog/linkedin/drafts/2026-03-24---containerise-python-application/post_1.md": {
+    "mtime": 1779805507.6890116,
+    "ast_hash": "27ab2557267476fd5ecd7ba71cd86e82",
+    "semantic_hash": "27ab2557267476fd5ecd7ba71cd86e82"
+  },
+  "/workspaces/my-blog/linkedin/drafts/2026-03-24---containerise-python-application/post_5.md": {
+    "mtime": 1779805507.6992993,
+    "ast_hash": "d839e5ab8269fe6a528a518197f8ceff",
+    "semantic_hash": "d839e5ab8269fe6a528a518197f8ceff"
+  },
+  "/workspaces/my-blog/linkedin/drafts/2026-03-24---containerise-python-application/post_4.md": {
+    "mtime": 1779805507.69496,
+    "ast_hash": "35abf7d9e8034f7a8edc2eb4ee3afe36",
+    "semantic_hash": "35abf7d9e8034f7a8edc2eb4ee3afe36"
+  },
+  "/workspaces/my-blog/linkedin/drafts/2026-03-24---containerise-python-application/post_3.md": {
+    "mtime": 1779805507.694344,
+    "ast_hash": "b218995f1ba07b0ed36670ac32c4c275",
+    "semantic_hash": "b218995f1ba07b0ed36670ac32c4c275"
+  },
+  "/workspaces/my-blog/linkedin/drafts/2026-03-24---containerise-python-application/post_2.md": {
+    "mtime": 1779805507.6921065,
+    "ast_hash": "705a5dc7c2dbddb6a1f90b79e6f3eee9",
+    "semantic_hash": "705a5dc7c2dbddb6a1f90b79e6f3eee9"
+  },
+  "/workspaces/my-blog/linkedin/drafts/2025-09-02---network-configuration/post_1.md": {
+    "mtime": 1779804969.0505276,
+    "ast_hash": "0a5c25ec88f98547161b48a49fe0c720",
+    "semantic_hash": "0a5c25ec88f98547161b48a49fe0c720"
+  },
+  "/workspaces/my-blog/linkedin/drafts/2025-09-02---network-configuration/post_5.md": {
+    "mtime": 1779804969.0521405,
+    "ast_hash": "5d9bc4afe0c70ae4fd86994b54e0cf71",
+    "semantic_hash": "5d9bc4afe0c70ae4fd86994b54e0cf71"
+  },
+  "/workspaces/my-blog/linkedin/drafts/2025-09-02---network-configuration/post_4.md": {
+    "mtime": 1779804969.0518181,
+    "ast_hash": "f56e2b150d8f727643b83d0d1d4c8e81",
+    "semantic_hash": "f56e2b150d8f727643b83d0d1d4c8e81"
+  },
+  "/workspaces/my-blog/linkedin/drafts/2025-09-02---network-configuration/post_3.md": {
+    "mtime": 1779804969.0514562,
+    "ast_hash": "be2cbcf90a68d0c3c12d5f08ce4d8d10",
+    "semantic_hash": "be2cbcf90a68d0c3c12d5f08ce4d8d10"
+  },
+  "/workspaces/my-blog/linkedin/drafts/2025-09-02---network-configuration/post_2.md": {
+    "mtime": 1779804969.0510101,
+    "ast_hash": "d271b68df75197bb86bf60fc7b7f928b",
+    "semantic_hash": "d271b68df75197bb86bf60fc7b7f928b"
+  },
+  "/workspaces/my-blog/linkedin/drafts/2026-05-14---openclaw-setup-and-security/post_1.md": {
+    "mtime": 1779805613.189853,
+    "ast_hash": "16415e75596816ce5f8dcb76ff3d6daf",
+    "semantic_hash": "16415e75596816ce5f8dcb76ff3d6daf"
+  },
+  "/workspaces/my-blog/linkedin/drafts/2026-05-14---openclaw-setup-and-security/post_4.md": {
+    "mtime": 1779805613.1931043,
+    "ast_hash": "e6298af5d64187a10a83b11f79e407e6",
+    "semantic_hash": "e6298af5d64187a10a83b11f79e407e6"
+  },
+  "/workspaces/my-blog/linkedin/drafts/2026-05-14---openclaw-setup-and-security/post_3.md": {
+    "mtime": 1779805613.1924613,
+    "ast_hash": "a85af110a39ed6eb186bb921e0b13bbc",
+    "semantic_hash": "a85af110a39ed6eb186bb921e0b13bbc"
+  },
+  "/workspaces/my-blog/linkedin/drafts/2026-05-14---openclaw-setup-and-security/post_2.md": {
+    "mtime": 1779805613.191081,
+    "ast_hash": "9c927b51cf362f8fadc93f9a0e927066",
+    "semantic_hash": "9c927b51cf362f8fadc93f9a0e927066"
+  },
+  "/workspaces/my-blog/linkedin/drafts/2026-02-26---first-gitops-implementation/post_1.md": {
+    "mtime": 1779805418.7668211,
+    "ast_hash": "ac85cac3a9a477f3e7e393bd223852b7",
+    "semantic_hash": "ac85cac3a9a477f3e7e393bd223852b7"
+  },
+  "/workspaces/my-blog/linkedin/drafts/2026-02-26---first-gitops-implementation/post_5.md": {
+    "mtime": 1779805418.768997,
+    "ast_hash": "cbf065c2d3de852d190d45ee63d3d450",
+    "semantic_hash": "cbf065c2d3de852d190d45ee63d3d450"
+  },
+  "/workspaces/my-blog/linkedin/drafts/2026-02-26---first-gitops-implementation/post_4.md": {
+    "mtime": 1779805418.7683167,
+    "ast_hash": "81c4b470c5fc26fa6008d7746a8f3eed",
+    "semantic_hash": "81c4b470c5fc26fa6008d7746a8f3eed"
+  },
+  "/workspaces/my-blog/linkedin/drafts/2026-02-26---first-gitops-implementation/post_3.md": {
+    "mtime": 1779805418.7676008,
+    "ast_hash": "aeacd6d583f407555abca7844a8c2358",
+    "semantic_hash": "aeacd6d583f407555abca7844a8c2358"
+  },
+  "/workspaces/my-blog/linkedin/drafts/2026-02-26---first-gitops-implementation/post_2.md": {
+    "mtime": 1779805418.767248,
+    "ast_hash": "56c54ece12ddb7f4c00d166b953266de",
+    "semantic_hash": "56c54ece12ddb7f4c00d166b953266de"
+  },
+  "/workspaces/my-blog/linkedin/drafts/2025-09-01---first-step-in-homelab/post_1.md": {
+    "mtime": 1779804919.0054762,
+    "ast_hash": "d1b3b62259df47557dd69a4d30efbabc",
+    "semantic_hash": "d1b3b62259df47557dd69a4d30efbabc"
+  },
+  "/workspaces/my-blog/linkedin/drafts/2025-09-01---first-step-in-homelab/post_5.md": {
+    "mtime": 1779804919.0076191,
+    "ast_hash": "ab02201c29f9fe099d7ff8750fa6084c",
+    "semantic_hash": "ab02201c29f9fe099d7ff8750fa6084c"
+  },
+  "/workspaces/my-blog/linkedin/drafts/2025-09-01---first-step-in-homelab/post_4.md": {
+    "mtime": 1779804919.0073419,
+    "ast_hash": "2722c113ee7840bafe451d19a845bd77",
+    "semantic_hash": "2722c113ee7840bafe451d19a845bd77"
+  },
+  "/workspaces/my-blog/linkedin/drafts/2025-09-01---first-step-in-homelab/post_3.md": {
+    "mtime": 1779804919.00624,
+    "ast_hash": "0c376a74c615bfbd42c8037041f3a57a",
+    "semantic_hash": "0c376a74c615bfbd42c8037041f3a57a"
+  },
+  "/workspaces/my-blog/linkedin/drafts/2025-09-01---first-step-in-homelab/post_2.md": {
+    "mtime": 1779804919.0058923,
+    "ast_hash": "caf1ac40f36945a390c72f20324544e7",
+    "semantic_hash": "caf1ac40f36945a390c72f20324544e7"
+  },
+  "/workspaces/my-blog/linkedin/drafts/2025-12-11---persistent-volume-with-nfs/post_1.md": {
+    "mtime": 1779805141.9349215,
+    "ast_hash": "39795a1a68ba2e2293d69034aaea787d",
+    "semantic_hash": "39795a1a68ba2e2293d69034aaea787d"
+  },
+  "/workspaces/my-blog/linkedin/drafts/2025-12-11---persistent-volume-with-nfs/post_3.md": {
+    "mtime": 1779805141.9355285,
+    "ast_hash": "1521758a365bf716ead1d021824329a9",
+    "semantic_hash": "1521758a365bf716ead1d021824329a9"
+  },
+  "/workspaces/my-blog/linkedin/drafts/2025-12-11---persistent-volume-with-nfs/post_2.md": {
+    "mtime": 1779805141.935252,
+    "ast_hash": "c67ebe3590a1240299701ee1e4c566f1",
+    "semantic_hash": "c67ebe3590a1240299701ee1e4c566f1"
+  },
+  "/workspaces/my-blog/linkedin/drafts/2026-05-25---mve-itguard-gitops/post_1.md": {
+    "mtime": 1779805759.1255796,
+    "ast_hash": "7c848666083e2c208ac5425ce3caeba1",
+    "semantic_hash": "7c848666083e2c208ac5425ce3caeba1"
+  },
+  "/workspaces/my-blog/linkedin/drafts/2026-05-25---mve-itguard-gitops/post_5.md": {
+    "mtime": 1779805759.1341407,
+    "ast_hash": "fe2a38d908f841469bb3dd873236ecb0",
+    "semantic_hash": "fe2a38d908f841469bb3dd873236ecb0"
+  },
+  "/workspaces/my-blog/linkedin/drafts/2026-05-25---mve-itguard-gitops/post_4.md": {
+    "mtime": 1779805759.1330998,
+    "ast_hash": "27cd56cc35feefbac0b71e752aac88e9",
+    "semantic_hash": "27cd56cc35feefbac0b71e752aac88e9"
+  },
+  "/workspaces/my-blog/linkedin/drafts/2026-05-25---mve-itguard-gitops/post_3.md": {
+    "mtime": 1779805759.1307766,
+    "ast_hash": "e140f49dac1e6120f4381ac1b8c06bf1",
+    "semantic_hash": "e140f49dac1e6120f4381ac1b8c06bf1"
+  },
+  "/workspaces/my-blog/linkedin/drafts/2026-05-25---mve-itguard-gitops/post_2.md": {
+    "mtime": 1779805759.1265345,
+    "ast_hash": "9b72c330f8f8d8ddde71a20dc0708a45",
+    "semantic_hash": "9b72c330f8f8d8ddde71a20dc0708a45"
+  },
+  "/workspaces/my-blog/linkedin/drafts/2025-08-31---intro/post_1.md": {
+    "mtime": 1779804865.2042267,
+    "ast_hash": "7b5e7eeaf5a5f5ab7dc518e571c13231",
+    "semantic_hash": "7b5e7eeaf5a5f5ab7dc518e571c13231"
+  },
+  "/workspaces/my-blog/linkedin/drafts/2025-08-31---intro/post_4.md": {
+    "mtime": 1779804865.205216,
+    "ast_hash": "40f5edbc17eccdf6021b70de119e6e75",
+    "semantic_hash": "40f5edbc17eccdf6021b70de119e6e75"
+  },
+  "/workspaces/my-blog/linkedin/drafts/2025-08-31---intro/post_3.md": {
+    "mtime": 1779804865.204938,
+    "ast_hash": "38aacbd009ebe7f89af8ba089bcc2e6d",
+    "semantic_hash": "38aacbd009ebe7f89af8ba089bcc2e6d"
+  },
+  "/workspaces/my-blog/linkedin/drafts/2025-08-31---intro/post_2.md": {
+    "mtime": 1779804865.2046647,
+    "ast_hash": "14c8f77965b80fd99ac54a975942628c",
+    "semantic_hash": "14c8f77965b80fd99ac54a975942628c"
+  },
+  "/workspaces/my-blog/blog/content/11 - Posts/2025-09-01 - First-step-in-homelab/cover.svg": {
+    "mtime": 1774611502.254712,
+    "ast_hash": "e4398618cf6231426712970e62c4196e",
+    "semantic_hash": "e4398618cf6231426712970e62c4196e"
+  },
+  "/workspaces/my-blog/blog/content/11 - Posts/2025-09-01 - First-step-in-homelab/diagram.png": {
+    "mtime": 1774611502.2558076,
+    "ast_hash": "a7ed671abcb5b426fabc004a7b2a0f76",
+    "semantic_hash": "a7ed671abcb5b426fabc004a7b2a0f76"
+  },
+  "/workspaces/my-blog/blog/content/11 - Posts/2025-12-11 - Persistent-volume-with-nfs/cover.svg": {
+    "mtime": 1774611988.9467258,
+    "ast_hash": "e4398618cf6231426712970e62c4196e",
+    "semantic_hash": "e4398618cf6231426712970e62c4196e"
+  },
+  "/workspaces/my-blog/blog/content/11 - Posts/2026-05-24 - mve-itguard/cover.svg": {
+    "mtime": 1779726437.085002,
+    "ast_hash": "cc44112f5784f78e0740004964f20645",
+    "semantic_hash": "cc44112f5784f78e0740004964f20645"
+  },
+  "/workspaces/my-blog/blog/content/11 - Posts/2025-09-15 - Architecture-learning-project/cover.svg": {
+    "mtime": 1774611801.4966538,
+    "ast_hash": "e4398618cf6231426712970e62c4196e",
+    "semantic_hash": "e4398618cf6231426712970e62c4196e"
+  },
+  "/workspaces/my-blog/blog/content/11 - Posts/2025-09-15 - Architecture-learning-project/Hardware-architecture.excalidraw.light.svg": {
+    "mtime": 1774611801.4962115,
+    "ast_hash": "edce22ec30de1124300d3a898f2ee79c",
+    "semantic_hash": "edce22ec30de1124300d3a898f2ee79c"
+  },
+  "/workspaces/my-blog/blog/content/11 - Posts/2026-05-25 - mve-itguard-gitops/cover.svg": {
+    "mtime": 1779726437.0864944,
+    "ast_hash": "a8ad46af599eafbc1cc4ab8732320c36",
+    "semantic_hash": "a8ad46af599eafbc1cc4ab8732320c36"
+  },
+  "/workspaces/my-blog/blog/content/11 - Posts/2026-03-24 - Containerise Python application/cover.svg": {
+    "mtime": 1774617387.5055149,
+    "ast_hash": "4cf5526f0d17a0462370c29930e546b8",
+    "semantic_hash": "4cf5526f0d17a0462370c29930e546b8"
+  },
+  "/workspaces/my-blog/blog/content/11 - Posts/2026-02-23 - Why learn linux before containerisation/cover.svg": {
+    "mtime": 1774617241.587571,
+    "ast_hash": "4cf5526f0d17a0462370c29930e546b8",
+    "semantic_hash": "4cf5526f0d17a0462370c29930e546b8"
+  },
+  "/workspaces/my-blog/blog/content/11 - Posts/2025-09-02 - Network-configuration/cover.svg": {
+    "mtime": 1774611630.584314,
+    "ast_hash": "e4398618cf6231426712970e62c4196e",
+    "semantic_hash": "e4398618cf6231426712970e62c4196e"
+  },
+  "/workspaces/my-blog/blog/content/11 - Posts/2025-09-02 - Network-configuration/diagram.png": {
+    "mtime": 1774611630.5859604,
+    "ast_hash": "a7ed671abcb5b426fabc004a7b2a0f76",
+    "semantic_hash": "a7ed671abcb5b426fabc004a7b2a0f76"
+  },
+  "/workspaces/my-blog/blog/content/11 - Posts/2026-03-27 - Refactoring my blog/cover.png": {
+    "mtime": 1774716628.0101655,
+    "ast_hash": "10caa7a7268d477a9c93d8d91d0b58ec",
+    "semantic_hash": "10caa7a7268d477a9c93d8d91d0b58ec"
+  },
+  "/workspaces/my-blog/blog/content/11 - Posts/2026-02-26 - First GitOps implementation/cover.svg": {
+    "mtime": 1774617325.419161,
+    "ast_hash": "04be79b90c3767ae23d4740b3b9e819d",
+    "semantic_hash": "04be79b90c3767ae23d4740b3b9e819d"
+  },
+  "/workspaces/my-blog/blog/content/11 - Posts/2026-02-26 - First GitOps implementation/GitOps.svg": {
+    "mtime": 1774617325.4185104,
+    "ast_hash": "a7f4498ba8d680d53bd51c4150cf4b4f",
+    "semantic_hash": "a7f4498ba8d680d53bd51c4150cf4b4f"
+  },
+  "/workspaces/my-blog/blog/content/11 - Posts/2026-01-01 - Become-beginer-again/cover.svg": {
+    "mtime": 1774612088.355143,
+    "ast_hash": "d98ef83a0e4c92939e384a1232f22701",
+    "semantic_hash": "d98ef83a0e4c92939e384a1232f22701"
+  },
+  "/workspaces/my-blog/blog/content/11 - Posts/2025-12-11 - New-homelab-workflow/homelab_v0-v1excalidraw.png": {
+    "mtime": 1774611893.555583,
+    "ast_hash": "bb9d75b9d04bd75f7c9fb8175101cf65",
+    "semantic_hash": "bb9d75b9d04bd75f7c9fb8175101cf65"
+  },
+  "/workspaces/my-blog/blog/content/11 - Posts/2025-12-11 - New-homelab-workflow/cover.svg": {
+    "mtime": 1774611893.5545285,
+    "ast_hash": "e4398618cf6231426712970e62c4196e",
+    "semantic_hash": "e4398618cf6231426712970e62c4196e"
+  },
+  "/workspaces/my-blog/blog/themes/PaperMod/images/screenshot.png": {
+    "mtime": 1774619335.6915112,
+    "ast_hash": "ee2daeb6717aa4cb48f261d6cebca759",
+    "semantic_hash": "ee2daeb6717aa4cb48f261d6cebca759"
+  },
+  "/workspaces/my-blog/blog/themes/PaperMod/images/tn.png": {
+    "mtime": 1774619335.691872,
+    "ast_hash": "093c01d1a17c0f3e57f2f652695ce9a6",
+    "semantic_hash": "093c01d1a17c0f3e57f2f652695ce9a6"
+  },
+  "/workspaces/my-blog/linkedin/drafts/2026-05-24---mve-itguard/cover.svg": {
+    "mtime": 1779805683.1758215,
+    "ast_hash": "cc44112f5784f78e0740004964f20645",
+    "semantic_hash": "cc44112f5784f78e0740004964f20645"
+  },
+  "/workspaces/my-blog/linkedin/drafts/2025-09-15---architecture-learning-project/cover.svg": {
+    "mtime": 1779805019.9450154,
+    "ast_hash": "e4398618cf6231426712970e62c4196e",
+    "semantic_hash": "e4398618cf6231426712970e62c4196e"
+  },
+  "/workspaces/my-blog/linkedin/drafts/2026-02-23---why-learn-linux-before-containerisation/cover.svg": {
+    "mtime": 1779805315.422555,
+    "ast_hash": "4cf5526f0d17a0462370c29930e546b8",
+    "semantic_hash": "4cf5526f0d17a0462370c29930e546b8"
+  },
+  "/workspaces/my-blog/linkedin/drafts/2026-01-01---become-beginer-again/cover.svg": {
+    "mtime": 1779805213.9941545,
+    "ast_hash": "d98ef83a0e4c92939e384a1232f22701",
+    "semantic_hash": "d98ef83a0e4c92939e384a1232f22701"
+  },
+  "/workspaces/my-blog/linkedin/drafts/2025-12-11---new-homelab-workflow/cover.svg": {
+    "mtime": 1779805070.614967,
+    "ast_hash": "e4398618cf6231426712970e62c4196e",
+    "semantic_hash": "e4398618cf6231426712970e62c4196e"
+  },
+  "/workspaces/my-blog/linkedin/drafts/2026-03-24---containerise-python-application/cover.svg": {
+    "mtime": 1779805507.725805,
+    "ast_hash": "4cf5526f0d17a0462370c29930e546b8",
+    "semantic_hash": "4cf5526f0d17a0462370c29930e546b8"
+  },
+  "/workspaces/my-blog/linkedin/drafts/2025-09-02---network-configuration/cover.svg": {
+    "mtime": 1779804969.0547888,
+    "ast_hash": "e4398618cf6231426712970e62c4196e",
+    "semantic_hash": "e4398618cf6231426712970e62c4196e"
+  },
+  "/workspaces/my-blog/linkedin/drafts/2026-02-26---first-gitops-implementation/cover.svg": {
+    "mtime": 1779805418.7728753,
+    "ast_hash": "04be79b90c3767ae23d4740b3b9e819d",
+    "semantic_hash": "04be79b90c3767ae23d4740b3b9e819d"
+  },
+  "/workspaces/my-blog/linkedin/drafts/2025-09-01---first-step-in-homelab/cover.svg": {
+    "mtime": 1779804919.0090692,
+    "ast_hash": "e4398618cf6231426712970e62c4196e",
+    "semantic_hash": "e4398618cf6231426712970e62c4196e"
+  },
+  "/workspaces/my-blog/linkedin/drafts/2025-12-11---persistent-volume-with-nfs/cover.svg": {
+    "mtime": 1779805141.937215,
+    "ast_hash": "e4398618cf6231426712970e62c4196e",
+    "semantic_hash": "e4398618cf6231426712970e62c4196e"
+  },
+  "/workspaces/my-blog/linkedin/drafts/2026-05-25---mve-itguard-gitops/cover.svg": {
+    "mtime": 1779805759.1921947,
+    "ast_hash": "a8ad46af599eafbc1cc4ab8732320c36",
+    "semantic_hash": "a8ad46af599eafbc1cc4ab8732320c36"
+  },
+  "/workspaces/my-blog/linkedin/coverage-html/favicon_32_cb_c827f16f.png": {
+    "mtime": 1779812812.3593812,
+    "ast_hash": "fe1c45ede5eaa2eaa3aff71f210afb26",
+    "semantic_hash": "fe1c45ede5eaa2eaa3aff71f210afb26"
+  },
+  "/workspaces/my-blog/linkedin/coverage-html/keybd_closed_cb_900cfef5.png": {
+    "mtime": 1779812812.3583462,
+    "ast_hash": "8285ae9f3a2652fbb7ffb8575590d91f",
+    "semantic_hash": "8285ae9f3a2652fbb7ffb8575590d91f"
+  }
+}
