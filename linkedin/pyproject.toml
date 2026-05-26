@@ -13,3 +13,11 @@ select = ["E", "F", "I", "W"]
 [tool.mypy]
 python_version = "3.13"
 ignore_missing_imports = true
+
+[tool.coverage.run]
+source = ["linkedin"]
+omit = ["linkedin/tests/*", "linkedin/drafts/*", "linkedin/__init__.py"]
+
+[tool.coverage.report]
+show_missing = true
+skip_empty = true

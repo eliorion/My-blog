@@ -114,6 +114,13 @@ def test_generate_skips_dir_without_index_md(tmp_path, monkeypatch):
     client.messages.create.assert_not_called()
 
 
+def test_generate_api_error_is_caught_and_printed(patched, blog_post, capsys):
+    client = MagicMock()
+    client.messages.create.side_effect = Exception("API timeout")
+    gen.cmd_generate(make_args(), client)
+    assert "API timeout" in capsys.readouterr().err
+
+
 # --- status ---
 
 

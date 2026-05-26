@@ -4,6 +4,8 @@ import json
 from pathlib import Path
 from unittest.mock import MagicMock
 
+import pytest
+
 import linkedin.generate as gen
 
 
@@ -136,3 +138,9 @@ def test_generate_posts_strips_plain_fence():
     wrapped = f"```\n{json.dumps(payload)}\n```"
     result = gen.generate_posts("content", _mock_client(wrapped), "claude-sonnet-4-6")
     assert len(result) == 1
+
+
+def test_find_posts_exits_when_dir_missing(tmp_path, monkeypatch):
+    monkeypatch.setattr(gen, "BLOG_POSTS_DIR", tmp_path / "nonexistent")
+    with pytest.raises(SystemExit):
+        gen.find_posts()

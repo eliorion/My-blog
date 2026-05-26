@@ -48,7 +48,28 @@ jobs:
         run: pip install -r linkedin/requirements.txt -r linkedin/requirements-dev.txt
 
       - name: Run tests
-        run: python -m pytest linkedin/tests/ -v
+        run: |
+          python -m pytest linkedin/tests/ -v \
+            --cov=linkedin \
+            --cov-config=linkedin/pyproject.toml \
+            --cov-report=html:linkedin-coverage-html \
+            --cov-report=term-missing \
+            --html=linkedin-test-report.html \
+            --self-contained-html
+
+      - name: Upload coverage report
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: linkedin-coverage
+          path: linkedin-coverage-html/
+
+      - name: Upload test report
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: linkedin-test-report
+          path: linkedin-test-report.html
 
   generate:
     name: Generate drafts
