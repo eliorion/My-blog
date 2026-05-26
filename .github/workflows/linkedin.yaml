@@ -24,21 +24,26 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - uses: actions/setup-python@v5
-        with:
-          python-version: "3.13"
+      - name: Install UV
+        uses: astral-sh/setup-uv@v5
 
-      - name: Install tools
-        run: pip install ruff mypy anthropic
+      - name: Set up Python
+        run: uv python install
+        working-directory: linkedin/
 
-      - name: Lint
-        run: ruff check linkedin/ --exclude linkedin/drafts
+      - name: Install dependencies
+        run: uv sync --locked --dev
+        working-directory: linkedin/
 
-      - name: Format check
-        run: ruff format --check linkedin/ --exclude linkedin/drafts
+      - name: Lint with Ruff
+        run: |
+          uv run ruff check --output-format=github --target-version=py313 . --exclude drafts
+          uv run ruff format --diff --check --target-version=py313 . --exclude drafts
+        working-directory: linkedin/
 
       - name: Type check
-        run: mypy linkedin/generate.py --ignore-missing-imports
+        run: uv run mypy generate.py --ignore-missing-imports
+        working-directory: linkedin/
 
   test:
     name: Tests
@@ -46,36 +51,59 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - uses: actions/setup-python@v5
-        with:
-          python-version: "3.13"
+      - name: Install UV
+        uses: astral-sh/setup-uv@v5
+
+      - name: Set up Python
+        run: uv python install
+        working-directory: linkedin/
 
       - name: Install dependencies
-        run: pip install -r linkedin/requirements.txt -r linkedin/requirements-dev.txt
+        run: uv sync --locked --dev
+        working-directory: linkedin/
 
-      - name: Run tests
+      - name: Run tests with coverage
         run: |
-          python -m pytest linkedin/tests/ -v \
-            --cov=linkedin \
-            --cov-config=linkedin/pyproject.toml \
-            --cov-report=html:linkedin-coverage-html \
-            --cov-report=term-missing \
-            --html=linkedin-test-report.html \
+          uv run pytest tests/ -v \
+            --cov=. \
+            --cov-report=xml:coverage.xml \
+            --cov-report=html:coverage-html \
+            --cov-fail-under=79 \
+            --html=test-report.html \
             --self-contained-html
+        working-directory: linkedin/
 
-      - name: Upload coverage report
+      - name: Upload coverage artifact
         uses: actions/upload-artifact@v4
         if: always()
         with:
           name: linkedin-coverage
-          path: linkedin-coverage-html/
+          path: linkedin/coverage-html/
+          retention-days: 7
 
-      - name: Upload test report
+      - name: Upload test report artifact
         uses: actions/upload-artifact@v4
         if: always()
         with:
           name: linkedin-test-report
-          path: linkedin-test-report.html
+          path: linkedin/test-report.html
+          retention-days: 7
+
+      - name: Coverage summary
+        uses: irongut/CodeCoverageSummary@v1.3.0
+        with:
+          filename: linkedin/coverage.xml
+          badge: true
+          format: markdown
+          output: both
+
+      - name: Add coverage PR comment
+        uses: marocchino/sticky-pull-request-comment@v2
+        if: github.event_name == 'pull_request'
+        with:
+          header: test-coverage
+          recreate: true
+          path: code-coverage-results.md
 
   generate:
     name: Generate drafts
@@ -86,17 +114,22 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - uses: actions/setup-python@v5
-        with:
-          python-version: "3.13"
+      - name: Install UV
+        uses: astral-sh/setup-uv@v5
+
+      - name: Set up Python
+        run: uv python install
+        working-directory: linkedin/
 
       - name: Install dependencies
-        run: pip install -r linkedin/requirements.txt
+        run: uv sync --locked
+        working-directory: linkedin/
 
       - name: Generate LinkedIn posts
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-        run: python linkedin/generate.py generate
+        run: uv run python generate.py generate
+        working-directory: linkedin/
 
       - name: Open PR with new drafts
         uses: peter-evans/create-pull-request@v7

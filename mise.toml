@@ -2,7 +2,7 @@
 pre-commit = "latest"
 python = "3.13"
 hugo = "0.153.0"
-ruff = "latest"
+uv = "latest"
 
 [settings]
 experimental = true
@@ -11,41 +11,47 @@ experimental = true
 enter = "bash ./scripts/setup_project"
 
 [tasks."linkedin:install"]
-description = "Install LinkedIn engine pip dependencies"
-run = "pip install -r linkedin/requirements.txt -r linkedin/requirements-dev.txt"
+description = "Install LinkedIn engine dependencies via uv"
+run = "uv sync --dev"
+dir = "linkedin"
 
 [tasks."linkedin:test"]
 description = "Run LinkedIn engine tests"
-run = "python -m pytest linkedin/tests/ -v"
+run = "uv run pytest tests/ -v"
+dir = "linkedin"
 
 [tasks."linkedin:lint"]
 description = "Lint + format check LinkedIn engine"
 run = [
-  "ruff check linkedin/ --exclude linkedin/drafts",
-  "ruff format --check linkedin/ --exclude linkedin/drafts",
+  "uv run ruff check --target-version=py313 . --exclude drafts",
+  "uv run ruff format --diff --check --target-version=py313 . --exclude drafts",
 ]
+dir = "linkedin"
 
 [tasks."linkedin:typecheck"]
 description = "Type check LinkedIn engine"
-run = "mypy linkedin/generate.py --ignore-missing-imports"
+run = "uv run mypy generate.py --ignore-missing-imports"
+dir = "linkedin"
 
 [tasks."linkedin:coverage"]
-description = "Run tests with HTML coverage + test report (opens in browser)"
+description = "Run tests with HTML coverage + test report"
 run = """
-python -m pytest linkedin/tests/ -v \
-  --cov=linkedin \
-  --cov-config=linkedin/pyproject.toml \
-  --cov-report=html:linkedin-coverage-html \
+uv run pytest tests/ -v \
+  --cov=. \
+  --cov-report=html:coverage-html \
   --cov-report=term-missing \
-  --html=linkedin-test-report.html \
+  --cov-fail-under=79 \
+  --html=test-report.html \
   --self-contained-html
 """
+dir = "linkedin"
 
 [tasks."linkedin:check"]
 description = "Run all LinkedIn engine checks (lint + typecheck + tests)"
 run = [
-  "ruff check linkedin/ --exclude linkedin/drafts",
-  "ruff format --check linkedin/ --exclude linkedin/drafts",
-  "mypy linkedin/generate.py --ignore-missing-imports",
-  "python -m pytest linkedin/tests/ -v",
+  "uv run ruff check --target-version=py313 . --exclude drafts",
+  "uv run ruff format --diff --check --target-version=py313 . --exclude drafts",
+  "uv run mypy generate.py --ignore-missing-imports",
+  "uv run pytest tests/ -v",
 ]
+dir = "linkedin"
