@@ -70,7 +70,8 @@ jobs:
             --cov-report=html:coverage-html \
             --cov-fail-under=79 \
             --html=test-report.html \
-            --self-contained-html
+            --self-contained-html \
+            --junitxml=junit.xml
         working-directory: linkedin/
 
       - name: Upload coverage artifact
@@ -91,6 +92,7 @@ jobs:
 
       - name: Coverage summary
         uses: irongut/CodeCoverageSummary@v1.3.0
+        if: always()
         with:
           filename: linkedin/coverage.xml
           badge: true
@@ -101,9 +103,16 @@ jobs:
         uses: marocchino/sticky-pull-request-comment@v2
         if: github.event_name == 'pull_request'
         with:
-          header: test-coverage
+          header: linkedin-coverage
           recreate: true
           path: code-coverage-results.md
+
+      - name: Add test results PR comment
+        uses: EnricoMi/publish-unit-test-result-action@v2
+        if: github.event_name == 'pull_request'
+        with:
+          files: linkedin/junit.xml
+          comment_title: "LinkedIn engine — test results"
 
   generate:
     name: Generate drafts
