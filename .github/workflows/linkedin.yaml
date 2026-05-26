@@ -12,8 +12,48 @@ permissions:
   pull-requests: write
 
 jobs:
-  generate:
+  static:
+    name: Static analysis
     runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+
+      - name: Install tools
+        run: pip install ruff mypy anthropic
+
+      - name: Lint
+        run: ruff check linkedin/ --exclude linkedin/drafts
+
+      - name: Format check
+        run: ruff format --check linkedin/ --exclude linkedin/drafts
+
+      - name: Type check
+        run: mypy linkedin/generate.py --ignore-missing-imports
+
+  test:
+    name: Tests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+
+      - name: Install dependencies
+        run: pip install -r linkedin/requirements.txt -r linkedin/requirements-dev.txt
+
+      - name: Run tests
+        run: python -m pytest linkedin/tests/ -v
+
+  generate:
+    name: Generate drafts
+    runs-on: ubuntu-latest
+    needs: [static, test]
 
     steps:
       - uses: actions/checkout@v4

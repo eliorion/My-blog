@@ -2,9 +2,38 @@
 pre-commit = "latest"
 python = "3.13"
 hugo = "0.153.0"
+ruff = "latest"
 
 [settings]
 experimental = true
 
 [hooks]
 enter = "bash ./scripts/setup_project"
+
+[tasks."linkedin:install"]
+description = "Install LinkedIn engine pip dependencies"
+run = "pip install -r linkedin/requirements.txt -r linkedin/requirements-dev.txt"
+
+[tasks."linkedin:test"]
+description = "Run LinkedIn engine tests"
+run = "python -m pytest linkedin/tests/ -v"
+
+[tasks."linkedin:lint"]
+description = "Lint + format check LinkedIn engine"
+run = [
+  "ruff check linkedin/ --exclude linkedin/drafts",
+  "ruff format --check linkedin/ --exclude linkedin/drafts",
+]
+
+[tasks."linkedin:typecheck"]
+description = "Type check LinkedIn engine"
+run = "mypy linkedin/generate.py --ignore-missing-imports"
+
+[tasks."linkedin:check"]
+description = "Run all LinkedIn engine checks (lint + typecheck + tests)"
+run = [
+  "ruff check linkedin/ --exclude linkedin/drafts",
+  "ruff format --check linkedin/ --exclude linkedin/drafts",
+  "mypy linkedin/generate.py --ignore-missing-imports",
+  "python -m pytest linkedin/tests/ -v",
+]

@@ -9,20 +9,24 @@ import shutil
 import sys
 from datetime import datetime
 from pathlib import Path
+from typing import cast
 
 import anthropic
+from anthropic.types import TextBlock
 
 BLOG_POSTS_DIR = Path("blog/content/11 - Posts")
 DRAFTS_DIR = Path("linkedin/drafts")
 
-SYSTEM_PROMPT = """You are a LinkedIn content strategist who transforms technical blog posts into engaging LinkedIn posts.
+SYSTEM_PROMPT = """You are a LinkedIn content strategist who transforms technical blog posts
+into engaging LinkedIn posts.
 
 Rules:
 - Each post must open with a strong hook (first 2 lines visible before "see more")
 - Max 1500 characters per post body (not counting hashtags)
 - Use line breaks generously for readability
 - 3-5 relevant hashtags per post, no # prefix in the hashtags array
-- Pick a different angle for each post: personal story, technical deep-dive, key lesson, hot take, tool spotlight, behind-the-scenes
+- Pick a different angle for each post: personal story, technical deep-dive, key lesson, hot take,
+  tool spotlight, behind-the-scenes
 - No corporate buzzwords. Write like a human sharing real experience.
 - Return valid JSON only, no markdown code block wrapper.
 
@@ -82,7 +86,7 @@ def generate_posts(content: str, client: anthropic.Anthropic, model: str) -> lis
             }
         ],
     )
-    raw = response.content[0].text.strip()
+    raw = cast(TextBlock, response.content[0]).text.strip()
     raw = re.sub(r"^```(?:json)?\n?", "", raw)
     raw = re.sub(r"\n?```$", "", raw.strip())
     data = json.loads(raw)

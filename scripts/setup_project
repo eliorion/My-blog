@@ -8,3 +8,7 @@ if ! command -v cz >/dev/null && [ "$DEVPOD" = "true" ]; then
   pre-commit install
   pre-commit install --hook-type commit-msg
 fi
+
+if ! python -c "import anthropic" 2>/dev/null; then
+  pip install -r linkedin/requirements.txt -r linkedin/requirements-dev.txt
+fi
