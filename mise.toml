@@ -46,6 +46,11 @@ uv run pytest tests/ -v \
 """
 dir = "linkedin"
 
+[tasks."linkedin:generate"]
+description = "Generate LinkedIn drafts using claude CLI (subscription, no API key needed)"
+run = "uv run python generate.py generate"
+dir = "linkedin"
+
 [tasks."linkedin:check"]
 description = "Run all LinkedIn engine checks (lint + typecheck + tests)"
 run = [
