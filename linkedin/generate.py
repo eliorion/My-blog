@@ -6,16 +6,18 @@ import json
 import os
 import re
 import shutil
+import subprocess
 import sys
-from datetime import datetime
+from datetime import date, datetime, timedelta
 from pathlib import Path
 from typing import cast
 
 import anthropic
 from anthropic.types import TextBlock
 
-BLOG_POSTS_DIR = Path("blog/content/11 - Posts")
-DRAFTS_DIR = Path("linkedin/drafts")
+_HERE = Path(__file__).parent
+BLOG_POSTS_DIR = _HERE.parent / "blog/content/11 - Posts"
+DRAFTS_DIR = _HERE / "drafts"
 
 SYSTEM_PROMPT = """You are a LinkedIn content strategist who transforms technical blog posts
 into engaging LinkedIn posts.
@@ -59,6 +61,16 @@ def has_draft(post_dir: Path) -> bool:
     return draft_dir.exists() and any(draft_dir.glob("post_*.md"))
 
 
+def post_date(post_dir: Path) -> date | None:
+    m = re.match(r"(\d{4}-\d{2}-\d{2})", post_dir.name)
+    if not m:
+        return None
+    try:
+        return date.fromisoformat(m.group(1))
+    except ValueError:
+        return None
+
+
 def read_post(post_dir: Path) -> tuple[str, str | None]:
     index = post_dir / "index.md"
     if not index.exists():
@@ -66,6 +78,13 @@ def read_post(post_dir: Path) -> tuple[str, str | None]:
     content = index.read_text(encoding="utf-8")
     cover = post_dir / "cover.svg"
     return content, str(cover) if cover.exists() else None
+
+
+def _parse_posts_from_text(raw: str) -> list[dict]:
+    raw = raw.strip()
+    raw = re.sub(r"^```(?:json)?\n?", "", raw)
+    raw = re.sub(r"\n?```$", "", raw.strip())
+    return json.loads(raw)["posts"]
 
 
 def generate_posts(content: str, client: anthropic.Anthropic, model: str) -> list[dict]:
@@ -86,11 +105,22 @@ def generate_posts(content: str, client: anthropic.Anthropic, model: str) -> lis
             }
         ],
     )
-    raw = cast(TextBlock, response.content[0]).text.strip()
-    raw = re.sub(r"^```(?:json)?\n?", "", raw)
-    raw = re.sub(r"\n?```$", "", raw.strip())
-    data = json.loads(raw)
-    return data["posts"]
+    raw = cast(TextBlock, response.content[0]).text
+    return _parse_posts_from_text(raw)
+
+
+def generate_posts_via_cli(content: str) -> list[dict]:
+    prompt = f"{SYSTEM_PROMPT}\n\nTransform this blog post into multiple LinkedIn posts:\n\n{content}"
+    result = subprocess.run(
+        ["claude", "--output-format", "json", "-p", prompt],
+        capture_output=True,
+        text=True,
+        timeout=180,
+    )
+    if result.returncode != 0:
+        raise RuntimeError(result.stderr.strip() or "claude CLI failed")
+    cli_output = json.loads(result.stdout)
+    return _parse_posts_from_text(cli_output["result"])
 
 
 def write_drafts(post_dir: Path, posts: list[dict], cover_path: str | None):
@@ -117,7 +147,7 @@ def write_drafts(post_dir: Path, posts: list[dict], cover_path: str | None):
     print(f"  -> {len(posts)} posts written to {draft_dir}")
 
 
-def cmd_generate(args, client: anthropic.Anthropic):
+def cmd_generate(args, client: anthropic.Anthropic | None = None):
     posts = find_posts()
 
     if args.post:
@@ -125,6 +155,10 @@ def cmd_generate(args, client: anthropic.Anthropic):
         if not posts:
             print(f"No post matching '{args.post}'")
             sys.exit(1)
+
+    if args.days is not None:
+        cutoff = date.today() - timedelta(days=args.days)
+        posts = [p for p in posts if (post_date(p) or date.min) >= cutoff]
 
     for post_dir in posts:
         if has_draft(post_dir) and not args.force:
@@ -137,7 +171,10 @@ def cmd_generate(args, client: anthropic.Anthropic):
 
         print(f"Processing: {post_dir.name}")
         try:
-            linkedin_posts = generate_posts(content, client, args.model)
+            if args.backend == "claude":
+                linkedin_posts = generate_posts_via_cli(content)
+            else:
+                linkedin_posts = generate_posts(content, client, args.model)  # type: ignore[arg-type]
             write_drafts(post_dir, linkedin_posts, cover)
         except Exception as e:
             print(f"  Error: {e}", file=sys.stderr)
@@ -162,11 +199,19 @@ def main():
     gen = sub.add_parser("generate", aliases=["g"], help="Generate LinkedIn posts")
     gen.add_argument("--post", "-p", help="Filter by post name/date (partial match)")
     gen.add_argument("--force", "-f", action="store_true", help="Regenerate even if draft exists")
+    gen.add_argument("--days", "-d", type=int, default=None, help="Skip posts older than N days")
+    gen.add_argument(
+        "--backend",
+        "-b",
+        choices=["claude", "anthropic"],
+        default="claude",
+        help="Backend: 'claude' (CLI, uses subscription) or 'anthropic' (API key required)",
+    )
     gen.add_argument(
         "--model",
         "-m",
         default="claude-sonnet-4-6",
-        help="Claude model to use (default: claude-sonnet-4-6)",
+        help="Model for anthropic backend (default: claude-sonnet-4-6)",
     )
 
     sub.add_parser("status", aliases=["s"], help="Show processing status")
@@ -180,12 +225,14 @@ def main():
         cmd_status()
         return
 
-    api_key = os.environ.get("ANTHROPIC_API_KEY")
-    if not api_key:
-        print("Error: ANTHROPIC_API_KEY not set", file=sys.stderr)
-        sys.exit(1)
+    client = None
+    if args.backend == "anthropic":
+        api_key = os.environ.get("ANTHROPIC_API_KEY")
+        if not api_key:
+            print("Error: ANTHROPIC_API_KEY not set", file=sys.stderr)
+            sys.exit(1)
+        client = anthropic.Anthropic(api_key=api_key)
 
-    client = anthropic.Anthropic(api_key=api_key)
     cmd_generate(args, client)
 
 

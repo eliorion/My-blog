@@ -2,6 +2,7 @@
 
 import argparse
 import json
+from datetime import date, timedelta
 from unittest.mock import MagicMock
 
 import pytest
@@ -25,7 +26,7 @@ def make_mock_client(posts: list = SAMPLE_POSTS) -> MagicMock:
 
 
 def make_args(**kwargs) -> argparse.Namespace:
-    defaults = {"post": None, "force": False, "model": "claude-sonnet-4-6"}
+    defaults = {"post": None, "force": False, "model": "claude-sonnet-4-6", "backend": "anthropic", "days": None}
     defaults.update(kwargs)
     return argparse.Namespace(**defaults)
 
@@ -114,11 +115,50 @@ def test_generate_skips_dir_without_index_md(tmp_path, monkeypatch):
     client.messages.create.assert_not_called()
 
 
+def test_generate_claude_backend_uses_cli(patched, blog_post, monkeypatch):
+    monkeypatch.setattr(gen, "generate_posts_via_cli", lambda c: SAMPLE_POSTS)
+    gen.cmd_generate(make_args(backend="claude"), None)
+    assert (patched / gen.post_slug(blog_post) / "post_1.md").exists()
+
+
 def test_generate_api_error_is_caught_and_printed(patched, blog_post, capsys):
     client = MagicMock()
     client.messages.create.side_effect = Exception("API timeout")
     gen.cmd_generate(make_args(), client)
     assert "API timeout" in capsys.readouterr().err
+
+
+# --- --days filter ---
+
+
+def test_days_filter_skips_old_post(tmp_path, monkeypatch):
+    old_date = (date.today() - timedelta(days=30)).isoformat()
+    post = tmp_path / "posts" / f"{old_date} - Old Post"
+    post.mkdir(parents=True)
+    (post / "index.md").write_text("content")
+    monkeypatch.setattr(gen, "BLOG_POSTS_DIR", post.parent)
+    monkeypatch.setattr(gen, "DRAFTS_DIR", tmp_path / "drafts")
+    client = make_mock_client()
+    gen.cmd_generate(make_args(days=14), client)
+    client.messages.create.assert_not_called()
+
+
+def test_days_filter_includes_recent_post(tmp_path, monkeypatch):
+    recent_date = (date.today() - timedelta(days=3)).isoformat()
+    post = tmp_path / "posts" / f"{recent_date} - Recent Post"
+    post.mkdir(parents=True)
+    (post / "index.md").write_text("content")
+    monkeypatch.setattr(gen, "BLOG_POSTS_DIR", post.parent)
+    monkeypatch.setattr(gen, "DRAFTS_DIR", tmp_path / "drafts")
+    client = make_mock_client()
+    gen.cmd_generate(make_args(days=14), client)
+    client.messages.create.assert_called_once()
+
+
+def test_days_none_includes_all_posts(patched, blog_post):
+    client = make_mock_client()
+    gen.cmd_generate(make_args(days=None), client)
+    client.messages.create.assert_called_once()
 
 
 # --- status ---

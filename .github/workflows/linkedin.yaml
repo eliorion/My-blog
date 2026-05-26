@@ -138,7 +138,7 @@ jobs:
       - name: Generate LinkedIn posts
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-        run: uv run python generate.py generate
+        run: uv run python generate.py generate --backend anthropic
         working-directory: linkedin/
 
       - name: Open PR with new drafts

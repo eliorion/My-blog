@@ -1,9 +1,8 @@
 public/
 .DS_Store
 .claude/
-linkedin/coverage-html/
-linkedin/coverage.xml
-linkedin/test-report.html
-linkedin/__pycache__/
-linkedin/tests/__pycache__/
-linkedin/.venv/
+*.xml
+__pycache__/
+.venv/
+*.html
+*.coverage
