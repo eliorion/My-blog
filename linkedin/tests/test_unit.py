@@ -2,6 +2,7 @@
 
 import json
 import subprocess
+from datetime import date, timedelta
 from pathlib import Path
 from unittest.mock import MagicMock
 
@@ -139,6 +140,18 @@ def test_generate_posts_strips_plain_fence():
     wrapped = f"```\n{json.dumps(payload)}\n```"
     result = gen.generate_posts("content", _mock_client(wrapped), "claude-sonnet-4-6")
     assert len(result) == 1
+
+
+def test_post_date_parses_valid():
+    assert gen.post_date(Path("2026-01-15 - My Post")) == date(2026, 1, 15)
+
+
+def test_post_date_returns_none_no_date():
+    assert gen.post_date(Path("No Date Title")) is None
+
+
+def test_post_date_returns_none_invalid_date():
+    assert gen.post_date(Path("2026-99-99 - Bad Date")) is None
 
 
 def test_find_posts_exits_when_dir_missing(tmp_path, monkeypatch):

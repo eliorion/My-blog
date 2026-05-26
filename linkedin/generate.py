@@ -8,7 +8,7 @@ import re
 import shutil
 import subprocess
 import sys
-from datetime import datetime
+from datetime import date, datetime, timedelta
 from pathlib import Path
 from typing import cast
 
@@ -59,6 +59,16 @@ def post_slug(post_dir: Path) -> str:
 def has_draft(post_dir: Path) -> bool:
     draft_dir = DRAFTS_DIR / post_slug(post_dir)
     return draft_dir.exists() and any(draft_dir.glob("post_*.md"))
+
+
+def post_date(post_dir: Path) -> date | None:
+    m = re.match(r"(\d{4}-\d{2}-\d{2})", post_dir.name)
+    if not m:
+        return None
+    try:
+        return date.fromisoformat(m.group(1))
+    except ValueError:
+        return None
 
 
 def read_post(post_dir: Path) -> tuple[str, str | None]:
@@ -146,6 +156,10 @@ def cmd_generate(args, client: anthropic.Anthropic | None = None):
             print(f"No post matching '{args.post}'")
             sys.exit(1)
 
+    if args.days is not None:
+        cutoff = date.today() - timedelta(days=args.days)
+        posts = [p for p in posts if (post_date(p) or date.min) >= cutoff]
+
     for post_dir in posts:
         if has_draft(post_dir) and not args.force:
             print(f"Skip {post_dir.name}  (draft exists, use --force to regenerate)")
@@ -185,6 +199,7 @@ def main():
     gen = sub.add_parser("generate", aliases=["g"], help="Generate LinkedIn posts")
     gen.add_argument("--post", "-p", help="Filter by post name/date (partial match)")
     gen.add_argument("--force", "-f", action="store_true", help="Regenerate even if draft exists")
+    gen.add_argument("--days", "-d", type=int, default=None, help="Skip posts older than N days")
     gen.add_argument(
         "--backend",
         "-b",
