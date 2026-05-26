@@ -1,6 +1,7 @@
 """Unit tests for pure functions in generate.py."""
 
 import json
+import subprocess
 from pathlib import Path
 from unittest.mock import MagicMock
 
@@ -144,3 +145,32 @@ def test_find_posts_exits_when_dir_missing(tmp_path, monkeypatch):
     monkeypatch.setattr(gen, "BLOG_POSTS_DIR", tmp_path / "nonexistent")
     with pytest.raises(SystemExit):
         gen.find_posts()
+
+
+def test_generate_posts_via_cli_success(monkeypatch):
+    payload = {"posts": [{"angle": "story", "hook": "H", "body": "B", "hashtags": ["homelab"]}]}
+    mock_result = MagicMock()
+    mock_result.returncode = 0
+    mock_result.stdout = json.dumps({"result": json.dumps(payload)})
+    monkeypatch.setattr(subprocess, "run", lambda *a, **kw: mock_result)
+    result = gen.generate_posts_via_cli("content")
+    assert result[0]["angle"] == "story"
+
+
+def test_generate_posts_via_cli_strips_markdown_fence(monkeypatch):
+    payload = {"posts": [{"angle": "a", "hook": "h", "body": "b", "hashtags": []}]}
+    mock_result = MagicMock()
+    mock_result.returncode = 0
+    mock_result.stdout = json.dumps({"result": f"```json\n{json.dumps(payload)}\n```"})
+    monkeypatch.setattr(subprocess, "run", lambda *a, **kw: mock_result)
+    result = gen.generate_posts_via_cli("content")
+    assert len(result) == 1
+
+
+def test_generate_posts_via_cli_raises_on_failure(monkeypatch):
+    mock_result = MagicMock()
+    mock_result.returncode = 1
+    mock_result.stderr = "claude: command not found"
+    monkeypatch.setattr(subprocess, "run", lambda *a, **kw: mock_result)
+    with pytest.raises(RuntimeError, match="claude: command not found"):
+        gen.generate_posts_via_cli("content")

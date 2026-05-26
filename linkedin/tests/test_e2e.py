@@ -25,7 +25,7 @@ def make_mock_client(posts: list = SAMPLE_POSTS) -> MagicMock:
 
 
 def make_args(**kwargs) -> argparse.Namespace:
-    defaults = {"post": None, "force": False, "model": "claude-sonnet-4-6"}
+    defaults = {"post": None, "force": False, "model": "claude-sonnet-4-6", "backend": "anthropic"}
     defaults.update(kwargs)
     return argparse.Namespace(**defaults)
 
@@ -112,6 +112,12 @@ def test_generate_skips_dir_without_index_md(tmp_path, monkeypatch):
     client = make_mock_client()
     gen.cmd_generate(make_args(), client)
     client.messages.create.assert_not_called()
+
+
+def test_generate_claude_backend_uses_cli(patched, blog_post, monkeypatch):
+    monkeypatch.setattr(gen, "generate_posts_via_cli", lambda c: SAMPLE_POSTS)
+    gen.cmd_generate(make_args(backend="claude"), None)
+    assert (patched / gen.post_slug(blog_post) / "post_1.md").exists()
 
 
 def test_generate_api_error_is_caught_and_printed(patched, blog_post, capsys):

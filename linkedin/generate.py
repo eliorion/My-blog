@@ -6,6 +6,7 @@ import json
 import os
 import re
 import shutil
+import subprocess
 import sys
 from datetime import datetime
 from pathlib import Path
@@ -68,6 +69,13 @@ def read_post(post_dir: Path) -> tuple[str, str | None]:
     return content, str(cover) if cover.exists() else None
 
 
+def _parse_posts_from_text(raw: str) -> list[dict]:
+    raw = raw.strip()
+    raw = re.sub(r"^```(?:json)?\n?", "", raw)
+    raw = re.sub(r"\n?```$", "", raw.strip())
+    return json.loads(raw)["posts"]
+
+
 def generate_posts(content: str, client: anthropic.Anthropic, model: str) -> list[dict]:
     response = client.messages.create(
         model=model,
@@ -86,11 +94,22 @@ def generate_posts(content: str, client: anthropic.Anthropic, model: str) -> lis
             }
         ],
     )
-    raw = cast(TextBlock, response.content[0]).text.strip()
-    raw = re.sub(r"^```(?:json)?\n?", "", raw)
-    raw = re.sub(r"\n?```$", "", raw.strip())
-    data = json.loads(raw)
-    return data["posts"]
+    raw = cast(TextBlock, response.content[0]).text
+    return _parse_posts_from_text(raw)
+
+
+def generate_posts_via_cli(content: str) -> list[dict]:
+    prompt = f"{SYSTEM_PROMPT}\n\nTransform this blog post into multiple LinkedIn posts:\n\n{content}"
+    result = subprocess.run(
+        ["claude", "--output-format", "json", "-p", prompt],
+        capture_output=True,
+        text=True,
+        timeout=180,
+    )
+    if result.returncode != 0:
+        raise RuntimeError(result.stderr.strip() or "claude CLI failed")
+    cli_output = json.loads(result.stdout)
+    return _parse_posts_from_text(cli_output["result"])
 
 
 def write_drafts(post_dir: Path, posts: list[dict], cover_path: str | None):
@@ -117,7 +136,7 @@ def write_drafts(post_dir: Path, posts: list[dict], cover_path: str | None):
     print(f"  -> {len(posts)} posts written to {draft_dir}")
 
 
-def cmd_generate(args, client: anthropic.Anthropic):
+def cmd_generate(args, client: anthropic.Anthropic | None = None):
     posts = find_posts()
 
     if args.post:
@@ -137,7 +156,10 @@ def cmd_generate(args, client: anthropic.Anthropic):
 
         print(f"Processing: {post_dir.name}")
         try:
-            linkedin_posts = generate_posts(content, client, args.model)
+            if args.backend == "claude":
+                linkedin_posts = generate_posts_via_cli(content)
+            else:
+                linkedin_posts = generate_posts(content, client, args.model)  # type: ignore[arg-type]
             write_drafts(post_dir, linkedin_posts, cover)
         except Exception as e:
             print(f"  Error: {e}", file=sys.stderr)
@@ -163,10 +185,17 @@ def main():
     gen.add_argument("--post", "-p", help="Filter by post name/date (partial match)")
     gen.add_argument("--force", "-f", action="store_true", help="Regenerate even if draft exists")
     gen.add_argument(
+        "--backend",
+        "-b",
+        choices=["claude", "anthropic"],
+        default="claude",
+        help="Backend: 'claude' (CLI, uses subscription) or 'anthropic' (API key required)",
+    )
+    gen.add_argument(
         "--model",
         "-m",
         default="claude-sonnet-4-6",
-        help="Claude model to use (default: claude-sonnet-4-6)",
+        help="Model for anthropic backend (default: claude-sonnet-4-6)",
     )
 
     sub.add_parser("status", aliases=["s"], help="Show processing status")
@@ -180,12 +209,14 @@ def main():
         cmd_status()
         return
 
-    api_key = os.environ.get("ANTHROPIC_API_KEY")
-    if not api_key:
-        print("Error: ANTHROPIC_API_KEY not set", file=sys.stderr)
-        sys.exit(1)
+    client = None
+    if args.backend == "anthropic":
+        api_key = os.environ.get("ANTHROPIC_API_KEY")
+        if not api_key:
+            print("Error: ANTHROPIC_API_KEY not set", file=sys.stderr)
+            sys.exit(1)
+        client = anthropic.Anthropic(api_key=api_key)
 
-    client = anthropic.Anthropic(api_key=api_key)
     cmd_generate(args, client)
 
 
