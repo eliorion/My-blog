@@ -1,0 +1,163 @@
+name: LinkedIn CI/CD
+
+on:
+  push:
+    branches: [main, "feat/**"]
+    paths:
+      - "blog/content/11 - Posts/**"
+      - "linkedin/**"
+      - "!linkedin/drafts/**"
+  pull_request:
+    paths:
+      - "linkedin/**"
+      - "!linkedin/drafts/**"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+  checks: write
+
+jobs:
+  static:
+    name: Static analysis
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install UV
+        uses: astral-sh/setup-uv@v5
+
+      - name: Set up Python
+        run: uv python install
+        working-directory: linkedin/
+
+      - name: Install dependencies
+        run: uv sync --locked --dev
+        working-directory: linkedin/
+
+      - name: Lint with Ruff
+        run: |
+          uv run ruff check --output-format=github --target-version=py313 . --exclude drafts
+          uv run ruff format --diff --check --target-version=py313 . --exclude drafts
+        working-directory: linkedin/
+
+      - name: Type check
+        run: uv run mypy generate.py --ignore-missing-imports
+        working-directory: linkedin/
+
+  test:
+    name: Tests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install UV
+        uses: astral-sh/setup-uv@v5
+
+      - name: Set up Python
+        run: uv python install
+        working-directory: linkedin/
+
+      - name: Install dependencies
+        run: uv sync --locked --dev
+        working-directory: linkedin/
+
+      - name: Run tests with coverage
+        run: |
+          uv run pytest tests/ -v \
+            --cov=. \
+            --cov-report=xml:coverage.xml \
+            --cov-report=html:coverage-html \
+            --cov-fail-under=79 \
+            --html=test-report.html \
+            --self-contained-html \
+            --junitxml=junit.xml
+        working-directory: linkedin/
+
+      - name: Upload coverage artifact
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: linkedin-coverage
+          path: linkedin/coverage-html/
+          retention-days: 7
+
+      - name: Upload test report artifact
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: linkedin-test-report
+          path: linkedin/test-report.html
+          retention-days: 7
+
+      - name: Coverage summary
+        uses: irongut/CodeCoverageSummary@v1.3.0
+        if: always()
+        with:
+          filename: linkedin/coverage.xml
+          badge: true
+          format: markdown
+          output: both
+
+      - name: Add coverage PR comment
+        uses: marocchino/sticky-pull-request-comment@v2
+        if: github.event_name == 'pull_request'
+        with:
+          header: linkedin-coverage
+          recreate: true
+          path: code-coverage-results.md
+
+      - name: Add test results PR comment
+        uses: EnricoMi/publish-unit-test-result-action@v2
+        if: github.event_name == 'pull_request'
+        with:
+          files: linkedin/junit.xml
+          comment_title: "LinkedIn engine — test results"
+
+  generate:
+    name: Generate drafts
+    runs-on: ubuntu-latest
+    needs: [static, test]
+    if: github.ref == 'refs/heads/main' || github.event_name == 'workflow_dispatch'
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install UV
+        uses: astral-sh/setup-uv@v5
+
+      - name: Set up Python
+        run: uv python install
+        working-directory: linkedin/
+
+      - name: Install dependencies
+        run: uv sync --locked
+        working-directory: linkedin/
+
+      - name: Generate LinkedIn posts
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: uv run python generate.py generate
+        working-directory: linkedin/
+
+      - name: Open PR with new drafts
+        uses: peter-evans/create-pull-request@v7
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: "feat(linkedin): generate drafts for new blog posts"
+          branch: linkedin-drafts/auto
+          delete-branch: true
+          title: "LinkedIn drafts — new blog posts"
+          body: |
+            Auto-generated LinkedIn post drafts from new blog post(s).
+
+            **Review checklist:**
+            - [ ] Read each draft in `linkedin/drafts/`
+            - [ ] Pick which posts to publish and in what order
+            - [ ] Post on LinkedIn, then merge this PR
+
+            Each draft folder contains:
+            - `post_N.md` — LinkedIn post text with angle label in frontmatter
+            - `cover.svg` — image to attach (copied from blog post)
+          labels: linkedin

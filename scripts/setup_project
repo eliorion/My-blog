@@ -8,3 +8,7 @@ if ! command -v cz >/dev/null && [ "$DEVPOD" = "true" ]; then
   pre-commit install
   pre-commit install --hook-type commit-msg
 fi
+
+if [ ! -d "linkedin/.venv" ]; then
+  uv sync --dev --directory linkedin/
+fi
