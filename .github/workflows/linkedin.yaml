@@ -1,0 +1,52 @@
+name: Generate LinkedIn drafts
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "blog/content/11 - Posts/**"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+
+      - name: Install dependencies
+        run: pip install -r linkedin/requirements.txt
+
+      - name: Generate LinkedIn posts
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: python linkedin/generate.py generate
+
+      - name: Open PR with new drafts
+        uses: peter-evans/create-pull-request@v7
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: "feat(linkedin): generate drafts for new blog posts"
+          branch: linkedin-drafts/auto
+          delete-branch: true
+          title: "LinkedIn drafts — new blog posts"
+          body: |
+            Auto-generated LinkedIn post drafts from new blog post(s).
+
+            **Review checklist:**
+            - [ ] Read each draft in `linkedin/drafts/`
+            - [ ] Pick which posts to publish and in what order
+            - [ ] Post on LinkedIn, then merge this PR
+
+            Each draft folder contains:
+            - `post_N.md` — LinkedIn post text with angle label in frontmatter
+            - `cover.svg` — image to attach (copied from blog post)
+          labels: linkedin
