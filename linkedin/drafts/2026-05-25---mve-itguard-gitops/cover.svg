@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 300" width="800" height="300">
+  <rect width="800" height="300" fill="#ffffff"/>
+
+  <!-- Left accent panel -->
+  <rect x="0" y="0" width="280" height="300" fill="#0d2137"/>
+
+  <!-- Git branch icon (top area) -->
+  <!-- Main vertical line -->
+  <line x1="90" y1="55" x2="90" y2="175" stroke="#4dabf7" stroke-width="3" stroke-linecap="round"/>
+  <!-- Branch line -->
+  <line x1="90" y1="90" x2="160" y2="130" stroke="#51cf66" stroke-width="2.5" stroke-linecap="round"/>
+  <!-- Merge line back -->
+  <line x1="160" y1="130" x2="90" y2="175" stroke="#51cf66" stroke-width="2.5" stroke-linecap="round"/>
+  <!-- Commit dots on main -->
+  <circle cx="90" cy="55" r="8" fill="#0d2137" stroke="#4dabf7" stroke-width="3"/>
+  <circle cx="90" cy="55" r="3" fill="#4dabf7"/>
+  <circle cx="90" cy="115" r="8" fill="#0d2137" stroke="#4dabf7" stroke-width="3"/>
+  <circle cx="90" cy="115" r="3" fill="#4dabf7"/>
+  <circle cx="90" cy="175" r="8" fill="#0d2137" stroke="#4dabf7" stroke-width="3"/>
+  <circle cx="90" cy="175" r="3" fill="#4dabf7"/>
+  <!-- Commit dot on branch -->
+  <circle cx="160" cy="130" r="8" fill="#0d2137" stroke="#51cf66" stroke-width="3"/>
+  <circle cx="160" cy="130" r="3" fill="#51cf66"/>
+
+  <!-- Arrow: git → pipeline -->
+  <line x1="90" y1="195" x2="90" y2="228" stroke="#4dabf7" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="4,3"/>
+  <polygon points="83,226 90,240 97,226" fill="#4dabf7"/>
+
+  <!-- Pipeline box -->
+  <rect x="40" y="242" width="100" height="34" fill="none" stroke="#ffd43b" stroke-width="2.5" rx="6"/>
+  <text x="90" y="264" font-family="'Courier New', Courier, monospace" font-size="12" fill="#ffd43b" text-anchor="middle">CI → Deploy</text>
+
+  <!-- Arrow to server icon -->
+  <line x1="140" y1="259" x2="196" y2="259" stroke="#4dabf7" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="4,3"/>
+  <polygon points="194,252 208,259 194,266" fill="#4dabf7"/>
+
+  <!-- Server icon -->
+  <rect x="208" y="242" width="55" height="34" fill="none" stroke="#74c0fc" stroke-width="2.5" rx="5"/>
+  <line x1="208" y1="254" x2="263" y2="254" stroke="#74c0fc" stroke-width="1.5"/>
+  <circle cx="220" cy="248" r="3" fill="#51cf66"/>
+  <circle cx="232" cy="248" r="3" fill="#51cf66"/>
+  <text x="235" y="268" font-family="Arial, sans-serif" font-size="10" fill="#74c0fc" text-anchor="middle">server</text>
+
+  <!-- Panel right border -->
+  <line x1="280" y1="0" x2="280" y2="300" stroke="#dee2e6" stroke-width="1"/>
+
+  <!-- Project label (small, top right) -->
+  <text x="312" y="42" font-family="'Courier New', Courier, monospace" font-size="13" fill="#adb5bd">mve-itguard / series 2</text>
+
+  <!-- Post title -->
+  <text x="312" y="82" font-family="Arial, Helvetica, sans-serif" font-size="30" font-weight="bold" fill="#0d2137">GitOps Without</text>
+  <text x="312" y="118" font-family="Arial, Helvetica, sans-serif" font-size="30" font-weight="bold" fill="#0d2137">Kubernetes</text>
+
+  <!-- Tagline -->
+  <text x="315" y="150" font-family="Arial, Helvetica, sans-serif" font-size="16" fill="#495057">Docker Compose + GitHub Actions</text>
+
+  <!-- Separator -->
+  <line x1="312" y1="168" x2="775" y2="168" stroke="#e9ecef" stroke-width="1.5"/>
+
+  <!-- Concept chips -->
+  <rect x="312" y="182" width="88" height="28" fill="#e7f5ff" rx="14" stroke="#4dabf7" stroke-width="1.5"/>
+  <text x="356" y="200" font-family="Arial, sans-serif" font-size="12" fill="#1971c2" text-anchor="middle">Two-file split</text>
+
+  <rect x="410" y="182" width="68" height="28" fill="#ebfbee" rx="14" stroke="#51cf66" stroke-width="1.5"/>
+  <text x="444" y="200" font-family="Arial, sans-serif" font-size="12" fill="#2f9e44" text-anchor="middle">CI pipeline</text>
+
+  <rect x="488" y="182" width="94" height="28" fill="#fff9db" rx="14" stroke="#ffd43b" stroke-width="1.5"/>
+  <text x="535" y="200" font-family="Arial, sans-serif" font-size="12" fill="#e67700" text-anchor="middle">Deploy pipeline</text>
+
+  <rect x="592" y="182" width="100" height="28" fill="#f8f0fc" rx="14" stroke="#cc5de8" stroke-width="1.5"/>
+  <text x="642" y="200" font-family="Arial, sans-serif" font-size="12" fill="#862e9c" text-anchor="middle">Runner isolation</text>
+
+  <!-- Second row -->
+  <rect x="312" y="220" width="82" height="26" fill="#fff5f5" rx="13" stroke="#ff6b6b" stroke-width="1.5"/>
+  <text x="353" y="237" font-family="Arial, sans-serif" font-size="12" fill="#c92a2a" text-anchor="middle">No SSH deploy</text>
+
+  <rect x="404" y="220" width="82" height="26" fill="#e6fcf5" rx="13" stroke="#20c997" stroke-width="1.5"/>
+  <text x="445" y="237" font-family="Arial, sans-serif" font-size="12" fill="#0ca678" text-anchor="middle">Socket proxy</text>
+
+  <rect x="496" y="220" width="88" height="26" fill="#fff4e6" rx="13" stroke="#ff922b" stroke-width="1.5"/>
+  <text x="540" y="237" font-family="Arial, sans-serif" font-size="12" fill="#d9480f" text-anchor="middle">workflow_run</text>
+
+  <rect x="594" y="220" width="102" height="26" fill="#e7f5ff" rx="13" stroke="#74c0fc" stroke-width="1.5"/>
+  <text x="645" y="237" font-family="Arial, sans-serif" font-size="12" fill="#1971c2" text-anchor="middle">yamllint + shellcheck</text>
+
+  <!-- Bottom caption -->
+  <text x="312" y="278" font-family="Arial, Helvetica, sans-serif" font-size="13" fill="#adb5bd">Git is the source of truth · CI gates every deploy · Runners on production server</text>
+</svg>
