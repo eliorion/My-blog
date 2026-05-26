@@ -2,7 +2,7 @@
 
 import json
 import subprocess
-from datetime import date, timedelta
+from datetime import date
 from pathlib import Path
 from unittest.mock import MagicMock
 
