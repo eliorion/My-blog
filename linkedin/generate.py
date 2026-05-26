@@ -15,8 +15,9 @@ from typing import cast
 import anthropic
 from anthropic.types import TextBlock
 
-BLOG_POSTS_DIR = Path("blog/content/11 - Posts")
-DRAFTS_DIR = Path("linkedin/drafts")
+_HERE = Path(__file__).parent
+BLOG_POSTS_DIR = _HERE.parent / "blog/content/11 - Posts"
+DRAFTS_DIR = _HERE / "drafts"
 
 SYSTEM_PROMPT = """You are a LinkedIn content strategist who transforms technical blog posts
 into engaging LinkedIn posts.
