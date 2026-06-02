@@ -14,6 +14,10 @@ hugo build -s blog           # production build → blog/public/
 pre-commit run --all-files   # lint
 ```
 
+To **see** the rendered site, use the `preview-blog` skill (`.claude/skills/preview-blog/`):
+it serves the blog and screenshots key pages at desktop/mobile widths into
+`screenshots/` for visual inspection.
+
 ## Post location
 
 `blog/content/11 - Posts/YYYY-MM-DD - Title/`

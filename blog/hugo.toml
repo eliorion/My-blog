@@ -2,6 +2,9 @@ theme = "PaperMod"
 baseURL = "https://eliorion.github.io/My-blog"
 title = 'Eliorion blog'
 
+[outputs]
+home = ["HTML", "RSS", "JSON"]
+
 [params]
 showReadingTime = true
 showBreadCrumbs = true
@@ -17,6 +20,24 @@ weight = 1
 # [languages.fr]
 #   languageName = "Français"
 #   weight = 2
+
+[[menu.main]]
+identifier = "about"
+name = "About"
+url = "/about/"
+weight = 10
+
+[[menu.main]]
+identifier = "archives"
+name = "Archive"
+url = "/archives/"
+weight = 14
+
+[[menu.main]]
+identifier = "search"
+name = "Search"
+url = "/search/"
+weight = 20
 
 [[menu.main]]
 identifier = "posts"
@@ -57,9 +78,27 @@ tag = "tags"
 topic = "topics"        # ← on peut ajouter "topics" si on veut un regroupement spécifique
 project = "projects"
 
-[languages.en.params.homeInfoParams]
-Title = "👋 Welcome to Eliorion's blog"
-Content = "Here I share my journey in homelab, Kubernetes, and engineering management. 🚀"
+[languages.en.params.profileMode]
+enabled = true
+title = "👋 Eliorion's blog"
+subtitle = "My journey in homelab, Kubernetes, and engineering management. 🚀"
+
+[[languages.en.params.profileMode.buttons]]
+name = "Posts"
+url = "/posts/"
+
+[[languages.en.params.profileMode.buttons]]
+name = "Topics"
+url = "/topics/"
+
+[[languages.en.params.profileMode.buttons]]
+name = "Archive"
+url = "/archives/"
+
+# Fallback landing (used if profileMode.enabled = false):
+# [languages.en.params.homeInfoParams]
+# Title = "👋 Welcome to Eliorion's blog"
+# Content = "Here I share my journey in homelab, Kubernetes, and engineering management. 🚀"
 
 #[languages.fr.params.homeInfoParams]
 #  Title = "👋 Bienvenue sur le blog d'Eliorion"

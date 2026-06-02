@@ -1,0 +1,4 @@
+{{- /* Preview/staging builds (hugo --environment preview): keep out of search engines. */ -}}
+{{- if eq hugo.Environment "preview" }}
+<meta name="robots" content="noindex, nofollow">
+{{- end }}
