@@ -1,0 +1,119 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 300" width="800" height="300">
+  <rect width="800" height="300" fill="#ffffff"/>
+
+  <!-- Left accent panel -->
+  <rect x="0" y="0" width="280" height="300" fill="#0c1a0c"/>
+
+  <!-- Production server box (top centre) -->
+  <rect x="90" y="18" width="100" height="38" fill="#0c1a0c" rx="5" stroke="#51cf66" stroke-width="2"/>
+  <text x="140" y="33" font-family="'Courier New', Courier, monospace" font-size="9" fill="#51cf66" text-anchor="middle">prod server</text>
+  <text x="140" y="47" font-family="Arial, sans-serif" font-size="8" fill="#6c757d" text-anchor="middle">03:00 daily</text>
+
+  <!-- Arrow down to split -->
+  <line x1="140" y1="56" x2="140" y2="72" stroke="#51cf66" stroke-width="2"/>
+  <!-- Branch left -->
+  <line x1="60" y1="72" x2="220" y2="72" stroke="#51cf66" stroke-width="2"/>
+
+  <!-- Arrow to node 1 -->
+  <line x1="60" y1="72" x2="60" y2="90" stroke="#4dabf7" stroke-width="2"/>
+  <!-- Arrow to node 2 -->
+  <line x1="140" y1="72" x2="140" y2="90" stroke="#4dabf7" stroke-width="2"/>
+  <!-- Arrow to node 3 (dashed = optional) -->
+  <line x1="220" y1="72" x2="220" y2="90" stroke="#4dabf7" stroke-width="2" stroke-dasharray="3,2"/>
+
+  <!-- Node 1 (primary) -->
+  <rect x="22" y="90" width="76" height="80" fill="#0c1a0c" rx="5" stroke="#4dabf7" stroke-width="2"/>
+  <text x="60" y="107" font-family="'Courier New', Courier, monospace" font-size="9" fill="#4dabf7" text-anchor="middle">Node 1</text>
+  <text x="60" y="119" font-family="Arial, sans-serif" font-size="8" fill="#6c757d" text-anchor="middle">primary</text>
+  <!-- Tier badges -->
+  <rect x="28" y="124" width="64" height="14" fill="#1a3a1a" rx="3" stroke="#51cf66" stroke-width="1"/>
+  <text x="60" y="134" font-family="Arial, sans-serif" font-size="8" fill="#51cf66" text-anchor="middle">critical</text>
+  <rect x="28" y="142" width="64" height="14" fill="#2a1a0a" rx="3" stroke="#ff922b" stroke-width="1"/>
+  <text x="60" y="152" font-family="Arial, sans-serif" font-size="8" fill="#ff922b" text-anchor="middle">+ frigate</text>
+  <!-- Location label -->
+  <text x="60" y="166" font-family="Arial, sans-serif" font-size="7" fill="#495057" text-anchor="middle">home</text>
+
+  <!-- Node 2 (secondary) -->
+  <rect x="102" y="90" width="76" height="80" fill="#0c1a0c" rx="5" stroke="#4dabf7" stroke-width="2"/>
+  <text x="140" y="107" font-family="'Courier New', Courier, monospace" font-size="9" fill="#4dabf7" text-anchor="middle">Node 2</text>
+  <text x="140" y="119" font-family="Arial, sans-serif" font-size="8" fill="#6c757d" text-anchor="middle">secondary</text>
+  <rect x="108" y="124" width="64" height="14" fill="#1a3a1a" rx="3" stroke="#51cf66" stroke-width="1"/>
+  <text x="140" y="134" font-family="Arial, sans-serif" font-size="8" fill="#51cf66" text-anchor="middle">critical</text>
+  <text x="140" y="166" font-family="Arial, sans-serif" font-size="7" fill="#495057" text-anchor="middle">friend's home</text>
+
+  <!-- Node 3 (optional) -->
+  <rect x="182" y="90" width="76" height="80" fill="#0c1a0c" rx="5" stroke="#495057" stroke-width="2" stroke-dasharray="4,2"/>
+  <text x="220" y="107" font-family="'Courier New', Courier, monospace" font-size="9" fill="#495057" text-anchor="middle">Node 3</text>
+  <text x="220" y="119" font-family="Arial, sans-serif" font-size="8" fill="#495057" text-anchor="middle">optional</text>
+  <rect x="188" y="124" width="64" height="14" fill="#1a3a1a" rx="3" stroke="#495057" stroke-width="1"/>
+  <text x="220" y="134" font-family="Arial, sans-serif" font-size="8" fill="#495057" text-anchor="middle">critical</text>
+  <text x="220" y="166" font-family="Arial, sans-serif" font-size="7" fill="#495057" text-anchor="middle">office / remote</text>
+
+  <!-- Append-only badge at bottom of each node -->
+  <rect x="22" y="175" width="76" height="14" fill="#0c1a0c" rx="3" stroke="#ffd43b" stroke-width="1"/>
+  <text x="60" y="185" font-family="Arial, sans-serif" font-size="7" fill="#ffd43b" text-anchor="middle">append-only</text>
+
+  <rect x="102" y="175" width="76" height="14" fill="#0c1a0c" rx="3" stroke="#ffd43b" stroke-width="1"/>
+  <text x="140" y="185" font-family="Arial, sans-serif" font-size="7" fill="#ffd43b" text-anchor="middle">append-only</text>
+
+  <rect x="182" y="175" width="76" height="14" fill="#0c1a0c" rx="3" stroke="#495057" stroke-width="1"/>
+  <text x="220" y="185" font-family="Arial, sans-serif" font-size="7" fill="#495057" text-anchor="middle">append-only</text>
+
+  <!-- Cloudflare label below -->
+  <text x="60" y="210" font-family="Arial, sans-serif" font-size="8" fill="#ff922b" text-anchor="middle">Cloudflare</text>
+  <text x="60" y="220" font-family="Arial, sans-serif" font-size="8" fill="#ff922b" text-anchor="middle">Tunnel</text>
+  <text x="140" y="210" font-family="Arial, sans-serif" font-size="8" fill="#ff922b" text-anchor="middle">Cloudflare</text>
+  <text x="140" y="220" font-family="Arial, sans-serif" font-size="8" fill="#ff922b" text-anchor="middle">Tunnel</text>
+
+  <!-- Prune timer note -->
+  <rect x="28" y="232" width="224" height="22" fill="#1a1a00" rx="4" stroke="#ffd43b" stroke-width="1.5"/>
+  <text x="140" y="246" font-family="'Courier New', Courier, monospace" font-size="8" fill="#ffd43b" text-anchor="middle">prune runs on node — prod cannot delete</text>
+
+  <!-- Panel right border -->
+  <line x1="280" y1="0" x2="280" y2="300" stroke="#dee2e6" stroke-width="1"/>
+
+  <!-- Project label -->
+  <text x="312" y="42" font-family="'Courier New', Courier, monospace" font-size="13" fill="#adb5bd">mve-itguard / series 7</text>
+
+  <!-- Post title -->
+  <text x="312" y="82" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="bold" fill="#0c1a0c">Multi-Node Backup</text>
+  <text x="312" y="116" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="bold" fill="#0c1a0c">with Restic</text>
+
+  <!-- Tagline -->
+  <text x="315" y="148" font-family="Arial, Helvetica, sans-serif" font-size="15" fill="#495057">Append-only · encrypted · 3-2-1 across physical sites</text>
+
+  <!-- Separator -->
+  <line x1="312" y1="166" x2="775" y2="166" stroke="#e9ecef" stroke-width="1.5"/>
+
+  <!-- Chips row 1 -->
+  <rect x="312" y="180" width="62" height="28" fill="#ebfbee" rx="14" stroke="#51cf66" stroke-width="1.5"/>
+  <text x="343" y="198" font-family="Arial, sans-serif" font-size="12" fill="#2f9e44" text-anchor="middle">Restic</text>
+
+  <rect x="384" y="180" width="102" height="28" fill="#fff9db" rx="14" stroke="#ffd43b" stroke-width="1.5"/>
+  <text x="435" y="198" font-family="Arial, sans-serif" font-size="12" fill="#e67700" text-anchor="middle">Append-only</text>
+
+  <rect x="496" y="180" width="96" height="28" fill="#fff4e6" rx="14" stroke="#ff922b" stroke-width="1.5"/>
+  <text x="544" y="198" font-family="Arial, sans-serif" font-size="12" fill="#d9480f" text-anchor="middle">Cloudflare</text>
+
+  <rect x="602" y="180" width="68" height="28" fill="#e7f5ff" rx="14" stroke="#4dabf7" stroke-width="1.5"/>
+  <text x="636" y="198" font-family="Arial, sans-serif" font-size="12" fill="#1971c2" text-anchor="middle">3-2-1</text>
+
+  <rect x="680" y="180" width="82" height="28" fill="#f8f0fc" rx="14" stroke="#cc5de8" stroke-width="1.5"/>
+  <text x="721" y="198" font-family="Arial, sans-serif" font-size="12" fill="#862e9c" text-anchor="middle">rest-server</text>
+
+  <!-- Chips row 2 -->
+  <rect x="312" y="218" width="104" height="26" fill="#ebfbee" rx="13" stroke="#20c997" stroke-width="1.5"/>
+  <text x="364" y="235" font-family="Arial, sans-serif" font-size="12" fill="#0ca678" text-anchor="middle">docker pause</text>
+
+  <rect x="426" y="218" width="100" height="26" fill="#fff5f5" rx="13" stroke="#ff6b6b" stroke-width="1.5"/>
+  <text x="476" y="235" font-family="Arial, sans-serif" font-size="12" fill="#c92a2a" text-anchor="middle">Two-tier data</text>
+
+  <rect x="536" y="218" width="90" height="26" fill="#e7f5ff" rx="13" stroke="#74c0fc" stroke-width="1.5"/>
+  <text x="581" y="235" font-family="Arial, sans-serif" font-size="12" fill="#1971c2" text-anchor="middle">HA notify</text>
+
+  <rect x="636" y="218" width="122" height="26" fill="#fff9db" rx="13" stroke="#ffd43b" stroke-width="1.5"/>
+  <text x="697" y="235" font-family="Arial, sans-serif" font-size="12" fill="#e67700" text-anchor="middle">Weekly prune timer</text>
+
+  <!-- Bottom caption -->
+  <text x="312" y="278" font-family="Arial, Helvetica, sans-serif" font-size="13" fill="#adb5bd">Encrypted blobs · prod writes · nodes prune · no ransomware delete path</text>
+</svg>
