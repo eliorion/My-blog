@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 300" width="800" height="300">
+  <rect width="800" height="300" fill="#ffffff"/>
+
+  <!-- Left accent panel -->
+  <rect x="0" y="0" width="280" height="300" fill="#0d2137"/>
+
+  <!-- Orchestrator node (top) -->
+  <rect x="66" y="46" width="56" height="30" fill="none" stroke="#ffd43b" stroke-width="2.5" rx="5"/>
+  <text x="94" y="66" font-family="Arial, sans-serif" font-size="10" fill="#ffd43b" text-anchor="middle">orch</text>
+
+  <!-- Worker lanes fanning out -->
+  <line x1="94" y1="76" x2="60" y2="118" stroke="#4dabf7" stroke-width="2" stroke-linecap="round"/>
+  <line x1="94" y1="76" x2="128" y2="118" stroke="#4dabf7" stroke-width="2" stroke-linecap="round"/>
+  <line x1="94" y1="76" x2="188" y2="118" stroke="#4dabf7" stroke-width="2" stroke-linecap="round"/>
+
+  <rect x="40" y="120" width="40" height="26" fill="none" stroke="#51cf66" stroke-width="2" rx="4"/>
+  <text x="60" y="137" font-family="Arial, sans-serif" font-size="9" fill="#51cf66" text-anchor="middle">lane</text>
+  <rect x="108" y="120" width="40" height="26" fill="none" stroke="#51cf66" stroke-width="2" rx="4"/>
+  <text x="128" y="137" font-family="Arial, sans-serif" font-size="9" fill="#51cf66" text-anchor="middle">lane</text>
+  <rect x="168" y="120" width="40" height="26" fill="none" stroke="#51cf66" stroke-width="2" rx="4"/>
+  <text x="188" y="137" font-family="Arial, sans-serif" font-size="9" fill="#51cf66" text-anchor="middle">lane</text>
+
+  <!-- Arrows to DB -->
+  <line x1="60" y1="146" x2="124" y2="196" stroke="#74c0fc" stroke-width="1.8" stroke-linecap="round" stroke-dasharray="4,3"/>
+  <line x1="128" y1="146" x2="128" y2="196" stroke="#74c0fc" stroke-width="1.8" stroke-linecap="round" stroke-dasharray="4,3"/>
+  <line x1="188" y1="146" x2="132" y2="196" stroke="#74c0fc" stroke-width="1.8" stroke-linecap="round" stroke-dasharray="4,3"/>
+
+  <!-- Postgres cylinder -->
+  <ellipse cx="128" cy="202" rx="34" ry="8" fill="none" stroke="#74c0fc" stroke-width="2.5"/>
+  <line x1="94" y1="202" x2="94" y2="240" stroke="#74c0fc" stroke-width="2.5"/>
+  <line x1="162" y1="202" x2="162" y2="240" stroke="#74c0fc" stroke-width="2.5"/>
+  <ellipse cx="128" cy="240" rx="34" ry="8" fill="none" stroke="#74c0fc" stroke-width="2.5"/>
+  <text x="128" y="268" font-family="'Courier New', Courier, monospace" font-size="12" fill="#adb5bd" text-anchor="middle">postgres</text>
+
+  <!-- Panel right border -->
+  <line x1="280" y1="0" x2="280" y2="300" stroke="#dee2e6" stroke-width="1"/>
+
+  <!-- Project label -->
+  <text x="312" y="42" font-family="'Courier New', Courier, monospace" font-size="13" fill="#adb5bd">asp / platform overview</text>
+
+  <!-- Post title -->
+  <text x="312" y="82" font-family="Arial, Helvetica, sans-serif" font-size="30" font-weight="bold" fill="#0d2137">Building a Scraping</text>
+  <text x="312" y="118" font-family="Arial, Helvetica, sans-serif" font-size="30" font-weight="bold" fill="#0d2137">Platform on K8s</text>
+
+  <!-- Tagline -->
+  <text x="315" y="150" font-family="Arial, Helvetica, sans-serif" font-size="16" fill="#495057">One Helm chart, many services, full CI/CD</text>
+
+  <!-- Separator -->
+  <line x1="312" y1="168" x2="775" y2="168" stroke="#e9ecef" stroke-width="1.5"/>
+
+  <!-- Concept chips -->
+  <rect x="312" y="182" width="96" height="28" fill="#e7f5ff" rx="14" stroke="#4dabf7" stroke-width="1.5"/>
+  <text x="360" y="200" font-family="Arial, sans-serif" font-size="12" fill="#1971c2" text-anchor="middle">Multi-proxy lanes</text>
+
+  <rect x="418" y="182" width="82" height="28" fill="#ebfbee" rx="14" stroke="#51cf66" stroke-width="1.5"/>
+  <text x="459" y="200" font-family="Arial, sans-serif" font-size="12" fill="#2f9e44" text-anchor="middle">FlareSolverr</text>
+
+  <rect x="510" y="182" width="92" height="28" fill="#fff9db" rx="14" stroke="#ffd43b" stroke-width="1.5"/>
+  <text x="556" y="200" font-family="Arial, sans-serif" font-size="12" fill="#e67700" text-anchor="middle">Flyway migrations</text>
+
+  <rect x="612" y="182" width="80" height="28" fill="#f8f0fc" rx="14" stroke="#cc5de8" stroke-width="1.5"/>
+  <text x="652" y="200" font-family="Arial, sans-serif" font-size="12" fill="#862e9c" text-anchor="middle">release-please</text>
+
+  <!-- Second row -->
+  <rect x="312" y="220" width="74" height="26" fill="#fff5f5" rx="13" stroke="#ff6b6b" stroke-width="1.5"/>
+  <text x="349" y="237" font-family="Arial, sans-serif" font-size="12" fill="#c92a2a" text-anchor="middle">k3d e2e</text>
+
+  <rect x="396" y="220" width="96" height="26" fill="#e6fcf5" rx="13" stroke="#20c997" stroke-width="1.5"/>
+  <text x="444" y="237" font-family="Arial, sans-serif" font-size="12" fill="#0ca678" text-anchor="middle">Nexus mirror cache</text>
+
+  <rect x="502" y="220" width="94" height="26" fill="#fff4e6" rx="13" stroke="#ff922b" stroke-width="1.5"/>
+  <text x="549" y="237" font-family="Arial, sans-serif" font-size="12" fill="#d9480f" text-anchor="middle">Auto-rollback</text>
+
+  <rect x="606" y="220" width="86" height="26" fill="#e7f5ff" rx="13" stroke="#74c0fc" stroke-width="1.5"/>
+  <text x="649" y="237" font-family="Arial, sans-serif" font-size="12" fill="#1971c2" text-anchor="middle">Next.js webapp</text>
+
+  <!-- Bottom caption -->
+  <text x="312" y="278" font-family="Arial, Helvetica, sans-serif" font-size="13" fill="#adb5bd">Scrape the data · store it in Postgres · operate it like a product</text>
+</svg>

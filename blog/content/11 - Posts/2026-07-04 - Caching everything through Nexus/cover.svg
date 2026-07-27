@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 300" width="800" height="300">
+  <rect width="800" height="300" fill="#ffffff"/>
+
+  <!-- Left accent panel -->
+  <rect x="0" y="0" width="280" height="300" fill="#0d2137"/>
+
+  <!-- Upstream cloud (crossed 429) -->
+  <ellipse cx="80" cy="62" rx="46" ry="22" fill="none" stroke="#868e96" stroke-width="2"/>
+  <text x="80" y="67" font-family="'Courier New', Courier, monospace" font-size="11" fill="#ff6b6b" text-anchor="middle">429</text>
+  <text x="80" y="100" font-family="Arial, sans-serif" font-size="9" fill="#868e96" text-anchor="middle">docker.io / pypi / npm</text>
+
+  <!-- Arrow upstream -> nexus -->
+  <line x1="80" y1="108" x2="80" y2="132" stroke="#4dabf7" stroke-width="2" stroke-linecap="round" stroke-dasharray="4,3"/>
+  <polygon points="73,130 80,144 87,130" fill="#4dabf7"/>
+
+  <!-- Nexus box -->
+  <rect x="30" y="146" width="100" height="42" fill="none" stroke="#ffd43b" stroke-width="2.5" rx="6"/>
+  <text x="80" y="164" font-family="'Courier New', Courier, monospace" font-size="12" fill="#ffd43b" text-anchor="middle">nexus</text>
+  <text x="80" y="180" font-family="Arial, sans-serif" font-size="9" fill="#ffd43b" text-anchor="middle">in-cluster mirror</text>
+
+  <!-- Fan-out to consumers -->
+  <line x1="130" y1="167" x2="176" y2="130" stroke="#51cf66" stroke-width="2" stroke-linecap="round"/>
+  <line x1="130" y1="167" x2="176" y2="167" stroke="#51cf66" stroke-width="2" stroke-linecap="round"/>
+  <line x1="130" y1="167" x2="176" y2="204" stroke="#51cf66" stroke-width="2" stroke-linecap="round"/>
+
+  <rect x="180" y="116" width="66" height="26" fill="none" stroke="#74c0fc" stroke-width="2" rx="4"/>
+  <text x="213" y="133" font-family="'Courier New', Courier, monospace" font-size="9" fill="#74c0fc" text-anchor="middle">builds</text>
+  <rect x="180" y="154" width="66" height="26" fill="none" stroke="#74c0fc" stroke-width="2" rx="4"/>
+  <text x="213" y="171" font-family="'Courier New', Courier, monospace" font-size="9" fill="#74c0fc" text-anchor="middle">uv / npm</text>
+  <rect x="180" y="192" width="66" height="26" fill="none" stroke="#74c0fc" stroke-width="2" rx="4"/>
+  <text x="213" y="209" font-family="'Courier New', Courier, monospace" font-size="9" fill="#74c0fc" text-anchor="middle">trivy DB</text>
+
+  <!-- Probe gauge -->
+  <text x="80" y="228" font-family="'Courier New', Courier, monospace" font-size="10" fill="#20c997" text-anchor="middle">probe: 200 OK</text>
+  <text x="138" y="262" font-family="Arial, sans-serif" font-size="11" fill="#adb5bd" text-anchor="middle">3.6 MB/s mirror · 140 KB/s fallback</text>
+
+  <!-- Panel right border -->
+  <line x1="280" y1="0" x2="280" y2="300" stroke="#dee2e6" stroke-width="1"/>
+
+  <!-- Project label -->
+  <text x="312" y="42" font-family="'Courier New', Courier, monospace" font-size="13" fill="#adb5bd">asp / CI supply chain</text>
+
+  <!-- Post title -->
+  <text x="312" y="82" font-family="Arial, Helvetica, sans-serif" font-size="30" font-weight="bold" fill="#0d2137">When CI Cannot Pull:</text>
+  <text x="312" y="118" font-family="Arial, Helvetica, sans-serif" font-size="30" font-weight="bold" fill="#0d2137">Caching Through Nexus</text>
+
+  <!-- Tagline -->
+  <text x="315" y="150" font-family="Arial, Helvetica, sans-serif" font-size="16" fill="#495057">Own your supply chain — and verify what your caches claim</text>
+
+  <!-- Separator -->
+  <line x1="312" y1="168" x2="775" y2="168" stroke="#e9ecef" stroke-width="1.5"/>
+
+  <!-- Concept chips row 1 -->
+  <rect x="312" y="182" width="90" height="28" fill="#fff5f5" rx="14" stroke="#ff6b6b" stroke-width="1.5"/>
+  <text x="357" y="200" font-family="Arial, sans-serif" font-size="12" fill="#c92a2a" text-anchor="middle">docker.io 429</text>
+
+  <rect x="412" y="182" width="90" height="28" fill="#e7f5ff" rx="14" stroke="#4dabf7" stroke-width="1.5"/>
+  <text x="457" y="200" font-family="Arial, sans-serif" font-size="12" fill="#1971c2" text-anchor="middle">Probe-gated</text>
+
+  <rect x="512" y="182" width="102" height="28" fill="#ebfbee" rx="14" stroke="#51cf66" stroke-width="1.5"/>
+  <text x="563" y="200" font-family="Arial, sans-serif" font-size="12" fill="#2f9e44" text-anchor="middle">Upstream fallback</text>
+
+  <rect x="624" y="182" width="88" height="28" fill="#fff9db" rx="14" stroke="#ffd43b" stroke-width="1.5"/>
+  <text x="668" y="200" font-family="Arial, sans-serif" font-size="12" fill="#e67700" text-anchor="middle">Net self-probe</text>
+
+  <!-- Concept chips row 2 -->
+  <rect x="312" y="220" width="98" height="26" fill="#e6fcf5" rx="13" stroke="#20c997" stroke-width="1.5"/>
+  <text x="361" y="237" font-family="Arial, sans-serif" font-size="12" fill="#0ca678" text-anchor="middle">trivy DB via ghcr</text>
+
+  <rect x="420" y="220" width="106" height="26" fill="#fff4e6" rx="13" stroke="#ff922b" stroke-width="1.5"/>
+  <text x="473" y="237" font-family="Arial, sans-serif" font-size="12" fill="#d9480f" text-anchor="middle">apk layer-cache bug</text>
+
+  <rect x="536" y="220" width="98" height="26" fill="#f8f0fc" rx="13" stroke="#cc5de8" stroke-width="1.5"/>
+  <text x="585" y="237" font-family="Arial, sans-serif" font-size="12" fill="#862e9c" text-anchor="middle">security-refresh</text>
+
+  <rect x="644" y="220" width="76" height="26" fill="#e7f5ff" rx="13" stroke="#74c0fc" stroke-width="1.5"/>
+  <text x="682" y="237" font-family="Arial, sans-serif" font-size="12" fill="#1971c2" text-anchor="middle">Zero hard dep</text>
+
+  <!-- Bottom caption -->
+  <text x="312" y="278" font-family="Arial, Helvetica, sans-serif" font-size="13" fill="#adb5bd">A cache is a claim about the world — probe it, measure it, bust it on schedule</text>
+</svg>

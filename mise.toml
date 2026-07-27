@@ -3,6 +3,7 @@ pre-commit = "latest"
 python = "3.13"
 hugo = "0.153.0"
 uv = "latest"
+gh = "latest"
 
 [settings]
 experimental = true
