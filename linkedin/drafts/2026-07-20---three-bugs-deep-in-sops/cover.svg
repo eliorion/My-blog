@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 300" width="800" height="300">
+  <rect width="800" height="300" fill="#ffffff"/>
+
+  <!-- Left accent panel -->
+  <rect x="0" y="0" width="280" height="300" fill="#0d2137"/>
+
+  <!-- Three stacked lock layers -->
+  <!-- Layer 1 -->
+  <rect x="50" y="44" width="180" height="42" fill="none" stroke="#ff6b6b" stroke-width="2.5" rx="6"/>
+  <rect x="66" y="58" width="18" height="15" fill="none" stroke="#ff6b6b" stroke-width="2" rx="3"/>
+  <path d="M 69 58 v-5 a6 6 0 0 1 12 0 v5" fill="none" stroke="#ff6b6b" stroke-width="2"/>
+  <text x="152" y="70" font-family="'Courier New', Courier, monospace" font-size="11" fill="#ff6b6b" text-anchor="middle">ssh-to-age</text>
+
+  <!-- Layer 2 -->
+  <rect x="50" y="102" width="180" height="42" fill="none" stroke="#ffd43b" stroke-width="2.5" rx="6"/>
+  <rect x="66" y="116" width="18" height="15" fill="none" stroke="#ffd43b" stroke-width="2" rx="3"/>
+  <path d="M 69 116 v-5 a6 6 0 0 1 12 0 v5" fill="none" stroke="#ffd43b" stroke-width="2"/>
+  <text x="152" y="128" font-family="'Courier New', Courier, monospace" font-size="11" fill="#ffd43b" text-anchor="middle">sshKeyPaths</text>
+
+  <!-- Layer 3 -->
+  <rect x="50" y="160" width="180" height="42" fill="none" stroke="#cc5de8" stroke-width="2.5" rx="6"/>
+  <rect x="66" y="174" width="18" height="15" fill="none" stroke="#cc5de8" stroke-width="2" rx="3"/>
+  <path d="M 69 174 v-5 a6 6 0 0 1 12 0 v5" fill="none" stroke="#cc5de8" stroke-width="2"/>
+  <text x="152" y="186" font-family="'Courier New', Courier, monospace" font-size="11" fill="#cc5de8" text-anchor="middle">Rosetta AEAD</text>
+
+  <!-- Arrow drilling down through layers -->
+  <line x1="246" y1="52" x2="246" y2="216" stroke="#4dabf7" stroke-width="2.5" stroke-dasharray="4,3"/>
+  <polygon points="239,214 246,228 253,214" fill="#4dabf7"/>
+
+  <!-- Error line -->
+  <text x="140" y="246" font-family="'Courier New', Courier, monospace" font-size="11" fill="#adb5bd" text-anchor="middle">"0 successful groups"</text>
+  <text x="140" y="268" font-family="'Courier New', Courier, monospace" font-size="11" fill="#51cf66" text-anchor="middle">fixed x3 · purego</text>
+
+  <!-- Panel right border -->
+  <line x1="280" y1="0" x2="280" y2="300" stroke="#dee2e6" stroke-width="1"/>
+
+  <!-- Project label -->
+  <text x="312" y="42" font-family="'Courier New', Courier, monospace" font-size="13" fill="#adb5bd">garage-fleet / debugging saga</text>
+
+  <!-- Post title -->
+  <text x="312" y="82" font-family="Arial, Helvetica, sans-serif" font-size="30" font-weight="bold" fill="#0d2137">Three Bugs Deep: The Week</text>
+  <text x="312" y="118" font-family="Arial, Helvetica, sans-serif" font-size="30" font-weight="bold" fill="#0d2137">sops Refused to Decrypt</text>
+
+  <!-- Tagline -->
+  <text x="315" y="150" font-family="Arial, Helvetica, sans-serif" font-size="16" fill="#495057">One error message, three root causes</text>
+
+  <!-- Separator -->
+  <line x1="312" y1="168" x2="775" y2="168" stroke="#e9ecef" stroke-width="1.5"/>
+
+  <!-- Concept chips row 1 -->
+  <rect x="312" y="182" width="104" height="28" fill="#fff5f5" rx="14" stroke="#ff6b6b" stroke-width="1.5"/>
+  <text x="364" y="200" font-family="Arial, sans-serif" font-size="12" fill="#c92a2a" text-anchor="middle">ssh-to-age drift</text>
+
+  <rect x="426" y="182" width="110" height="28" fill="#fff9db" rx="14" stroke="#ffd43b" stroke-width="1.5"/>
+  <text x="481" y="200" font-family="Arial, sans-serif" font-size="12" fill="#e67700" text-anchor="middle">Default won't die</text>
+
+  <rect x="546" y="182" width="118" height="28" fill="#f8f0fc" rx="14" stroke="#cc5de8" stroke-width="1.5"/>
+  <text x="605" y="200" font-family="Arial, sans-serif" font-size="12" fill="#862e9c" text-anchor="middle">Rosetta breaks crypto</text>
+
+  <!-- Concept chips row 2 -->
+  <rect x="312" y="220" width="112" height="26" fill="#e7f5ff" rx="13" stroke="#4dabf7" stroke-width="1.5"/>
+  <text x="368" y="237" font-family="Arial, sans-serif" font-size="12" fill="#1971c2" text-anchor="middle">Dedicated age keys</text>
+
+  <rect x="434" y="220" width="106" height="26" fill="#ebfbee" rx="13" stroke="#51cf66" stroke-width="1.5"/>
+  <text x="487" y="237" font-family="Arial, sans-serif" font-size="12" fill="#2f9e44" text-anchor="middle">RFC 8439 KAT</text>
+
+  <rect x="550" y="220" width="98" height="26" fill="#e6fcf5" rx="13" stroke="#20c997" stroke-width="1.5"/>
+  <text x="599" y="237" font-family="Arial, sans-serif" font-size="12" fill="#0ca678" text-anchor="middle">purego builds</text>
+
+  <!-- Bottom caption -->
+  <text x="312" y="278" font-family="Arial, Helvetica, sans-serif" font-size="13" fill="#adb5bd">Every fix was correct · every fix revealed the next bug · test vectors don't have opinions</text>
+</svg>

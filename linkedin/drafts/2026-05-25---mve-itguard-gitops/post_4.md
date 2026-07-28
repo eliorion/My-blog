@@ -2,36 +2,32 @@
 angle: behind-the-scenes
 post_number: 4
 blog_post: 2026-05-25 - mve-itguard-gitops
-generated: 2026-05-26T14:29:18.968732
+generated: 2026-07-27T19:10:18.019766
 ---
 
-My CI runner cannot touch Docker.
-My deploy runner can — but only through a restricted proxy.
+I haven't SSH'd into my server to deploy in months.
+There is no shell in the deploy path at all.
 
-Both are self-hosted runners on the same production server. GitHub-hosted runners can't reach a home network, so self-hosted is required.
+The deploy runner already lives on the server. When a commit lands on main and CI passes:
 
-But that creates a real risk: any pull request can trigger CI. If that runner has Docker access, an attacker can read secrets, inspect containers, or manipulate running services.
+1. The runner checks out the repo
+2. It writes the AGE key from a GitHub secret and decrypts secrets with SOPS
+3. docker compose up -d --remove-orphans --pull always
+4. The key is deleted — in a step marked if: always(), so it disappears even when the deploy fails
 
-So I split them:
+What that buys me:
 
-runner-ci (label: ci)
-→ No Docker access whatsoever
-→ Runs lint + validation only
-→ Triggered by PRs and pushes to main
+Secrets never sit on disk between deployments.
+--pull always fetches fresh images on every deploy.
+--remove-orphans removes containers Git no longer declares.
 
-runner-deploy (label: deploy)
-→ Docker access via socket proxy only
-→ Only starts after CI passes on main
-→ Never triggered by pull requests
+Drift doesn't accumulate. The running state is always a consequence of what's in the repository.
 
-The socket proxy sits between the runner and the Docker daemon:
+SSH still exists — for actual operations: a failing container, logs that aren't surfaced elsewhere, hardware changes.
 
-runner-deploy → TCP:2375 → socket-proxy → unix socket → dockerd
+But deploys? Edit a config. Open a PR. Merge.
+Services update within seconds, without touching the server.
 
-The proxy allows only what `docker compose` needs: CONTAINERS, IMAGES, NETWORKS, VOLUMES, POST, INFO, PING. No direct socket access. No unrestricted API.
+The day I stopped deploying by hand was the day deployments stopped being scary.
 
-CI jobs never see production. Deploy jobs never run unvalidated code.
-
-Two runners, two labels, completely different trust levels. Simple to configure, hard to bypass accidentally.
-
-#security #selfhosted #githubactions #docker #homelab
+#gitops #automation #sops #devops

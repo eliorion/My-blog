@@ -2,31 +2,28 @@
 angle: technical deep-dive
 post_number: 2
 blog_post: 2026-05-25 - mve-itguard-gitops
-generated: 2026-05-26T14:29:18.963154
+generated: 2026-07-27T19:10:18.019096
 ---
 
-One Compose file is a trap.
-Here's the three-file pattern that solved my local/prod parity problem.
+One docker-compose.yaml was quietly putting my production data at risk.
+Now I use three.
 
-My Docker Compose setup splits into three files:
+docker-compose.yaml — the base. What the services ARE: images, safe environment variables, config mounts from the repo.
 
-docker-compose.yaml       ← base: services, images, config mounts
-docker-compose.prod.yaml  ← overlay: ports, data volumes, cloudflared
-docker-compose.ci.yaml    ← overlay: alternate ports for CI
+docker-compose.prod.yaml — the production overlay. Exposed ports, absolute paths for persistent data, secrets from environment variables, the Cloudflare tunnel container.
 
-The base file defines what services *are*. Image versions, environment variables safe anywhere, config file mounts from the repo.
+docker-compose.ci.yaml — the CI overlay. Same shape as prod, different ports, so validation never collides with production bindings on the same machine.
 
-The production overlay adds what's environment-specific: exposed ports, persistent data paths on the host, secrets injected from env vars, and the Cloudflare tunnel that only runs in production.
+Why bother splitting?
 
-The CI overlay mirrors prod but uses different port numbers — so validation jobs don't clash with services already running on the same machine.
+Run docker compose up with just the base file and you get a working local stack. No port clashes with a running production deployment. No risk of accidentally touching production data volumes.
 
-The result:
-→ Developers run `docker compose up` (base only) — no port conflicts, no touching prod data
-→ CI validates with CI overlay — real validation, isolated namespace
-→ Production deploys with prod overlay — explicit, separate project name via `-p mve-itguard-prod`
+And one flag ties it together:
 
-One config file means local dev bleeds into prod. Three files means each environment gets exactly what it needs.
+-p mve-itguard-prod
 
-Docker Compose supports this natively with `-f` overlays. Most people don't use it.
+Naming the Compose project explicitly means the CI stack and the production stack live in completely separate namespaces — even on the same host.
 
-#docker #dockercompose #devops #homelab #selfhosted
+Small pattern. It removed an entire class of "oops, that was prod" mistakes.
+
+#docker #dockercompose #devops #homelab

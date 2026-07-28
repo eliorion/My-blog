@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 300" width="800" height="300">
+  <rect width="800" height="300" fill="#ffffff"/>
+
+  <!-- Left accent panel -->
+  <rect x="0" y="0" width="280" height="300" fill="#0d2137"/>
+
+  <!-- Old kustomize stack (faded overlays) -->
+  <rect x="40" y="52" width="76" height="26" fill="none" stroke="#868e96" stroke-width="2" rx="4"/>
+  <text x="78" y="69" font-family="'Courier New', Courier, monospace" font-size="10" fill="#868e96" text-anchor="middle">base/</text>
+  <rect x="52" y="86" width="76" height="26" fill="none" stroke="#868e96" stroke-width="2" rx="4"/>
+  <text x="90" y="103" font-family="'Courier New', Courier, monospace" font-size="10" fill="#868e96" text-anchor="middle">overlay</text>
+  <rect x="64" y="120" width="76" height="26" fill="none" stroke="#868e96" stroke-width="2" rx="4"/>
+  <text x="102" y="137" font-family="'Courier New', Courier, monospace" font-size="10" fill="#868e96" text-anchor="middle">overlay</text>
+
+  <!-- Migration arrow -->
+  <line x1="150" y1="99" x2="186" y2="99" stroke="#ffd43b" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="4,3"/>
+  <polygon points="184,92 198,99 184,106" fill="#ffd43b"/>
+
+  <!-- Helm chart box -->
+  <rect x="168" y="120" width="84" height="56" fill="none" stroke="#4dabf7" stroke-width="2.5" rx="6"/>
+  <text x="210" y="143" font-family="'Courier New', Courier, monospace" font-size="11" fill="#4dabf7" text-anchor="middle">chart</text>
+  <text x="210" y="160" font-family="'Courier New', Courier, monospace" font-size="10" fill="#74c0fc" text-anchor="middle">values.yaml</text>
+
+  <!-- Render diff check -->
+  <line x1="118" y1="190" x2="118" y2="212" stroke="#51cf66" stroke-width="2" stroke-linecap="round"/>
+  <rect x="46" y="216" width="146" height="30" fill="none" stroke="#51cf66" stroke-width="2.5" rx="6"/>
+  <text x="119" y="236" font-family="'Courier New', Courier, monospace" font-size="12" fill="#51cf66" text-anchor="middle">render diff = 0</text>
+  <text x="119" y="270" font-family="Arial, sans-serif" font-size="11" fill="#adb5bd" text-anchor="middle">same names, same labels</text>
+
+  <!-- Panel right border -->
+  <line x1="280" y1="0" x2="280" y2="300" stroke="#dee2e6" stroke-width="1"/>
+
+  <!-- Project label -->
+  <text x="312" y="42" font-family="'Courier New', Courier, monospace" font-size="13" fill="#adb5bd">asp / deploy migration</text>
+
+  <!-- Post title -->
+  <text x="312" y="82" font-family="Arial, Helvetica, sans-serif" font-size="30" font-weight="bold" fill="#0d2137">From Kustomize</text>
+  <text x="312" y="118" font-family="Arial, Helvetica, sans-serif" font-size="30" font-weight="bold" fill="#0d2137">to Helm</text>
+
+  <!-- Tagline -->
+  <text x="315" y="150" font-family="Arial, Helvetica, sans-serif" font-size="16" fill="#495057">Migrate by proving equivalence, not by rewriting</text>
+
+  <!-- Separator -->
+  <line x1="312" y1="168" x2="775" y2="168" stroke="#e9ecef" stroke-width="1.5"/>
+
+  <!-- Concept chips row 1 -->
+  <rect x="312" y="182" width="80" height="28" fill="#e7f5ff" rx="14" stroke="#4dabf7" stroke-width="1.5"/>
+  <text x="352" y="200" font-family="Arial, sans-serif" font-size="12" fill="#1971c2" text-anchor="middle">Render diff</text>
+
+  <rect x="402" y="182" width="94" height="28" fill="#ebfbee" rx="14" stroke="#51cf66" stroke-width="1.5"/>
+  <text x="449" y="200" font-family="Arial, sans-serif" font-size="12" fill="#2f9e44" text-anchor="middle">Generated lanes</text>
+
+  <rect x="506" y="182" width="86" height="28" fill="#fff9db" rx="14" stroke="#ffd43b" stroke-width="1.5"/>
+  <text x="549" y="200" font-family="Arial, sans-serif" font-size="12" fill="#e67700" text-anchor="middle">bump-chart CI</text>
+
+  <rect x="602" y="182" width="90" height="28" fill="#f8f0fc" rx="14" stroke="#cc5de8" stroke-width="1.5"/>
+  <text x="647" y="200" font-family="Arial, sans-serif" font-size="12" fill="#862e9c" text-anchor="middle">HelmRelease</text>
+
+  <!-- Concept chips row 2 -->
+  <rect x="312" y="220" width="92" height="26" fill="#fff5f5" rx="13" stroke="#ff6b6b" stroke-width="1.5"/>
+  <text x="358" y="237" font-family="Arial, sans-serif" font-size="12" fill="#c92a2a" text-anchor="middle">values split</text>
+
+  <rect x="414" y="220" width="104" height="26" fill="#e6fcf5" rx="13" stroke="#20c997" stroke-width="1.5"/>
+  <text x="466" y="237" font-family="Arial, sans-serif" font-size="12" fill="#0ca678" text-anchor="middle">Two-phase deploy</text>
+
+  <rect x="528" y="220" width="98" height="26" fill="#fff4e6" rx="13" stroke="#ff922b" stroke-width="1.5"/>
+  <text x="577" y="237" font-family="Arial, sans-serif" font-size="12" fill="#d9480f" text-anchor="middle">helm lint + smoke</text>
+
+  <rect x="636" y="220" width="86" height="26" fill="#e7f5ff" rx="13" stroke="#74c0fc" stroke-width="1.5"/>
+  <text x="679" y="237" font-family="Arial, sans-serif" font-size="12" fill="#1971c2" text-anchor="middle">Kustomize dev</text>
+
+  <!-- Bottom caption -->
+  <text x="312" y="278" font-family="Arial, Helvetica, sans-serif" font-size="13" fill="#adb5bd">Same rendered YAML · one chart for the fleet · each tool at its best</text>
+</svg>

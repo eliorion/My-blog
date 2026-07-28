@@ -2,37 +2,33 @@
 angle: hot take
 post_number: 1
 blog_post: 2026-05-25 - mve-itguard-gitops
-generated: 2026-05-26T14:29:18.928589
+generated: 2026-07-27T19:10:18.018764
 ---
 
-You don't need Kubernetes to do GitOps.
-Docker Compose + GitHub Actions is enough.
+Everyone says GitOps needs Kubernetes.
+Mine runs on Docker Compose and a single server.
 
-The GitOps principle is simple:
-— Git is the single source of truth
-— No change happens outside of Git
-— Automation applies what Git declares
+GitOps is a principle, not a tool:
 
-That's it. No mention of Kubernetes, FluxCD, or ArgoCD.
+Git is the single source of truth.
+No change happens outside of Git.
+Automation applies what Git declares.
 
-I run a home security system — cameras, automations, sensors — on a single server. A full Kubernetes cluster would be overengineering. Docker Compose fits the workload.
+For my home security system, a full Kubernetes cluster would be overengineering. A handful of services, one machine, and operational simplicity matters more than scalability.
 
-So I applied the GitOps principle without the ecosystem:
-→ Every config change goes through a pull request
-→ CI validates before merge
-→ GitHub Actions deploys on merge to main
-→ The server's running state always reflects what's in the repo
+So I built the same guarantees with Docker Compose + GitHub Actions:
 
-No manual deployments. No "quick fixes" pushed directly. No configuration drift.
+- Every change goes through a pull request
+- CI lints and validates before anything ships
+- The deploy pipeline triggers only when CI passes on main
+- docker compose up -d --remove-orphans --pull always reconciles the server to match the repo
 
-The workflow:
-1. Edit config locally
-2. Open PR → CI runs automatically
-3. Merge → deploy triggers within seconds
-4. Server updates without touching it
+No ArgoCD. No FluxCD. No cluster.
 
-The tooling is simpler. The principle is identical.
+Same outcome: the server's running state is always a consequence of what the repository declares.
 
-If you've been thinking GitOps is out of reach without Kubernetes — it isn't.
+If your workload fits on one machine, you don't need Kubernetes complexity to get GitOps discipline.
 
-#gitops #docker #homelab #cicd #devops
+Keep the principle. Skip the platform.
+
+#gitops #docker #devops #homelab

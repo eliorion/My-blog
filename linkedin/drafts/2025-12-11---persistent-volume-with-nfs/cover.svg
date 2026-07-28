@@ -1,4 +1,69 @@
-<?xml version="1.0" standalone="no"?>
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 75" width="360" height="75"><!-- svg-source:excalidraw --><metadata></metadata><defs><style class="style-fonts">
-      @font-face { font-family: Excalifont; src: url(data:font/woff2;base64,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); }</style></defs><rect x="0" y="0" width="360" height="75" fill="#ffffff"></rect><g stroke-linecap="round" transform="translate(10 10) rotate(0 170 27.5)"><path d="M13.75 0 C93.34 -3.07, 175.64 -1.87, 326.25 0 M13.75 0 C133.53 0.49, 255.07 0.2, 326.25 0 M326.25 0 C336.55 0.35, 341.91 5.19, 340 13.75 M326.25 0 C336.04 -0.73, 340.02 3.18, 340 13.75 M340 13.75 C341.13 19.8, 341.58 26.61, 340 41.25 M340 13.75 C338.87 23.33, 339.5 32.37, 340 41.25 M340 41.25 C339.44 48.8, 337.2 55.01, 326.25 55 M340 41.25 C340.53 52.12, 334.16 55.04, 326.25 55 M326.25 55 C262.55 52.36, 199.43 53.35, 13.75 55 M326.25 55 C211.23 55.58, 97.4 56.43, 13.75 55 M13.75 55 C5.15 56.02, 1.91 52.3, 0 41.25 M13.75 55 C4.74 57, 1.08 50.48, 0 41.25 M0 41.25 C0.77 32.73, 0.88 26.29, 0 13.75 M0 41.25 C-1.1 36.17, -0.85 29.5, 0 13.75 M0 13.75 C1.08 5.15, 3.88 -0.59, 13.75 0 M0 13.75 C-1.21 3.67, 4.35 -1.28, 13.75 0" stroke="#e03131" stroke-width="2" fill="none"></path></g><g transform="translate(112.89799499511719 20) rotate(0 67.10200500488281 17.5)"><text x="67.10200500488281" y="24.668" font-family="Excalifont, Xiaolai, sans-serif, Segoe UI Emoji" font-size="28px" fill="#e03131" text-anchor="middle" style="white-space: pre;" direction="ltr" dominant-baseline="alphabetic">HOMELAB</text></g></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 300" width="800" height="300">
+  <rect width="800" height="300" fill="#ffffff"/>
+
+  <!-- Left accent panel -->
+  <rect x="0" y="0" width="280" height="300" fill="#1a2744"/>
+
+  <!-- Server box -->
+  <rect x="85" y="48" width="110" height="44" rx="4" fill="none" stroke="#4dabf7" stroke-width="3"/>
+  <circle cx="100" cy="70" r="3.5" fill="#51cf66"/>
+  <line x1="115" y1="63" x2="180" y2="63" stroke="#74c0fc" stroke-width="1.5"/>
+  <line x1="115" y1="71" x2="180" y2="71" stroke="#74c0fc" stroke-width="1.5"/>
+  <line x1="115" y1="79" x2="165" y2="79" stroke="#74c0fc" stroke-width="1.5"/>
+
+  <!-- Arrow down -->
+  <line x1="140" y1="92" x2="140" y2="126" stroke="#ff922b" stroke-width="2.5"/>
+  <polygon points="133,124 147,124 140,138" fill="#ff922b"/>
+
+  <!-- Cylinder 1 (NFS volume) -->
+  <path d="M 81,155 v 52 a 34,11 0 0 0 68,0 v -52" fill="none" stroke="#ff922b" stroke-width="3"/>
+  <ellipse cx="115" cy="155" rx="34" ry="11" fill="#1a2744" stroke="#ff922b" stroke-width="3"/>
+  <text x="115" y="190" font-family="'DejaVu Sans Mono', monospace" font-size="14" fill="#74c0fc" text-anchor="middle">nfs</text>
+
+  <!-- Cylinder 2 (replica) -->
+  <path d="M 152,182 v 40 a 26,8 0 0 0 52,0 v -40" fill="none" stroke="#51cf66" stroke-width="2.5"/>
+  <ellipse cx="178" cy="182" rx="26" ry="8" fill="#1a2744" stroke="#51cf66" stroke-width="2.5"/>
+
+  <!-- Signal dots -->
+  <circle cx="220" cy="256" r="3.5" fill="#4dabf7" opacity="0.5"/>
+  <circle cx="236" cy="256" r="3.5" fill="#4dabf7" opacity="0.75"/>
+  <circle cx="252" cy="256" r="3.5" fill="#4dabf7" opacity="1"/>
+
+  <!-- Panel right border -->
+  <line x1="280" y1="0" x2="280" y2="300" stroke="#dee2e6" stroke-width="1"/>
+
+  <!-- Title -->
+  <text x="312" y="95" font-family="'DejaVu Sans Mono', 'Courier New', monospace" font-size="50" font-weight="bold" fill="#1a2744" letter-spacing="-1">persistence</text>
+
+  <!-- Tagline -->
+  <text x="315" y="128" font-family="'DejaVu Sans', Arial, sans-serif" font-size="16" fill="#495057" letter-spacing="0.3">NFS-backed persistent volumes for Kubernetes</text>
+
+  <!-- Separator -->
+  <line x1="312" y1="148" x2="775" y2="148" stroke="#e9ecef" stroke-width="1.5"/>
+
+  <!-- Chips row 1 -->
+  <rect x="312" y="163" width="73" height="28" fill="#e7f5ff" rx="14" stroke="#4dabf7" stroke-width="1.5"/>
+  <text x="348" y="181" font-family="'DejaVu Sans', sans-serif" font-size="12" fill="#1971c2" text-anchor="middle">TrueNAS</text>
+
+  <rect x="395" y="163" width="46" height="28" fill="#fff4e6" rx="14" stroke="#ff922b" stroke-width="1.5"/>
+  <text x="418" y="181" font-family="'DejaVu Sans', sans-serif" font-size="12" fill="#d9480f" text-anchor="middle">NFS</text>
+
+  <rect x="451" y="163" width="46" height="28" fill="#ebfbee" rx="14" stroke="#51cf66" stroke-width="1.5"/>
+  <text x="474" y="181" font-family="'DejaVu Sans', sans-serif" font-size="12" fill="#2f9e44" text-anchor="middle">PVC</text>
+
+  <rect x="507" y="163" width="46" height="28" fill="#ebfbee" rx="14" stroke="#51cf66" stroke-width="1.5"/>
+  <text x="530" y="181" font-family="'DejaVu Sans', sans-serif" font-size="12" fill="#2f9e44" text-anchor="middle">K8s</text>
+
+  <!-- Chips row 2 -->
+  <rect x="312" y="202" width="66" height="26" fill="#f8f0fc" rx="13" stroke="#cc5de8" stroke-width="1.5"/>
+  <text x="345" y="219" font-family="'DejaVu Sans', sans-serif" font-size="12" fill="#862e9c" text-anchor="middle">Pulumi</text>
+
+  <rect x="388" y="202" width="46" height="26" fill="#fff9db" rx="13" stroke="#ffd43b" stroke-width="1.5"/>
+  <text x="411" y="219" font-family="'DejaVu Sans', sans-serif" font-size="12" fill="#e67700" text-anchor="middle">IaC</text>
+
+  <rect x="444" y="202" width="73" height="26" fill="#e6fcf5" rx="13" stroke="#20c997" stroke-width="1.5"/>
+  <text x="480" y="219" font-family="'DejaVu Sans', sans-serif" font-size="12" fill="#0ca678" text-anchor="middle">Storage</text>
+
+  <!-- Bottom caption -->
+  <text x="312" y="272" font-family="'DejaVu Sans', Arial, sans-serif" font-size="13" fill="#adb5bd">TrueNAS share · NFS provisioner · PVC/PV lifecycle</text>
+</svg>

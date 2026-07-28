@@ -1,0 +1,110 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 300" width="800" height="300">
+  <rect width="800" height="300" fill="#ffffff"/>
+
+  <!-- Left accent panel -->
+  <rect x="0" y="0" width="280" height="300" fill="#0b2239"/>
+
+  <!-- Terminal window frame -->
+  <rect x="18" y="22" width="244" height="168" fill="#0d1117" rx="8" stroke="#30363d" stroke-width="1.5"/>
+  <!-- Title bar -->
+  <rect x="18" y="22" width="244" height="22" fill="#161b22" rx="8"/>
+  <rect x="18" y="35" width="244" height="9" fill="#161b22"/>
+  <!-- Traffic lights -->
+  <circle cx="34" cy="33" r="5" fill="#ff5f56"/>
+  <circle cx="50" cy="33" r="5" fill="#ffbd2e"/>
+  <circle cx="66" cy="33" r="5" fill="#27c93f"/>
+  <!-- Title text -->
+  <text x="140" y="37" font-family="'Courier New', Courier, monospace" font-size="9" fill="#8b949e" text-anchor="middle">sysadmin@server</text>
+
+  <!-- Terminal content -->
+  <text x="28" y="62" font-family="'Courier New', Courier, monospace" font-size="9" fill="#8b949e">$ scp keys.txt sysadmin@server:~/</text>
+  <text x="28" y="76" font-family="'Courier New', Courier, monospace" font-size="9" fill="#8b949e">$ scp -r ops/ sysadmin@server:~/</text>
+  <text x="28" y="96" font-family="'Courier New', Courier, monospace" font-size="9" fill="#c9d1d9">$ sudo bash ~/ops/bootstrap ~/keys.txt</text>
+  <text x="28" y="112" font-family="'Courier New', Courier, monospace" font-size="9" fill="#27c93f">[bootstrap] Installing packages...</text>
+  <text x="28" y="126" font-family="'Courier New', Courier, monospace" font-size="9" fill="#27c93f">[bootstrap] Installing Docker...</text>
+  <text x="28" y="140" font-family="'Courier New', Courier, monospace" font-size="9" fill="#27c93f">[bootstrap] Running Ansible...</text>
+  <text x="28" y="154" font-family="'Courier New', Courier, monospace" font-size="9" fill="#27c93f">[bootstrap] Starting runners...</text>
+  <text x="28" y="168" font-family="'Courier New', Courier, monospace" font-size="9" fill="#27c93f">[bootstrap] Done. ~60 seconds.</text>
+  <!-- Cursor blink -->
+  <rect x="28" y="175" width="7" height="10" fill="#58a6ff" opacity="0.8"/>
+
+  <!-- Step badges below terminal -->
+  <!-- Step dots connected by line -->
+  <line x1="38" y1="228" x2="242" y2="228" stroke="#30363d" stroke-width="1.5"/>
+  <!-- Step 1: packages -->
+  <circle cx="50" cy="228" r="10" fill="#0b2239" stroke="#4dabf7" stroke-width="2"/>
+  <text x="50" y="232" font-family="Arial, sans-serif" font-size="8" fill="#4dabf7" text-anchor="middle">1</text>
+  <text x="50" y="248" font-family="Arial, sans-serif" font-size="7" fill="#6c757d" text-anchor="middle">pkgs</text>
+  <!-- Step 2: docker -->
+  <circle cx="88" cy="228" r="10" fill="#0b2239" stroke="#4dabf7" stroke-width="2"/>
+  <text x="88" y="232" font-family="Arial, sans-serif" font-size="8" fill="#4dabf7" text-anchor="middle">2</text>
+  <text x="88" y="248" font-family="Arial, sans-serif" font-size="7" fill="#6c757d" text-anchor="middle">docker</text>
+  <!-- Step 3: clone -->
+  <circle cx="126" cy="228" r="10" fill="#0b2239" stroke="#51cf66" stroke-width="2"/>
+  <text x="126" y="232" font-family="Arial, sans-serif" font-size="8" fill="#51cf66" text-anchor="middle">3</text>
+  <text x="126" y="248" font-family="Arial, sans-serif" font-size="7" fill="#6c757d" text-anchor="middle">clone</text>
+  <!-- Step 4: ansible -->
+  <circle cx="164" cy="228" r="10" fill="#0b2239" stroke="#51cf66" stroke-width="2"/>
+  <text x="164" y="232" font-family="Arial, sans-serif" font-size="8" fill="#51cf66" text-anchor="middle">4</text>
+  <text x="164" y="248" font-family="Arial, sans-serif" font-size="7" fill="#6c757d" text-anchor="middle">ansible</text>
+  <!-- Step 5: runners -->
+  <circle cx="202" cy="228" r="10" fill="#0b2239" stroke="#ffd43b" stroke-width="2"/>
+  <text x="202" y="232" font-family="Arial, sans-serif" font-size="8" fill="#ffd43b" text-anchor="middle">5</text>
+  <text x="202" y="248" font-family="Arial, sans-serif" font-size="7" fill="#6c757d" text-anchor="middle">runners</text>
+  <!-- Step 6: cleanup -->
+  <circle cx="240" cy="228" r="10" fill="#0b2239" stroke="#ff6b6b" stroke-width="2"/>
+  <text x="240" y="232" font-family="Arial, sans-serif" font-size="8" fill="#ff6b6b" text-anchor="middle">6</text>
+  <text x="240" y="248" font-family="Arial, sans-serif" font-size="7" fill="#6c757d" text-anchor="middle">wipe</text>
+
+  <!-- "3–5 min" badge -->
+  <rect x="90" y="262" width="100" height="22" fill="#1a3a1a" rx="5" stroke="#27c93f" stroke-width="1.5"/>
+  <text x="140" y="277" font-family="Arial, sans-serif" font-size="11" fill="#27c93f" text-anchor="middle">3 – 5 minutes</text>
+
+  <!-- Panel right border -->
+  <line x1="280" y1="0" x2="280" y2="300" stroke="#dee2e6" stroke-width="1"/>
+
+  <!-- Project label -->
+  <text x="312" y="42" font-family="'Courier New', Courier, monospace" font-size="13" fill="#adb5bd">mve-itguard / series 5</text>
+
+  <!-- Post title -->
+  <text x="312" y="82" font-family="Arial, Helvetica, sans-serif" font-size="30" font-weight="bold" fill="#0b2239">One Command to</text>
+  <text x="312" y="118" font-family="Arial, Helvetica, sans-serif" font-size="30" font-weight="bold" fill="#0b2239">Provision a Server</text>
+
+  <!-- Tagline -->
+  <text x="315" y="150" font-family="Arial, Helvetica, sans-serif" font-size="15" fill="#495057">Bootstrap + Ansible · Debian · Reproducible from scratch</text>
+
+  <!-- Separator -->
+  <line x1="312" y1="166" x2="775" y2="166" stroke="#e9ecef" stroke-width="1.5"/>
+
+  <!-- Chips row 1 -->
+  <rect x="312" y="180" width="72" height="28" fill="#ebfbee" rx="14" stroke="#51cf66" stroke-width="1.5"/>
+  <text x="348" y="198" font-family="Arial, sans-serif" font-size="12" fill="#2f9e44" text-anchor="middle">Ansible</text>
+
+  <rect x="394" y="180" width="66" height="28" fill="#e7f5ff" rx="14" stroke="#4dabf7" stroke-width="1.5"/>
+  <text x="427" y="198" font-family="Arial, sans-serif" font-size="12" fill="#1971c2" text-anchor="middle">Debian 12</text>
+
+  <rect x="470" y="180" width="82" height="28" fill="#fff9db" rx="14" stroke="#ffd43b" stroke-width="1.5"/>
+  <text x="511" y="198" font-family="Arial, sans-serif" font-size="12" fill="#e67700" text-anchor="middle">Idempotent</text>
+
+  <rect x="562" y="180" width="96" height="28" fill="#f8f0fc" rx="14" stroke="#cc5de8" stroke-width="1.5"/>
+  <text x="610" y="198" font-family="Arial, sans-serif" font-size="12" fill="#862e9c" text-anchor="middle">Two-user model</text>
+
+  <rect x="668" y="180" width="96" height="28" fill="#fff4e6" rx="14" stroke="#ff922b" stroke-width="1.5"/>
+  <text x="716" y="198" font-family="Arial, sans-serif" font-size="12" fill="#d9480f" text-anchor="middle">SSH hardening</text>
+
+  <!-- Chips row 2 -->
+  <rect x="312" y="218" width="88" height="26" fill="#fff5f5" rx="13" stroke="#ff6b6b" stroke-width="1.5"/>
+  <text x="356" y="235" font-family="Arial, sans-serif" font-size="12" fill="#c92a2a" text-anchor="middle">Wipe on exit</text>
+
+  <rect x="410" y="218" width="102" height="26" fill="#e7f5ff" rx="13" stroke="#74c0fc" stroke-width="1.5"/>
+  <text x="461" y="235" font-family="Arial, sans-serif" font-size="12" fill="#1971c2" text-anchor="middle">Backup timer</text>
+
+  <rect x="522" y="218" width="110" height="26" fill="#e6fcf5" rx="13" stroke="#20c997" stroke-width="1.5"/>
+  <text x="577" y="235" font-family="Arial, sans-serif" font-size="12" fill="#0ca678" text-anchor="middle">GitHub App clone</text>
+
+  <rect x="642" y="218" width="122" height="26" fill="#fff9db" rx="13" stroke="#ffd43b" stroke-width="1.5"/>
+  <text x="703" y="235" font-family="Arial, sans-serif" font-size="12" fill="#e67700" text-anchor="middle">Data never touched</text>
+
+  <!-- Bottom caption -->
+  <text x="312" y="278" font-family="Arial, Helvetica, sans-serif" font-size="13" fill="#adb5bd">Copy 2 files · run 1 command · server ready in minutes</text>
+</svg>

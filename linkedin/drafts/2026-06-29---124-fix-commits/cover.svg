@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 300" width="800" height="300">
+  <rect width="800" height="300" fill="#ffffff"/>
+
+  <!-- Left accent panel -->
+  <rect x="0" y="0" width="280" height="300" fill="#0d2137"/>
+
+  <!-- git log label -->
+  <text x="60" y="48" font-family="'Courier New', Courier, monospace" font-size="13" fill="#adb5bd">git log</text>
+
+  <!-- Commit line -->
+  <line x1="80" y1="62" x2="80" y2="252" stroke="#4dabf7" stroke-width="3" stroke-linecap="round"/>
+
+  <!-- Commit dots with fix crosses -->
+  <circle cx="80" cy="70" r="7" fill="#0d2137" stroke="#4dabf7" stroke-width="3"/>
+  <line x1="100" y1="64" x2="112" y2="76" stroke="#ff6b6b" stroke-width="2.5" stroke-linecap="round"/>
+  <line x1="112" y1="64" x2="100" y2="76" stroke="#ff6b6b" stroke-width="2.5" stroke-linecap="round"/>
+  <text x="124" y="75" font-family="'Courier New', Courier, monospace" font-size="11" fill="#868e96">fix: intentation</text>
+
+  <circle cx="80" cy="108" r="7" fill="#0d2137" stroke="#4dabf7" stroke-width="3"/>
+  <line x1="100" y1="102" x2="112" y2="114" stroke="#ff6b6b" stroke-width="2.5" stroke-linecap="round"/>
+  <line x1="112" y1="102" x2="100" y2="114" stroke="#ff6b6b" stroke-width="2.5" stroke-linecap="round"/>
+  <text x="124" y="113" font-family="'Courier New', Courier, monospace" font-size="11" fill="#868e96">fix: port 3006</text>
+
+  <circle cx="80" cy="146" r="7" fill="#0d2137" stroke="#4dabf7" stroke-width="3"/>
+  <line x1="100" y1="140" x2="112" y2="152" stroke="#ff6b6b" stroke-width="2.5" stroke-linecap="round"/>
+  <line x1="112" y1="140" x2="100" y2="152" stroke="#ff6b6b" stroke-width="2.5" stroke-linecap="round"/>
+  <text x="124" y="151" font-family="'Courier New', Courier, monospace" font-size="11" fill="#868e96">fix: to string</text>
+
+  <circle cx="80" cy="184" r="7" fill="#0d2137" stroke="#ffd43b" stroke-width="3"/>
+  <text x="124" y="189" font-family="'Courier New', Courier, monospace" font-size="11" fill="#868e96">fix: label match</text>
+
+  <!-- Last commit: green check -->
+  <circle cx="80" cy="240" r="8" fill="#0d2137" stroke="#51cf66" stroke-width="3"/>
+  <polyline points="99,238 105,246 118,230" fill="none" stroke="#51cf66" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="126" y="245" font-family="'Courier New', Courier, monospace" font-size="11" fill="#51cf66">reconciled</text>
+
+  <!-- Counter -->
+  <text x="60" y="284" font-family="'Courier New', Courier, monospace" font-size="13" fill="#74c0fc">124 / 270 = fixes</text>
+
+  <!-- Panel right border -->
+  <line x1="280" y1="0" x2="280" y2="300" stroke="#dee2e6" stroke-width="1"/>
+
+  <!-- Project label -->
+  <text x="312" y="42" font-family="'Courier New', Courier, monospace" font-size="13" fill="#adb5bd">HomeLab gitDevSecOps / retrospective</text>
+
+  <!-- Post title -->
+  <text x="312" y="82" font-family="Arial, Helvetica, sans-serif" font-size="30" font-weight="bold" fill="#0d2137">124 Fix Commits:</text>
+  <text x="312" y="118" font-family="Arial, Helvetica, sans-serif" font-size="30" font-weight="bold" fill="#0d2137">Learning by Breaking</text>
+
+  <!-- Tagline -->
+  <text x="315" y="150" font-family="Arial, Helvetica, sans-serif" font-size="16" fill="#495057">The git history is the curriculum</text>
+
+  <!-- Separator -->
+  <line x1="312" y1="168" x2="775" y2="168" stroke="#e9ecef" stroke-width="1.5"/>
+
+  <!-- Concept chips row 1 -->
+  <rect x="312" y="182" width="84" height="28" fill="#e7f5ff" rx="14" stroke="#4dabf7" stroke-width="1.5"/>
+  <text x="354" y="200" font-family="Arial, sans-serif" font-size="12" fill="#1971c2" text-anchor="middle">270 commits</text>
+
+  <rect x="406" y="182" width="74" height="28" fill="#fff5f5" rx="14" stroke="#ff6b6b" stroke-width="1.5"/>
+  <text x="443" y="200" font-family="Arial, sans-serif" font-size="12" fill="#c92a2a" text-anchor="middle">124 fixes</text>
+
+  <rect x="490" y="182" width="104" height="28" fill="#fff9db" rx="14" stroke="#ffd43b" stroke-width="1.5"/>
+  <text x="542" y="200" font-family="Arial, sans-serif" font-size="12" fill="#e67700" text-anchor="middle">Push &amp; pray loop</text>
+
+  <rect x="604" y="182" width="110" height="28" fill="#f8f0fc" rx="14" stroke="#cc5de8" stroke-width="1.5"/>
+  <text x="659" y="200" font-family="Arial, sans-serif" font-size="12" fill="#862e9c" text-anchor="middle">YAML indentation</text>
+
+  <!-- Concept chips row 2 -->
+  <rect x="312" y="220" width="92" height="26" fill="#ebfbee" rx="13" stroke="#51cf66" stroke-width="1.5"/>
+  <text x="358" y="237" font-family="Arial, sans-serif" font-size="12" fill="#2f9e44" text-anchor="middle">GLPI day · 29</text>
+
+  <rect x="414" y="220" width="112" height="26" fill="#e7f5ff" rx="13" stroke="#74c0fc" stroke-width="1.5"/>
+  <text x="470" y="237" font-family="Arial, sans-serif" font-size="12" fill="#1971c2" text-anchor="middle">Keycloak day · 21</text>
+
+  <rect x="536" y="220" width="100" height="26" fill="#e6fcf5" rx="13" stroke="#20c997" stroke-width="1.5"/>
+  <text x="586" y="237" font-family="Arial, sans-serif" font-size="12" fill="#0ca678" text-anchor="middle">Lint before push</text>
+
+  <rect x="646" y="220" width="90" height="26" fill="#fff4e6" rx="13" stroke="#ff922b" stroke-width="1.5"/>
+  <text x="691" y="237" font-family="Arial, sans-serif" font-size="12" fill="#d9480f" text-anchor="middle">Public history</text>
+
+  <!-- Bottom caption -->
+  <text x="312" y="278" font-family="Arial, Helvetica, sans-serif" font-size="13" fill="#adb5bd">The cluster was the test environment · every repair became a lesson</text>
+</svg>

@@ -1,37 +1,26 @@
 ---
-angle: key lesson
+angle: key lesson (security)
 post_number: 3
 blog_post: 2026-05-25 - mve-itguard-gitops
-generated: 2026-05-26T14:29:18.964974
+generated: 2026-07-27T19:10:18.019506
 ---
 
-My deploy pipeline doesn't trigger on git push.
-It triggers when CI completes successfully. That difference matters.
+A stranger's pull request could have owned my production server.
+Here's the isolation that prevents it.
 
-In a single pipeline where deploy is a downstream job, one wrong `if:` condition and you're deploying unvalidated code. It's happened to me before.
+My GitHub Actions runners are self-hosted, living on the production box itself. They have to be — GitHub-hosted runners can't reach a home server on a private network.
 
-With GitHub's `workflow_run` event, the pipelines are physically separate:
+That's a scary setup. Any pull request can execute arbitrary code in CI. If that runner can talk to Docker, it can read secrets, inspect containers, touch production services.
 
-on:
-  workflow_run:
-    workflows: ["CI"]
-    types: [completed]
-    branches: [main]
+So the runners are split:
 
-CI must complete and pass. Only then does deploy start. No exceptions.
+runner-ci — lint and validation only. No Docker socket. No path to production. It can check out code and run linters. Nothing more.
 
-The CI pipeline runs two jobs:
-1. Lint — yamllint, shellcheck, ansible-lint, no plaintext .env check
-2. Validate — `docker compose config` with the CI overlay
+runner-deploy — deployments only. It runs after CI passes on main, and it never touches the Docker socket directly. It goes through a socket proxy that allows exactly the API surface docker compose needs: containers, images, networks, volumes, info, ping.
 
-The deploy pipeline runs two jobs:
-1. Rotate — AGE encryption key rotation if needed
-2. Deploy — decrypt secrets, pull images, `docker compose up`
+Untrusted code gets a sandbox.
+Trusted deploys get a narrow, proxied path.
 
-Neither pipeline knows about the other's internals. The deploy pipeline doesn't understand what CI checked. It just knows CI passed.
+If your self-hosted runner has direct Docker socket access on the same machine as production, that's not a pipeline. That's a backdoor waiting for its first PR.
 
-There's also a `workflow_dispatch` trigger for manual redeploys — useful when a service needs restarting without a new commit.
-
-Decoupling pipelines is one of those things that feels like overhead until the day it stops a bad deploy.
-
-#githubactions #cicd #devops #gitops #automation
+#devsecops #githubactions #docker #cicd #security
