@@ -3,6 +3,8 @@ angle: personal story
 post_number: 1
 blog_post: 2025-09-01 - First-step-in-homelab
 generated: 2026-05-26T14:15:18.988493
+published: 2026-07-28T12:52:10.304534
+post_urn: urn:li:share:7487852401324888065
 ---
 
 I'm a software engineer. I build systems every day.
