@@ -123,18 +123,6 @@ def test_post_date_returns_none_invalid_date():
     assert gen.post_date(Path("2026-99-99 - Bad Date")) is None
 
 
-def test_post_date_parses_valid():
-    assert gen.post_date(Path("2026-01-15 - My Post")) == date(2026, 1, 15)
-
-
-def test_post_date_returns_none_no_date():
-    assert gen.post_date(Path("No Date Title")) is None
-
-
-def test_post_date_returns_none_invalid_date():
-    assert gen.post_date(Path("2026-99-99 - Bad Date")) is None
-
-
 def test_find_posts_exits_when_dir_missing(tmp_path, monkeypatch):
     monkeypatch.setattr(gen, "BLOG_POSTS_DIR", tmp_path / "nonexistent")
     with pytest.raises(SystemExit):

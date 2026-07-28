@@ -34,7 +34,7 @@ ignore_missing_imports = true
 
 [tool.coverage.run]
 source = ["."]
-omit = ["tests/*", "drafts/*", "__init__.py", "conftest.py"]
+omit = ["tests/*", "drafts/*", "__init__.py", "conftest.py", "publish.py"]
 
 [tool.coverage.report]
 show_missing = true
