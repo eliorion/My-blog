@@ -1,31 +1,34 @@
 ---
-angle: personal story
+angle: tool spotlight
 post_number: 5
 blog_post: 2026-05-25 - mve-itguard-gitops
-generated: 2026-05-26T14:29:18.971158
+generated: 2026-07-27T19:10:18.019924
+published: 2026-07-28T12:34:15.698191  # posted manually
 ---
 
-I haven't SSH'd into my server to deploy in months.
-Every deployment is triggered by a git push.
+The most underrated GitHub Actions feature I use: workflow_run.
+It turned my CI into a hard gate for production.
 
-This was a hard constraint I set for my home security system: production deployments must never require SSH.
+Most setups I see have deploy as just another job at the end of the pipeline.
 
-No logging into the server to run commands. No deployment script over a remote shell. No "quick fix" pushed directly to avoid the pipeline.
+Mine is a separate workflow entirely. It never runs on push:
 
-When a commit lands on main:
-1. CI runs lint and validation automatically
-2. If CI passes, the deploy pipeline triggers
-3. The self-hosted runner — already running on the server — checks out the repo
-4. Secrets are decrypted from encrypted files committed to Git
-5. `docker compose up --pull always --remove-orphans` runs
-6. The decryption key is immediately deleted from disk (even on failure)
+on:
+  workflow_run:
+    workflows: ["CI"]
+    types: [completed]
+    branches: [main]
 
-Every change is auditable. Every deploy is reproducible. The running state of the server is always a consequence of what the repository declares.
+The deploy pipeline starts only when the CI workflow completes successfully on main. Lint, compose validation, the plaintext-secrets check — all of it becomes a gate you cannot accidentally skip with a config change.
 
-SSH still exists for real operational tasks: debugging a failing container, checking logs, hardware changes. But that's rare.
+Two extra wins:
 
-The interesting side effect: I stopped making manual "temporary" changes that never get committed. If it's not in Git, it doesn't exist.
+workflow_dispatch on the same file gives me manual redeploys of the same commit — perfect for "just restart it" moments, no empty commit needed.
 
-That discipline is the actual value of GitOps. The automation just enforces it.
+And the split maps cleanly onto runner isolation: CI runs on a locked-down runner with zero Docker access, deploy on a separate runner behind a Docker socket proxy.
 
-#gitops #devops #automation #homelab #selfhosted
+One YAML trigger, and "nothing deploys unless CI passes" went from team discipline to physical impossibility.
+
+If your deploy job lives in the same workflow as your tests: what happens when someone edits the needs: line?
+
+#githubactions #cicd #devops #automation

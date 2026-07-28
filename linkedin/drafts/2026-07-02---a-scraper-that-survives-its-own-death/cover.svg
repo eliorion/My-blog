@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 300" width="800" height="300">
+  <rect width="800" height="300" fill="#ffffff"/>
+
+  <!-- Left accent panel -->
+  <rect x="0" y="0" width="280" height="300" fill="#0d2137"/>
+
+  <!-- Dead worker (faded, crossed) -->
+  <rect x="42" y="54" width="60" height="38" fill="none" stroke="#ff6b6b" stroke-width="2.5" rx="5"/>
+  <line x1="50" y1="62" x2="94" y2="84" stroke="#ff6b6b" stroke-width="2"/>
+  <line x1="94" y1="62" x2="50" y2="84" stroke="#ff6b6b" stroke-width="2"/>
+  <text x="72" y="108" font-family="Arial, sans-serif" font-size="10" fill="#ff8787" text-anchor="middle">worker dies</text>
+
+  <!-- URL row returning to queue -->
+  <path d="M 108 73 C 150 73, 150 73, 170 100" stroke="#ffd43b" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-dasharray="4,3"/>
+  <polygon points="163,96 174,106 176,92" fill="#ffd43b"/>
+
+  <!-- Queue (postgres rows) -->
+  <rect x="150" y="108" width="94" height="18" fill="none" stroke="#74c0fc" stroke-width="2" rx="3"/>
+  <rect x="150" y="132" width="94" height="18" fill="none" stroke="#74c0fc" stroke-width="2" rx="3"/>
+  <rect x="150" y="156" width="94" height="18" fill="none" stroke="#74c0fc" stroke-width="2" rx="3"/>
+  <text x="197" y="121" font-family="'Courier New', Courier, monospace" font-size="9" fill="#74c0fc" text-anchor="middle">lease &gt; 900s</text>
+  <text x="197" y="145" font-family="'Courier New', Courier, monospace" font-size="9" fill="#74c0fc" text-anchor="middle">pending</text>
+  <text x="197" y="169" font-family="'Courier New', Courier, monospace" font-size="9" fill="#74c0fc" text-anchor="middle">pending</text>
+
+  <!-- New worker claiming -->
+  <rect x="42" y="196" width="60" height="38" fill="none" stroke="#51cf66" stroke-width="2.5" rx="5"/>
+  <circle cx="54" cy="207" r="3" fill="#51cf66"/>
+  <text x="72" y="220" font-family="Arial, sans-serif" font-size="9" fill="#51cf66" text-anchor="middle">claim()</text>
+  <path d="M 148 140 C 120 150, 110 170, 104 200" stroke="#51cf66" stroke-width="2" fill="none" stroke-linecap="round" stroke-dasharray="4,3"/>
+  <polygon points="98,194 104,208 111,196" fill="#51cf66"/>
+
+  <!-- Heartbeat line -->
+  <polyline points="40,262 70,262 80,248 92,274 102,262 240,262" fill="none" stroke="#4dabf7" stroke-width="2" stroke-linecap="round"/>
+
+  <!-- Panel right border -->
+  <line x1="280" y1="0" x2="280" y2="300" stroke="#dee2e6" stroke-width="1"/>
+
+  <!-- Project label -->
+  <text x="312" y="42" font-family="'Courier New', Courier, monospace" font-size="13" fill="#adb5bd">asp / reliability patterns</text>
+
+  <!-- Post title -->
+  <text x="312" y="82" font-family="Arial, Helvetica, sans-serif" font-size="30" font-weight="bold" fill="#0d2137">A Scraper That Survives</text>
+  <text x="312" y="118" font-family="Arial, Helvetica, sans-serif" font-size="30" font-weight="bold" fill="#0d2137">Its Own Death</text>
+
+  <!-- Tagline -->
+  <text x="315" y="150" font-family="Arial, Helvetica, sans-serif" font-size="16" fill="#495057">Assume every worker will die — make death boring</text>
+
+  <!-- Separator -->
+  <line x1="312" y1="168" x2="775" y2="168" stroke="#e9ecef" stroke-width="1.5"/>
+
+  <!-- Concept chips row 1 -->
+  <rect x="312" y="182" width="96" height="28" fill="#e7f5ff" rx="14" stroke="#4dabf7" stroke-width="1.5"/>
+  <text x="360" y="200" font-family="Arial, sans-serif" font-size="12" fill="#1971c2" text-anchor="middle">Loop heartbeat</text>
+
+  <rect x="418" y="182" width="86" height="28" fill="#ebfbee" rx="14" stroke="#51cf66" stroke-width="1.5"/>
+  <text x="461" y="200" font-family="Arial, sans-serif" font-size="12" fill="#2f9e44" text-anchor="middle">Stale reclaim</text>
+
+  <rect x="514" y="182" width="98" height="28" fill="#fff9db" rx="14" stroke="#ffd43b" stroke-width="1.5"/>
+  <text x="563" y="200" font-family="Arial, sans-serif" font-size="12" fill="#e67700" text-anchor="middle">Adaptive pacing</text>
+
+  <rect x="622" y="182" width="76" height="28" fill="#fff5f5" rx="14" stroke="#ff6b6b" stroke-width="1.5"/>
+  <text x="660" y="200" font-family="Arial, sans-serif" font-size="12" fill="#c92a2a" text-anchor="middle">429 jail</text>
+
+  <!-- Concept chips row 2 -->
+  <rect x="312" y="220" width="100" height="26" fill="#e6fcf5" rx="13" stroke="#20c997" stroke-width="1.5"/>
+  <text x="362" y="237" font-family="Arial, sans-serif" font-size="12" fill="#0ca678" text-anchor="middle">Lease, not lock</text>
+
+  <rect x="422" y="220" width="112" height="26" fill="#f8f0fc" rx="13" stroke="#cc5de8" stroke-width="1.5"/>
+  <text x="478" y="237" font-family="Arial, sans-serif" font-size="12" fill="#862e9c" text-anchor="middle">Interruptible cooldown</text>
+
+  <rect x="544" y="220" width="90" height="26" fill="#fff4e6" rx="13" stroke="#ff922b" stroke-width="1.5"/>
+  <text x="589" y="237" font-family="Arial, sans-serif" font-size="12" fill="#d9480f" text-anchor="middle">No lost URLs</text>
+
+  <rect x="644" y="220" width="78" height="26" fill="#e7f5ff" rx="13" stroke="#74c0fc" stroke-width="1.5"/>
+  <text x="683" y="237" font-family="Arial, sans-serif" font-size="12" fill="#1971c2" text-anchor="middle">3Gi limits</text>
+
+  <!-- Bottom caption -->
+  <text x="312" y="278" font-family="Arial, Helvetica, sans-serif" font-size="13" fill="#adb5bd">Probes that tell the truth · leases that expire · jails that are weather, not damage</text>
+</svg>

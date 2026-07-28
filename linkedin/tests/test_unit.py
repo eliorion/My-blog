@@ -111,35 +111,16 @@ def test_write_drafts_does_not_overwrite_existing_cover(tmp_path, monkeypatch):
     assert (draft_dir / "cover.svg").read_text() == "<svg>original</svg>"
 
 
-def _mock_client(response_text: str) -> MagicMock:
-    mock_content = MagicMock()
-    mock_content.text = response_text
-    mock_response = MagicMock()
-    mock_response.content = [mock_content]
-    client = MagicMock()
-    client.messages.create.return_value = mock_response
-    return client
+def test_post_date_parses_valid():
+    assert gen.post_date(Path("2026-01-15 - My Post")) == date(2026, 1, 15)
 
 
-def test_generate_posts_parses_clean_json():
-    payload = {"posts": [{"angle": "story", "hook": "H", "body": "B", "hashtags": ["homelab"]}]}
-    result = gen.generate_posts("content", _mock_client(json.dumps(payload)), "claude-sonnet-4-6")
-    assert len(result) == 1
-    assert result[0]["angle"] == "story"
+def test_post_date_returns_none_no_date():
+    assert gen.post_date(Path("No Date Title")) is None
 
 
-def test_generate_posts_strips_markdown_fence():
-    payload = {"posts": [{"angle": "a", "hook": "h", "body": "b", "hashtags": []}]}
-    wrapped = f"```json\n{json.dumps(payload)}\n```"
-    result = gen.generate_posts("content", _mock_client(wrapped), "claude-sonnet-4-6")
-    assert result[0]["angle"] == "a"
-
-
-def test_generate_posts_strips_plain_fence():
-    payload = {"posts": [{"angle": "a", "hook": "h", "body": "b", "hashtags": []}]}
-    wrapped = f"```\n{json.dumps(payload)}\n```"
-    result = gen.generate_posts("content", _mock_client(wrapped), "claude-sonnet-4-6")
-    assert len(result) == 1
+def test_post_date_returns_none_invalid_date():
+    assert gen.post_date(Path("2026-99-99 - Bad Date")) is None
 
 
 def test_post_date_parses_valid():

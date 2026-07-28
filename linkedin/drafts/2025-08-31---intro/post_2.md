@@ -3,6 +3,7 @@ angle: tool spotlight
 post_number: 2
 blog_post: 2025-08-31 - Intro
 generated: 2026-05-26T14:14:25.198537
+published: skipped
 ---
 
 Hugo + GitHub Pages = a blog live in under an hour.

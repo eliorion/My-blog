@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 300" width="800" height="300">
+  <rect width="800" height="300" fill="#ffffff"/>
+
+  <!-- Left accent panel -->
+  <rect x="0" y="0" width="280" height="300" fill="#1a2744"/>
+
+  <!-- Root folder -->
+  <polygon points="55,70 55,62 75,62 81,70" fill="none" stroke="#20c997" stroke-width="2.5" stroke-linejoin="round"/>
+  <rect x="55" y="70" width="52" height="36" rx="4" fill="none" stroke="#20c997" stroke-width="2.5"/>
+
+  <!-- Tree lines -->
+  <line x1="81" y1="106" x2="81" y2="195" stroke="#74c0fc" stroke-width="2"/>
+  <line x1="81" y1="135" x2="115" y2="135" stroke="#74c0fc" stroke-width="2"/>
+  <line x1="81" y1="165" x2="115" y2="165" stroke="#74c0fc" stroke-width="2"/>
+  <line x1="81" y1="195" x2="115" y2="195" stroke="#74c0fc" stroke-width="2"/>
+
+  <!-- Child folders -->
+  <rect x="115" y="123" width="44" height="24" rx="3" fill="none" stroke="#4dabf7" stroke-width="2"/>
+  <rect x="115" y="153" width="44" height="24" rx="3" fill="none" stroke="#ffd43b" stroke-width="2.5"/>
+  <rect x="115" y="183" width="44" height="24" rx="3" fill="none" stroke="#4dabf7" stroke-width="2"/>
+  <!-- Highlighted folder content dots -->
+  <circle cx="127" cy="165" r="2.5" fill="#ffd43b"/>
+  <circle cx="137" cy="165" r="2.5" fill="#ffd43b"/>
+  <circle cx="147" cy="165" r="2.5" fill="#ffd43b"/>
+
+  <!-- Pencil (refactor) -->
+  <g transform="rotate(45 205 190)">
+    <rect x="197" y="160" width="16" height="50" rx="2" fill="none" stroke="#cc5de8" stroke-width="2.5"/>
+    <polygon points="197,210 213,210 205,226" fill="none" stroke="#cc5de8" stroke-width="2.5" stroke-linejoin="round"/>
+    <line x1="197" y1="170" x2="213" y2="170" stroke="#cc5de8" stroke-width="2"/>
+  </g>
+
+  <!-- Signal dots (top right) -->
+  <circle cx="228" cy="60" r="3.5" fill="#4dabf7" opacity="0.5"/>
+  <circle cx="244" cy="60" r="3.5" fill="#4dabf7" opacity="0.75"/>
+  <circle cx="260" cy="60" r="3.5" fill="#4dabf7" opacity="1"/>
+
+  <!-- Panel right border -->
+  <line x1="280" y1="0" x2="280" y2="300" stroke="#dee2e6" stroke-width="1"/>
+
+  <!-- Title -->
+  <text x="312" y="95" font-family="'DejaVu Sans Mono', 'Courier New', monospace" font-size="50" font-weight="bold" fill="#1a2744" letter-spacing="-1">refactoring</text>
+
+  <!-- Tagline -->
+  <text x="315" y="128" font-family="'DejaVu Sans', Arial, sans-serif" font-size="16" fill="#495057" letter-spacing="0.3">Cleaner structure, simpler CI/CD for this blog</text>
+
+  <!-- Separator -->
+  <line x1="312" y1="148" x2="775" y2="148" stroke="#e9ecef" stroke-width="1.5"/>
+
+  <!-- Chips row 1 -->
+  <rect x="312" y="163" width="53" height="28" fill="#e6fcf5" rx="14" stroke="#20c997" stroke-width="1.5"/>
+  <text x="338" y="181" font-family="'DejaVu Sans', sans-serif" font-size="12" fill="#0ca678" text-anchor="middle">Hugo</text>
+
+  <rect x="375" y="163" width="120" height="28" fill="#e7f5ff" rx="14" stroke="#4dabf7" stroke-width="1.5"/>
+  <text x="435" y="181" font-family="'DejaVu Sans', sans-serif" font-size="12" fill="#1971c2" text-anchor="middle">GitHub Actions</text>
+
+  <rect x="505" y="163" width="60" height="28" fill="#fff4e6" rx="14" stroke="#ff922b" stroke-width="1.5"/>
+  <text x="535" y="181" font-family="'DejaVu Sans', sans-serif" font-size="12" fill="#d9480f" text-anchor="middle">CI/CD</text>
+
+  <!-- Chips row 2 -->
+  <rect x="312" y="202" width="120" height="26" fill="#fff9db" rx="13" stroke="#ffd43b" stroke-width="1.5"/>
+  <text x="372" y="219" font-family="'DejaVu Sans', sans-serif" font-size="12" fill="#e67700" text-anchor="middle">Johnny Decimal</text>
+
+  <rect x="442" y="202" width="80" height="26" fill="#f8f0fc" rx="13" stroke="#cc5de8" stroke-width="1.5"/>
+  <text x="482" y="219" font-family="'DejaVu Sans', sans-serif" font-size="12" fill="#862e9c" text-anchor="middle">PaperMod</text>
+
+  <!-- Bottom caption -->
+  <text x="312" y="272" font-family="'DejaVu Sans', Arial, sans-serif" font-size="13" fill="#adb5bd">Hugo + PaperMod · Johnny Decimal · GitHub Actions</text>
+</svg>

@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 300" width="800" height="300">
+  <rect width="800" height="300" fill="#ffffff"/>
+
+  <!-- Left accent panel -->
+  <rect x="0" y="0" width="280" height="300" fill="#0d2137"/>
+
+  <!-- Old K3s node (faded) -->
+  <rect x="44" y="60" width="80" height="46" fill="none" stroke="#868e96" stroke-width="2.5" rx="6"/>
+  <text x="84" y="80" font-family="'Courier New', Courier, monospace" font-size="12" fill="#868e96" text-anchor="middle">K3s</text>
+  <text x="84" y="96" font-family="Arial, sans-serif" font-size="9" fill="#868e96" text-anchor="middle">1 VM node</text>
+  <line x1="52" y1="102" x2="116" y2="66" stroke="#868e96" stroke-width="1.5"/>
+
+  <!-- Migration arrow -->
+  <line x1="90" y1="118" x2="90" y2="150" stroke="#ffd43b" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="4,3"/>
+  <polygon points="83,148 90,162 97,148" fill="#ffd43b"/>
+
+  <!-- New Talos nodes (3 replicas) -->
+  <rect x="34" y="166" width="50" height="34" fill="none" stroke="#4dabf7" stroke-width="2.5" rx="5"/>
+  <circle cx="47" cy="176" r="3" fill="#51cf66"/>
+  <rect x="92" y="166" width="50" height="34" fill="none" stroke="#4dabf7" stroke-width="2.5" rx="5"/>
+  <circle cx="105" cy="176" r="3" fill="#51cf66"/>
+  <rect x="150" y="166" width="50" height="34" fill="none" stroke="#4dabf7" stroke-width="2.5" rx="5"/>
+  <circle cx="163" cy="176" r="3" fill="#51cf66"/>
+  <text x="117" y="220" font-family="'Courier New', Courier, monospace" font-size="12" fill="#74c0fc" text-anchor="middle">Talos · 3 nodes</text>
+
+  <!-- Immutable label -->
+  <rect x="60" y="236" width="114" height="26" fill="none" stroke="#51cf66" stroke-width="2" rx="13"/>
+  <text x="117" y="253" font-family="Arial, sans-serif" font-size="11" fill="#51cf66" text-anchor="middle">immutable · no SSH</text>
+
+  <!-- Panel right border -->
+  <line x1="280" y1="0" x2="280" y2="300" stroke="#dee2e6" stroke-width="1"/>
+
+  <!-- Project label -->
+  <text x="312" y="42" font-family="'Courier New', Courier, monospace" font-size="13" fill="#adb5bd">HomeLab gitDevSecOps</text>
+
+  <!-- Post title -->
+  <text x="312" y="82" font-family="Arial, Helvetica, sans-serif" font-size="30" font-weight="bold" fill="#0d2137">From K3s to Talos</text>
+  <text x="312" y="118" font-family="Arial, Helvetica, sans-serif" font-size="30" font-weight="bold" fill="#0d2137">Rebuilding the Cluster</text>
+
+  <!-- Tagline -->
+  <text x="315" y="150" font-family="Arial, Helvetica, sans-serif" font-size="16" fill="#495057">Declarative from the OS up</text>
+
+  <!-- Separator -->
+  <line x1="312" y1="168" x2="775" y2="168" stroke="#e9ecef" stroke-width="1.5"/>
+
+  <!-- Concept chips -->
+  <rect x="312" y="182" width="86" height="28" fill="#e7f5ff" rx="14" stroke="#4dabf7" stroke-width="1.5"/>
+  <text x="355" y="200" font-family="Arial, sans-serif" font-size="12" fill="#1971c2" text-anchor="middle">Talos Linux</text>
+
+  <rect x="408" y="182" width="98" height="28" fill="#ebfbee" rx="14" stroke="#51cf66" stroke-width="1.5"/>
+  <text x="457" y="200" font-family="Arial, sans-serif" font-size="12" fill="#2f9e44" text-anchor="middle">CNPG + R2 backup</text>
+
+  <rect x="516" y="182" width="76" height="28" fill="#fff9db" rx="14" stroke="#ffd43b" stroke-width="1.5"/>
+  <text x="554" y="200" font-family="Arial, sans-serif" font-size="12" fill="#e67700" text-anchor="middle">Longhorn</text>
+
+  <rect x="602" y="182" width="90" height="28" fill="#f8f0fc" rx="14" stroke="#cc5de8" stroke-width="1.5"/>
+  <text x="647" y="200" font-family="Arial, sans-serif" font-size="12" fill="#862e9c" text-anchor="middle">Tailscale operator</text>
+
+  <!-- Second row -->
+  <rect x="312" y="220" width="72" height="26" fill="#fff5f5" rx="13" stroke="#ff6b6b" stroke-width="1.5"/>
+  <text x="348" y="237" font-family="Arial, sans-serif" font-size="12" fill="#c92a2a" text-anchor="middle">Flux GitOps</text>
+
+  <rect x="394" y="220" width="96" height="26" fill="#e6fcf5" rx="13" stroke="#20c997" stroke-width="1.5"/>
+  <text x="442" y="237" font-family="Arial, sans-serif" font-size="12" fill="#0ca678" text-anchor="middle">ARC self-hosted CI</text>
+
+  <rect x="500" y="220" width="84" height="26" fill="#fff4e6" rx="13" stroke="#ff922b" stroke-width="1.5"/>
+  <text x="542" y="237" font-family="Arial, sans-serif" font-size="12" fill="#d9480f" text-anchor="middle">Telegram alerts</text>
+
+  <rect x="594" y="220" width="98" height="26" fill="#e7f5ff" rx="13" stroke="#74c0fc" stroke-width="1.5"/>
+  <text x="643" y="237" font-family="Arial, sans-serif" font-size="12" fill="#1971c2" text-anchor="middle">Private tailnet only</text>
+
+  <!-- Bottom caption -->
+  <text x="312" y="278" font-family="Arial, Helvetica, sans-serif" font-size="13" fill="#adb5bd">Retire the hand-managed VM · declare the nodes · trust the cluster</text>
+</svg>

@@ -1,0 +1,11 @@
+{
+  "name": "preview-blog",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "shoot": "node shoot.mjs"
+  },
+  "dependencies": {
+    "playwright": "^1.49.0"
+  }
+}

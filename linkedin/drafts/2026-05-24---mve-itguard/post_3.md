@@ -3,6 +3,7 @@ angle: key lesson
 post_number: 3
 blog_post: 2026-05-24 - mve-itguard
 generated: 2026-05-26T14:28:03.162359
+published: 2026-07-28T12:34:15.698191  # posted manually
 ---
 
 I run Kubernetes at home for learning.

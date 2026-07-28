@@ -3,6 +3,7 @@ angle: hot take
 post_number: 3
 blog_post: 2025-08-31 - Intro
 generated: 2026-05-26T14:14:25.198921
+published: skipped
 ---
 
 Waiting until your setup is 'good enough' to share?

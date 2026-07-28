@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 300" width="800" height="300">
+  <rect width="800" height="300" fill="#ffffff"/>
+
+  <!-- Left accent panel -->
+  <rect x="0" y="0" width="280" height="300" fill="#0d2137"/>
+
+  <!-- GitHub job box -->
+  <rect x="52" y="42" width="136" height="32" fill="none" stroke="#ffd43b" stroke-width="2.5" rx="6"/>
+  <text x="120" y="63" font-family="'Courier New', Courier, monospace" font-size="12" fill="#ffd43b" text-anchor="middle">GitHub job queue</text>
+
+  <!-- Arrow down to ARC -->
+  <line x1="120" y1="74" x2="120" y2="102" stroke="#4dabf7" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="4,3"/>
+  <polygon points="113,100 120,114 127,100" fill="#4dabf7"/>
+
+  <!-- ARC controller -->
+  <rect x="76" y="116" width="88" height="30" fill="none" stroke="#4dabf7" stroke-width="2.5" rx="6"/>
+  <text x="120" y="136" font-family="'Courier New', Courier, monospace" font-size="12" fill="#4dabf7" text-anchor="middle">ARC</text>
+
+  <!-- Fan out to runner pods -->
+  <line x1="120" y1="146" x2="62" y2="180" stroke="#51cf66" stroke-width="2" stroke-linecap="round"/>
+  <line x1="120" y1="146" x2="120" y2="180" stroke="#51cf66" stroke-width="2" stroke-linecap="round"/>
+  <line x1="120" y1="146" x2="196" y2="178" stroke="#cc5de8" stroke-width="2" stroke-linecap="round"/>
+
+  <!-- Default runner pods -->
+  <rect x="40" y="184" width="44" height="28" fill="none" stroke="#51cf66" stroke-width="2" rx="4"/>
+  <text x="62" y="202" font-family="Arial, sans-serif" font-size="9" fill="#51cf66" text-anchor="middle">runner</text>
+  <rect x="98" y="184" width="44" height="28" fill="none" stroke="#51cf66" stroke-width="2" rx="4"/>
+  <text x="120" y="202" font-family="Arial, sans-serif" font-size="9" fill="#51cf66" text-anchor="middle">runner</text>
+
+  <!-- XL runner pod -->
+  <rect x="158" y="180" width="76" height="52" fill="none" stroke="#cc5de8" stroke-width="2.5" rx="5"/>
+  <text x="196" y="200" font-family="Arial, sans-serif" font-size="10" fill="#cc5de8" text-anchor="middle">arc-xl</text>
+  <text x="196" y="216" font-family="'Courier New', Courier, monospace" font-size="9" fill="#cc5de8" text-anchor="middle">k3d e2e</text>
+
+  <!-- Scale-to-zero note -->
+  <text x="91" y="232" font-family="'Courier New', Courier, monospace" font-size="10" fill="#adb5bd" text-anchor="middle">0-2 · ephemeral</text>
+
+  <!-- Bottom caption in panel -->
+  <text x="140" y="268" font-family="'Courier New', Courier, monospace" font-size="11" fill="#74c0fc" text-anchor="middle">3 nodes · all control planes</text>
+
+  <!-- Panel right border -->
+  <line x1="280" y1="0" x2="280" y2="300" stroke="#dee2e6" stroke-width="1"/>
+
+  <!-- Project label -->
+  <text x="312" y="42" font-family="'Courier New', Courier, monospace" font-size="13" fill="#adb5bd">HomeLab gitDevSecOps / ci on the cluster</text>
+
+  <!-- Post title -->
+  <text x="312" y="82" font-family="Arial, Helvetica, sans-serif" font-size="30" font-weight="bold" fill="#0d2137">CI Runners Inside</text>
+  <text x="312" y="118" font-family="Arial, Helvetica, sans-serif" font-size="30" font-weight="bold" fill="#0d2137">the Cluster</text>
+
+  <!-- Tagline -->
+  <text x="315" y="150" font-family="Arial, Helvetica, sans-serif" font-size="16" fill="#495057">ARC on Talos — every limit exists for a reason</text>
+
+  <!-- Separator -->
+  <line x1="312" y1="168" x2="775" y2="168" stroke="#e9ecef" stroke-width="1.5"/>
+
+  <!-- Concept chips row 1 -->
+  <rect x="312" y="182" width="78" height="28" fill="#e7f5ff" rx="14" stroke="#4dabf7" stroke-width="1.5"/>
+  <text x="351" y="200" font-family="Arial, sans-serif" font-size="12" fill="#1971c2" text-anchor="middle">ARC 0.14.2</text>
+
+  <rect x="400" y="182" width="88" height="28" fill="#ebfbee" rx="14" stroke="#51cf66" stroke-width="1.5"/>
+  <text x="444" y="200" font-family="Arial, sans-serif" font-size="12" fill="#2f9e44" text-anchor="middle">Scale to zero</text>
+
+  <rect x="498" y="182" width="48" height="28" fill="#fff9db" rx="14" stroke="#ffd43b" stroke-width="1.5"/>
+  <text x="522" y="200" font-family="Arial, sans-serif" font-size="12" fill="#e67700" text-anchor="middle">dind</text>
+
+  <rect x="556" y="182" width="110" height="28" fill="#e6fcf5" rx="14" stroke="#20c997" stroke-width="1.5"/>
+  <text x="611" y="200" font-family="Arial, sans-serif" font-size="12" fill="#0ca678" text-anchor="middle">Nexus pypi-proxy</text>
+
+  <!-- Concept chips row 2 -->
+  <rect x="312" y="220" width="82" height="26" fill="#f8f0fc" rx="13" stroke="#cc5de8" stroke-width="1.5"/>
+  <text x="353" y="237" font-family="Arial, sans-serif" font-size="12" fill="#862e9c" text-anchor="middle">XL pool 1–3</text>
+
+  <rect x="404" y="220" width="96" height="26" fill="#fff4e6" rx="13" stroke="#ff922b" stroke-width="1.5"/>
+  <text x="452" y="237" font-family="Arial, sans-serif" font-size="12" fill="#d9480f" text-anchor="middle">podAntiAffinity</text>
+
+  <rect x="510" y="220" width="94" height="26" fill="#fff5f5" rx="13" stroke="#ff6b6b" stroke-width="1.5"/>
+  <text x="557" y="237" font-family="Arial, sans-serif" font-size="12" fill="#c92a2a" text-anchor="middle">PSA privileged</text>
+
+  <rect x="614" y="220" width="88" height="26" fill="#e7f5ff" rx="13" stroke="#74c0fc" stroke-width="1.5"/>
+  <text x="658" y="237" font-family="Arial, sans-serif" font-size="12" fill="#1971c2" text-anchor="middle">etcd guarded</text>
+
+  <!-- Bottom caption -->
+  <text x="312" y="278" font-family="Arial, Helvetica, sans-serif" font-size="13" fill="#adb5bd">Ephemeral runner pods · declared CRD ordering · capacity planned line by line</text>
+</svg>

@@ -3,6 +3,7 @@ on:
   push:
     branches:
       - main
+      - dev
   workflow_dispatch:
 permissions:
   contents: read
@@ -24,11 +25,22 @@ jobs:
       NODE_VERSION: 24.14.0
       TZ: Europe/Oslo
     steps:
-      - name: Checkout
+      - name: Checkout production (main)
         uses: actions/checkout@v6
         with:
+          ref: main
           submodules: recursive
           fetch-depth: 0
+          path: main
+      - name: Checkout preview (dev)
+        id: checkout-dev
+        continue-on-error: true
+        uses: actions/checkout@v6
+        with:
+          ref: dev
+          submodules: recursive
+          fetch-depth: 0
+          path: dev
       - name: Setup Go
         uses: actions/setup-go@v6
         with:
@@ -63,12 +75,9 @@ jobs:
           echo "Go: $(go version)"
           echo "Hugo: $(hugo version)"
           echo "Node.js: $(node --version)"
-      - name: Install Node.js dependencies
-        run: |
-          [[ -f package-lock.json || -f npm-shrinkwrap.json ]] && npm ci || true
       - name: Configure Git
         run: |
-          git config core.quotepath false
+          git config --global core.quotepath false
       - name: Cache restore
         id: cache-restore
         uses: actions/cache/restore@v5
@@ -76,13 +85,27 @@ jobs:
           path: ${{ runner.temp }}/hugo_cache
           key: hugo-${{ github.run_id }}
           restore-keys: hugo-
-      - name: Build the site
+      - name: Build production site (main → root)
         run: |
           hugo build \
-            -s blog \
+            -s main/blog \
             --gc \
             --minify \
             --baseURL "${{ steps.pages.outputs.base_url }}/" \
+            --destination "${{ github.workspace }}/_site" \
+            --cacheDir "${{ runner.temp }}/hugo_cache"
+      - name: Build preview site (dev → /dev/)
+        if: steps.checkout-dev.outcome == 'success'
+        run: |
+          hugo build \
+            -s dev/blog \
+            --gc \
+            --minify \
+            --environment preview \
+            --buildDrafts \
+            --buildFuture \
+            --baseURL "${{ steps.pages.outputs.base_url }}/dev/" \
+            --destination "${{ github.workspace }}/_site/dev" \
             --cacheDir "${{ runner.temp }}/hugo_cache"
       - name: Cache save
         id: cache-save
@@ -93,7 +116,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./blog/public
+          path: ./_site
   deploy:
     environment:
       name: github-pages

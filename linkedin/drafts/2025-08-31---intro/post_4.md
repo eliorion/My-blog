@@ -3,6 +3,7 @@ angle: behind the scenes
 post_number: 4
 blog_post: 2025-08-31 - Intro
 generated: 2026-05-26T14:14:25.199186
+published: skipped
 ---
 
 I almost spun up a VPS just to write blog posts.
