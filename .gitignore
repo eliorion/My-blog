@@ -3,6 +3,10 @@ public/
 .claude/
 *.xml
 __pycache__/
+*.pyc
 .venv/
 *.html
 *.coverage
+.agents/
+linkedin/.linkedin_token.json
+linkedin/.env

@@ -3,6 +3,7 @@ angle: behind-the-scenes
 post_number: 5
 blog_post: 2026-05-29 - mve-itguard-bootstrap
 generated: 2026-07-27T20:03:40.273893
+published: 2026-07-28T12:34:15.698191  # posted manually
 ---
 
 My deploy pipeline runs with zero sudo access.

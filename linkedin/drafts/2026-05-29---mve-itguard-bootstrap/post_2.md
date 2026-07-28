@@ -3,6 +3,7 @@ angle: technical deep-dive
 post_number: 2
 blog_post: 2026-05-29 - mve-itguard-bootstrap
 generated: 2026-07-27T20:03:40.273323
+published: 2026-07-28T12:34:15.698191  # posted manually
 ---
 
 How do you clone a private repo on a brand-new server

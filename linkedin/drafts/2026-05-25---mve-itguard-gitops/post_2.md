@@ -3,6 +3,7 @@ angle: technical deep-dive
 post_number: 2
 blog_post: 2026-05-25 - mve-itguard-gitops
 generated: 2026-07-27T19:10:18.019096
+published: 2026-07-28T12:34:15.698191  # posted manually
 ---
 
 One docker-compose.yaml was quietly putting my production data at risk.

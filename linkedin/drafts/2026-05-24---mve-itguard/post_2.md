@@ -3,6 +3,7 @@ angle: personal story
 post_number: 2
 blog_post: 2026-05-24 - mve-itguard
 generated: 2026-05-26T14:28:03.160225
+published: 2026-07-28T12:34:15.698191  # posted manually
 ---
 
 Someone needed a security camera system with no cloud dependency and no monthly bill.

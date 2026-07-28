@@ -3,6 +3,7 @@ angle: tool spotlight
 post_number: 5
 blog_post: 2026-05-24 - mve-itguard
 generated: 2026-05-26T14:28:03.163686
+published: 2026-07-28T12:34:15.698191  # posted manually
 ---
 
 Frigate does real-time AI object detection on your cameras — completely locally, no cloud, no API calls.

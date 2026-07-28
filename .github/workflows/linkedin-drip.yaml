@@ -1,0 +1,34 @@
+name: LinkedIn drip
+
+on:
+  schedule:
+    - cron: "30 7 * * 1-5" # weekdays 07:30 UTC
+  workflow_dispatch:
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: dev
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+
+      - name: Publish next draft
+        env:
+          LINKEDIN_ACCESS_TOKEN: ${{ secrets.LINKEDIN_ACCESS_TOKEN }}
+          LINKEDIN_PERSON_URN: ${{ secrets.LINKEDIN_PERSON_URN }}
+        run: python linkedin/publish.py next
+
+      - name: Commit publish state
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add linkedin/drafts
+          git diff --cached --quiet || git commit -m "chore(linkedin): mark draft as published [skip ci]"
+          git push origin dev

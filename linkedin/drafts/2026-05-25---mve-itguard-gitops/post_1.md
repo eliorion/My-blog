@@ -3,6 +3,7 @@ angle: hot take
 post_number: 1
 blog_post: 2026-05-25 - mve-itguard-gitops
 generated: 2026-07-27T19:10:18.018764
+published: 2026-07-28T12:34:15.698191  # posted manually
 ---
 
 Everyone says GitOps needs Kubernetes.

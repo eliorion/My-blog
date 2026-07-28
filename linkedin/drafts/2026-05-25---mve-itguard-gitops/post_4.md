@@ -3,6 +3,7 @@ angle: behind-the-scenes
 post_number: 4
 blog_post: 2026-05-25 - mve-itguard-gitops
 generated: 2026-07-27T19:10:18.019766
+published: 2026-07-28T12:34:15.698191  # posted manually
 ---
 
 I haven't SSH'd into my server to deploy in months.

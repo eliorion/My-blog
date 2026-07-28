@@ -3,6 +3,7 @@ angle: key lesson (security)
 post_number: 3
 blog_post: 2026-05-25 - mve-itguard-gitops
 generated: 2026-07-27T19:10:18.019506
+published: 2026-07-28T12:34:15.698191  # posted manually
 ---
 
 A stranger's pull request could have owned my production server.

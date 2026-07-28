@@ -3,6 +3,7 @@ angle: hot take
 post_number: 1
 blog_post: 2026-05-24 - mve-itguard
 generated: 2026-05-26T14:28:03.157377
+published: 2026-07-28T12:34:15.698191  # posted manually
 ---
 
 Your Ring camera footage isn't yours.

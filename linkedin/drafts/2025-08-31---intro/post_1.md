@@ -3,6 +3,7 @@ angle: personal story
 post_number: 1
 blog_post: 2025-08-31 - Intro
 generated: 2026-05-26T14:14:25.195214
+published: skipped
 ---
 
 I've been building projects for years.

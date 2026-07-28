@@ -3,6 +3,7 @@ angle: tool spotlight
 post_number: 5
 blog_post: 2026-05-25 - mve-itguard-gitops
 generated: 2026-07-27T19:10:18.019924
+published: 2026-07-28T12:34:15.698191  # posted manually
 ---
 
 The most underrated GitHub Actions feature I use: workflow_run.

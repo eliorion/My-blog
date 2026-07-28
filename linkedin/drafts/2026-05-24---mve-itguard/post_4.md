@@ -3,6 +3,7 @@ angle: technical deep-dive
 post_number: 4
 blog_post: 2026-05-24 - mve-itguard
 generated: 2026-05-26T14:28:03.162882
+published: 2026-07-28T12:34:15.698191  # posted manually
 ---
 
 5 open-source tools. 1 Debian server. 0 ports exposed to the internet.

@@ -3,6 +3,7 @@ angle: hot take
 post_number: 1
 blog_post: 2026-05-29 - mve-itguard-bootstrap
 generated: 2026-07-27T20:03:40.273025
+published: 2026-07-28T12:34:15.698191  # posted manually
 ---
 
 The worst infrastructure isn't the one that breaks.

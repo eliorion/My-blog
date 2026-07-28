@@ -3,6 +3,7 @@ angle: tool spotlight
 post_number: 4
 blog_post: 2026-05-29 - mve-itguard-bootstrap
 generated: 2026-07-27T20:03:40.273753
+published: 2026-07-28T12:34:15.698191  # posted manually
 ---
 
 Every secret my server needs is committed to Git.
