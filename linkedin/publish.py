@@ -32,6 +32,7 @@ AUTH_URL = "https://www.linkedin.com/oauth/v2/authorization"
 TOKEN_URL = "https://www.linkedin.com/oauth/v2/accessToken"
 USERINFO_URL = "https://api.linkedin.com/v2/userinfo"
 POSTS_URL = "https://api.linkedin.com/rest/posts"
+IMAGES_INIT_URL = "https://api.linkedin.com/rest/images?action=initializeUpload"
 SCOPES = "openid profile w_member_social"
 
 # LinkedIn "little text format" reserved characters that must be escaped in commentary.
@@ -183,6 +184,30 @@ def _is_published(path: Path) -> bool:
     return "published:" in fm
 
 
+def _rest_headers(token: str) -> dict:
+    return {
+        "Authorization": f"Bearer {token}",
+        "X-Restli-Protocol-Version": "2.0.0",
+        "LinkedIn-Version": API_VERSION,
+        "Content-Type": "application/json",
+    }
+
+
+def _upload_image(token: str, person_urn: str, png: Path) -> str:
+    init = json.dumps({"initializeUploadRequest": {"owner": person_urn}}).encode()
+    _, _, raw = _http_json(IMAGES_INIT_URL, data=init, headers=_rest_headers(token))
+    value = json.loads(raw)["value"]
+    req = urllib.request.Request(
+        value["uploadUrl"],
+        data=png.read_bytes(),
+        method="PUT",
+        headers={"Authorization": f"Bearer {token}"},
+    )
+    with urllib.request.urlopen(req, timeout=60):
+        pass
+    return value["image"]
+
+
 def publish_file(path: Path):
     token, person_urn = _load_token()
     text = path.read_text(encoding="utf-8")
@@ -191,32 +216,29 @@ def publish_file(path: Path):
         print(f"Already published: {path}", file=sys.stderr)
         sys.exit(1)
 
-    payload = json.dumps(
-        {
-            "author": person_urn,
-            "commentary": _escape_commentary(body.strip()),
-            "visibility": "PUBLIC",
-            "distribution": {
-                "feedDistribution": "MAIN_FEED",
-                "targetEntities": [],
-                "thirdPartyDistributionChannels": [],
-            },
-            "lifecycleState": "PUBLISHED",
-            "isReshareDisabledByAuthor": False,
-        }
-    ).encode()
+    post: dict = {
+        "author": person_urn,
+        "commentary": _escape_commentary(body.strip()),
+        "visibility": "PUBLIC",
+        "distribution": {
+            "feedDistribution": "MAIN_FEED",
+            "targetEntities": [],
+            "thirdPartyDistributionChannels": [],
+        },
+        "lifecycleState": "PUBLISHED",
+        "isReshareDisabledByAuthor": False,
+    }
+
+    png = path.with_suffix(".png")
+    if png.exists():
+        angle = re.search(r"^angle:\s*(.+)$", fm, re.MULTILINE)
+        alt = angle.group(1).strip() if angle else "cover"
+        post["content"] = {"media": {"id": _upload_image(token, person_urn, png), "altText": alt}}
+
+    payload = json.dumps(post).encode()
 
     try:
-        status, headers, _ = _http_json(
-            POSTS_URL,
-            data=payload,
-            headers={
-                "Authorization": f"Bearer {token}",
-                "X-Restli-Protocol-Version": "2.0.0",
-                "LinkedIn-Version": API_VERSION,
-                "Content-Type": "application/json",
-            },
-        )
+        status, headers, _ = _http_json(POSTS_URL, data=payload, headers=_rest_headers(token))
     except urllib.error.HTTPError as e:
         print(f"LinkedIn API error {e.code}: {e.read().decode()[:500]}", file=sys.stderr)
         sys.exit(1)
