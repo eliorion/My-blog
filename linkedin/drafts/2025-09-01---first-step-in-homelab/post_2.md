@@ -3,6 +3,8 @@ angle: key lesson
 post_number: 2
 blog_post: 2025-09-01 - First-step-in-homelab
 generated: 2026-05-26T14:15:18.989583
+published: 2026-07-29T09:58:47.115672
+post_urn: urn:li:share:7488171155133079552
 ---
 
 I watched every Kubernetes tutorial on YouTube.
