@@ -52,8 +52,11 @@ def _load_env() -> dict:
     return env
 
 
+_USER_AGENT = "linkedin-drip/1.0 (blog publishing; +https://eliorion.github.io/My-blog)"
+
+
 def _http_json(url: str, data: bytes | None = None, headers: dict | None = None, method: str | None = None):
-    req = urllib.request.Request(url, data=data, headers=headers or {}, method=method)
+    req = urllib.request.Request(url, data=data, headers={"User-Agent": _USER_AGENT, **(headers or {})}, method=method)
     with urllib.request.urlopen(req, timeout=30) as resp:
         return resp.status, dict(resp.headers), resp.read().decode()
 
@@ -201,7 +204,7 @@ def _upload_image(token: str, person_urn: str, png: Path) -> str:
         value["uploadUrl"],
         data=png.read_bytes(),
         method="PUT",
-        headers={"Authorization": f"Bearer {token}"},
+        headers={"Authorization": f"Bearer {token}", "User-Agent": _USER_AGENT},
     )
     with urllib.request.urlopen(req, timeout=60):
         pass
