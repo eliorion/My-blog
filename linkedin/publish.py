@@ -233,7 +233,10 @@ def publish_file(path: Path):
     if png.exists():
         angle = re.search(r"^angle:\s*(.+)$", fm, re.MULTILINE)
         alt = angle.group(1).strip() if angle else "cover"
-        post["content"] = {"media": {"id": _upload_image(token, person_urn, png), "altText": alt}}
+        try:
+            post["content"] = {"media": {"id": _upload_image(token, person_urn, png), "altText": alt}}
+        except urllib.error.HTTPError as e:
+            print(f"Image upload failed ({e.code}): {e.read().decode()[:300]} - posting text-only", file=sys.stderr)
 
     payload = json.dumps(post).encode()
 
