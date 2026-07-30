@@ -249,8 +249,22 @@ def publish_file(path: Path):
     print(f"Published {path.relative_to(_HERE)} -> {post_urn}")
 
 
+def _published_today(posts: list[Path]) -> bool:
+    today = datetime.now().date().isoformat()
+    for post in posts:
+        fm, _ = _split_frontmatter(post.read_text(encoding="utf-8"))
+        m = re.search(r"^published:\s*(\d{4}-\d{2}-\d{2})", fm, re.MULTILINE)
+        if m and m.group(1) == today:
+            return True
+    return False
+
+
 def cmd_next():
-    for post in _draft_posts():
+    posts = _draft_posts()
+    if _published_today(posts):
+        print("Already published today - nothing to do.")
+        return
+    for post in posts:
         if not _is_published(post):
             publish_file(post)
             return

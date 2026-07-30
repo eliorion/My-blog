@@ -3,6 +3,7 @@ name: LinkedIn drip
 on:
   schedule:
     - cron: "47 7 * * 1-5" # weekdays 07:47 UTC (odd minute avoids GitHub's crowded :00/:30 slots)
+    - cron: "47 9 * * 1-5" # retry slot - no-op if the 07:47 run already published (daily guard)
   workflow_dispatch:
 
 jobs:
