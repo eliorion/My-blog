@@ -3,6 +3,8 @@ angle: technical deep-dive
 post_number: 3
 blog_post: 2025-09-01 - First-step-in-homelab
 generated: 2026-05-26T14:15:18.989972
+published: 2026-07-30T08:03:16.770957
+post_urn: urn:li:share:7488504473967812609
 ---
 
 My homelab Kubernetes stack — and why I chose each piece.
