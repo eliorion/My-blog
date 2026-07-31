@@ -3,6 +3,8 @@ angle: hot take
 post_number: 4
 blog_post: 2025-09-01 - First-step-in-homelab
 generated: 2026-05-26T14:15:18.990316
+published: 2026-07-31T09:23:25.818882
+post_urn: urn:li:share:7488887033776562176
 ---
 
 Most engineers who use Kubernetes daily have never actually run their own cluster.
