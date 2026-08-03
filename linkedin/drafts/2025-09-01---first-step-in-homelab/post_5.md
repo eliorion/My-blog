@@ -3,6 +3,8 @@ angle: tool spotlight
 post_number: 5
 blog_post: 2025-09-01 - First-step-in-homelab
 generated: 2026-05-26T14:15:18.991418
+published: 2026-08-03T10:59:40.642784
+post_urn: urn:li:share:7489998418556133376
 ---
 
 Nobody talks about Talos Linux enough.
