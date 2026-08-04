@@ -3,6 +3,8 @@ angle: personal story
 post_number: 1
 blog_post: 2025-09-02 - Network-configuration
 generated: 2026-05-26T14:16:09.046221
+published: 2026-08-04T10:20:40.480963
+post_urn: urn:li:share:7490350989661691905
 ---
 
 I lost 4 hours to network problems that had nothing to do with Kubernetes.
