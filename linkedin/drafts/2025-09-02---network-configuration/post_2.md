@@ -3,6 +3,8 @@ angle: technical deep-dive
 post_number: 2
 blog_post: 2025-09-02 - Network-configuration
 generated: 2026-05-26T14:16:09.048401
+published: 2026-08-05T10:16:55.143046
+post_urn: urn:li:share:7490712433788088320
 ---
 
 Static IPs in a Kubernetes homelab without a real router.
