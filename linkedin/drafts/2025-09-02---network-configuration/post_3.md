@@ -3,6 +3,8 @@ angle: key lesson
 post_number: 3
 blog_post: 2025-09-02 - Network-configuration
 generated: 2026-05-26T14:16:09.048881
+published: 2026-08-06T10:18:30.809202
+post_urn: urn:li:share:7491075222796742656
 ---
 
 Your cluster config can be perfect and your cluster still won't work.
