@@ -3,6 +3,8 @@ angle: tool spotlight
 post_number: 4
 blog_post: 2025-09-02 - Network-configuration
 generated: 2026-05-26T14:16:09.049306
+published: 2026-08-07T08:41:00.794475
+post_urn: urn:li:share:7491413073954611200
 ---
 
 dnsmasq is the most underrated tool in a homelab stack.
