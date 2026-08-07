@@ -1,0 +1,76 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: linkedin-drip
+  namespace: linkedin-drip
+spec:
+  # One post per weekday morning. Cluster egress is the home ISP IP, so the
+  # LinkedIn Images API accepts the upload (GitHub-hosted runners are blocked).
+  schedule: "47 7 * * 1-5"
+  timeZone: Europe/Paris
+  concurrencyPolicy: Forbid
+  startingDeadlineSeconds: 3600
+  successfulJobsHistoryLimit: 3
+  failedJobsHistoryLimit: 3
+  jobTemplate:
+    spec:
+      backoffLimit: 2
+      template:
+        spec:
+          restartPolicy: OnFailure
+          containers:
+            - name: publish
+              image: python:3.13-alpine
+              envFrom:
+                - secretRef:
+                    name: linkedin-drip
+              resources:
+                requests:
+                  cpu: 50m
+                  memory: 64Mi
+                limits:
+                  cpu: 500m
+                  memory: 256Mi
+              securityContext:
+                allowPrivilegeEscalation: false
+                capabilities:
+                  drop: ["ALL"]
+              volumeMounts:
+                - name: work
+                  mountPath: /work
+              command: ["/bin/sh", "-c"]
+              args:
+                - |
+                  set -eu
+                  apk add --no-cache git >/dev/null
+
+                  cd /work
+                  git clone --depth 1 --single-branch --branch dev \
+                    "https://x-access-token:${GITHUB_TOKEN}@github.com/eliorion/My-blog.git" repo
+                  cd repo
+                  git config user.name "linkedin-drip[bot]"
+                  git config user.email "linkedin-drip@users.noreply.github.com"
+
+                  python linkedin/publish.py next
+
+                  git add linkedin/drafts
+                  if git diff --cached --quiet; then
+                    echo "nothing to record"
+                    exit 0
+                  fi
+                  git commit -m "chore(linkedin): mark draft as published [skip ci]"
+
+                  # dev also receives commits from laptop/CI, so rebase before pushing
+                  for attempt in 1 2 3; do
+                    if git push origin dev; then
+                      exit 0
+                    fi
+                    echo "push rejected, rebasing (attempt ${attempt})"
+                    git pull --rebase --depth 50 origin dev
+                  done
+                  echo "could not push publish state after 3 attempts" >&2
+                  exit 1
+          volumes:
+            - name: work
+              emptyDir:
+                sizeLimit: 1Gi

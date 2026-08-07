@@ -1,186 +1,159 @@
-# Plan: move the LinkedIn auto-post job onto the homelab K8s cluster (ARC)
+# Plan: run the LinkedIn auto-post job on the homelab K8s cluster
 
-Audience: a Claude session working in the homelab/cluster project. This document is
-self-contained — it carries all context needed from the blog repo side.
+Audience: a Claude session working in the homelab / cluster project. Self-contained —
+it carries every fact needed from the blog repo side.
 
-## Why move
+Deliverable already committed in this repo: `k8s/linkedin-drip/` (namespace, CronJob,
+secret template, kustomization). The work left is deploying it and wiring the secret.
 
-The blog repo (`github.com:eliorion/My-blog`) publishes one LinkedIn post per weekday
-via the GitHub Actions workflow `.github/workflows/linkedin-drip.yaml`. Two problems
-with GitHub-hosted runners:
+## Why the job must run in the cluster
 
-1. **Images blocked.** LinkedIn's WAF returns an HTML 400 to `POST /rest/images?action=initializeUpload`
-   from GitHub's datacenter IP ranges (confirmed 2026-07-30 and 2026-07-31; an explicit
-   User-Agent did not help — it is IP-based). The same call succeeds from a residential IP.
-   Result: posts publish text-only via the built-in fallback, never with their cover image.
-2. **Cron latency.** GitHub `schedule` triggers fire up to ~2h20 late or get dropped
-   (observed 2026-07-29 → 2026-07-31).
+The blog repo (`github.com:eliorion/My-blog`) publishes one LinkedIn post per weekday.
+It ran on GitHub-hosted runners and hit two walls:
 
-Running the job on an ARC (Actions Runner Controller) runner inside the homelab cluster
-fixes (1) because egress uses the home ISP IP. It does NOT fix (2) by itself — the
-`schedule` event is still evaluated by GitHub. Step 6 optionally fixes (2) with an
-in-cluster CronJob that triggers the workflow at an exact time.
+1. **Images blocked by IP.** `POST /rest/images?action=initializeUpload` returns an HTML
+   400 (WAF page) from GitHub's datacenter ranges — reproduced 2026-07-30 and 2026-07-31.
+   An explicit `User-Agent` changed nothing; the same call succeeds from the home
+   connection. Posts therefore went out text-only through the script's fallback.
+2. **Cron latency.** GitHub `schedule` fired up to ~2h20 late or was dropped entirely
+   on three consecutive days.
 
-## Current state (blog repo side — do not re-implement, it all works)
+The cluster sits on the home ISP address, so both problems disappear: uploads are
+accepted and `CronJob` timing is exact. No Tailscale or egress gateway is involved —
+that is deliberate; routing this namespace through a VPN exit would reintroduce a
+datacenter IP and bring back the WAF block.
 
-- `linkedin/publish.py` — stdlib-only publisher. `python linkedin/publish.py next`:
-  - picks the oldest `linkedin/drafts/*/post_N.md` without `published:` in frontmatter
-  - exits early ("Already published today") if any draft was published today — the daily
-    guard that makes multiple cron slots / retries idempotent
-  - uploads `post_N.png` (same basename as the .md) via the LinkedIn Images API and
-    attaches it; on upload failure it logs the error body and publishes text-only
-  - on success writes `published:` + `post_urn:` into the draft's frontmatter
-- `.github/workflows/linkedin-drip.yaml` — triggers: cron `47 7 * * 1-5`, cron
-  `47 9 * * 1-5` (retry slot, no-ops via the daily guard), `workflow_dispatch`.
-  Steps: checkout `dev` → setup-python 3.13 → `python linkedin/publish.py next` →
-  commit the frontmatter mark back to `dev` (`[skip ci]`).
-- Repo secrets (already set): `LINKEDIN_ACCESS_TOKEN` (member OAuth token,
-  **expires 2026-09-26**, renew via `python linkedin/publish.py auth` locally),
-  `LINKEDIN_PERSON_URN`. The script reads both from env.
-- The repo is **public**. Default branch `main`; the queue lives on `dev` (main is
-  merged forward regularly).
+## How the publisher works (already built, do not reimplement)
 
-## Target architecture
+`linkedin/publish.py` — standard library only, no dependencies to install.
 
-```
-GitHub schedule/dispatch ──► job "publish" ──► runs-on: <ARC scale set>
-                                              pod in homelab cluster
-                                              egress via home ISP IP
-                                              └─ python publish.py next
-                                                 ├─ Images API  ✓ (no WAF block)
-                                                 └─ Posts API   ✓
-(optional) k8s CronJob ──► gh workflow_dispatch at exact time, weekdays
-```
+- `python linkedin/publish.py next`
+  - picks the oldest `linkedin/drafts/*/post_N.md` whose frontmatter has no `published:`
+  - exits early with "Already published today" if any draft was published today —
+    the guard that makes retries and overlapping triggers idempotent
+  - uploads the matching `post_N.png` through the Images API and attaches it; if the
+    upload fails it logs the response body and publishes text-only rather than aborting
+  - on success writes `published:` and `post_urn:` into that draft's frontmatter
+- `python linkedin/publish.py status` — queue state, safe to run anywhere
+- Credentials come from the environment: `LINKEDIN_ACCESS_TOKEN`, `LINKEDIN_PERSON_URN`
 
-## Implementation steps (cluster side)
+Queue state lives in git (the frontmatter marker), so the job clones `dev`, publishes,
+commits the marker and pushes back. Branch layout: default branch is `main`, the drip
+queue and its markers live on `dev`, `main` is merged forward regularly.
 
-### 1. Inventory the existing ARC install
+## What is deployed
 
-```bash
-kubectl get autoscalingrunnersets -A \
-  -o custom-columns=NS:.metadata.namespace,NAME:.metadata.name,URL:.spec.githubConfigUrl
-kubectl get pods -n <arc-system-namespace>   # controller + listeners
-helm list -A | grep -i gha                   # chart + version
-```
+`k8s/linkedin-drip/cronjob.yaml`, summarised:
 
-Record: controller namespace/version, the auth method in use (GitHub App vs PAT),
-and the secret that holds it.
+- schedule `47 7 * * 1-5`, `timeZone: Europe/Paris`, `concurrencyPolicy: Forbid`
+- image `python:3.13-alpine`; `apk add --no-cache git` at start (the only runtime install)
+- clones `dev` shallow into an `emptyDir`, runs `publish.py next`, commits the marker,
+  pushes with up to three rebase retries because laptop and CI also push to `dev`
+- secret `linkedin-drip` mounted with `envFrom`
 
-### 2. Add a runner scale set for My-blog
+## Deployment steps
 
-If the existing scale set's `githubConfigUrl` already covers `eliorion/My-blog`
-(org-level URL), skip to step 3 and reuse its name.
+### 1. Create the secret
 
-Otherwise install a new `gha-runner-scale-set` release, following the cluster's
-existing GitOps pattern (same chart version as the current install):
+Template: `k8s/linkedin-drip/secret.example.yaml`. Encrypt it with the cluster's usual
+SOPS/age flow (same pattern as the mve-itguard secrets) — never commit plaintext.
 
-```yaml
-# values — adjust names to cluster conventions
-githubConfigUrl: https://github.com/eliorion/My-blog
-githubConfigSecret: <existing ARC github secret, or a new one with the same App/PAT>
-minRunners: 0
-maxRunners: 1
-runnerScaleSetName: blog-runner        # ← this is the `runs-on:` value
-```
+| Key | Value | Where it comes from |
+| --- | --- | --- |
+| `LINKEDIN_ACCESS_TOKEN` | member OAuth token | `python linkedin/publish.py auth` on the laptop |
+| `LINKEDIN_PERSON_URN` | `urn:li:person:DxKqhDF5zi` | printed by the same command |
+| `GITHUB_TOKEN` | fine-grained PAT, **Contents: read and write** on `eliorion/My-blog` only | github.com/settings/personal-access-tokens |
 
-Notes:
-- PAT scope needed for repo-level registration: `repo`. GitHub App needs
-  Actions (read) + Administration (read/write) on the repo — same as the existing install.
-- `minRunners: 0` — ephemeral pod spins up per job, nothing idles.
-- Runner image must have `git`, and `python3` ≥ 3.10 available or installable;
-  the default ARC runner image + `actions/setup-python` works.
+The current LinkedIn token **expires 2026-09-26**. Renewal is manual: run the auth
+command locally, then update this secret and the `LINKEDIN_ACCESS_TOKEN` repo secret.
 
-### 3. Verify egress IP (critical — this is the whole point)
+### 2. Apply the manifests
 
-From a pod on the same node pool / egress path as the runners:
+Through the homelab GitOps repo, matching its existing structure:
 
 ```bash
-kubectl run ipcheck --rm -it --image=curlimages/curl --restart=Never -- \
-  curl -s https://ifconfig.me
+kubectl apply -k k8s/linkedin-drip/     # or copy the directory into the GitOps tree
 ```
 
-Must return the **home ISP IP**, not a VPN/tunnel datacenter exit. If cluster egress
-routes through a VPS/Cloudflare/Tailscale exit node with a datacenter IP, exempt the
-runner namespace from that route — otherwise the WAF block returns and the move is pointless.
-
-### 4. Confirm the runner registers
+### 3. Verify egress before trusting the schedule
 
 ```bash
-# from any machine with gh authenticated to eliorion
-gh api repos/eliorion/My-blog/actions/runners --jq '.runners[].name'
+kubectl run ipcheck -n linkedin-drip --rm -it --restart=Never \
+  --image=curlimages/curl -- curl -s https://ifconfig.me
 ```
 
-Scale-set runners are ephemeral: also check the listener pod logs show a successful
-session for `blog-runner`.
+Must print the home ISP address. If it prints a VPS/Cloudflare/Tailscale exit address,
+this namespace is being routed through a tunnel — exempt it, otherwise images stay blocked.
 
-### 5. Blog repo change (coordinate with a session in the blog repo, or do it here)
+### 4. Trigger one run manually
 
-In `.github/workflows/linkedin-drip.yaml`, job `publish`:
-
-```diff
--    runs-on: ubuntu-latest
-+    runs-on: blog-runner
+```bash
+kubectl create job -n linkedin-drip --from=cronjob/linkedin-drip drip-test
+kubectl logs -n linkedin-drip -l job-name=drip-test -f
 ```
 
-Keep everything else identical. Commit to `dev`, merge to `main` (cron reads main).
+Success looks like:
 
-**Security hardening — required, the repo is public:**
-- Repo → Settings → Actions → General → Fork pull request workflows:
-  "Require approval for all outside collaborators".
-- Leave the other workflows (`linkedin-generate`, `linkedin.yaml` CI, Hugo deploy)
-  on `ubuntu-latest` — only the drip job needs the homelab IP; smaller attack surface.
-- ARC ephemeral runners: verify `containerMode` is default (no privileged, no docker-in-docker
-  needed for this job).
-
-### 6. Optional: exact-time trigger (fixes GitHub cron latency)
-
-Keep the GitHub crons as fallback (the daily guard makes double-triggers no-ops) and add
-an in-cluster CronJob that calls the dispatch API at the desired local time:
-
-```yaml
-apiVersion: batch/v1
-kind: CronJob
-metadata:
-  name: linkedin-drip-trigger
-spec:
-  schedule: "45 7 * * 1-5"        # cluster TZ; set spec.timeZone explicitly, e.g. Europe/Paris
-  jobTemplate:
-    spec:
-      template:
-        spec:
-          restartPolicy: Never
-          containers:
-            - name: trigger
-              image: curlimages/curl
-              envFrom: [{secretRef: {name: github-dispatch-token}}]   # PAT: actions:write on My-blog
-              command:
-                - sh
-                - -c
-                - >
-                  curl -sf -X POST
-                  -H "Authorization: Bearer $GH_TOKEN"
-                  -H "Accept: application/vnd.github+json"
-                  https://api.github.com/repos/eliorion/My-blog/actions/workflows/linkedin-drip.yaml/dispatches
-                  -d '{"ref":"main"}'
+```
+Published drafts/2025-09-02---network-configuration/post_4.md -> urn:li:share:74888...
 ```
 
-### 7. End-to-end test
+with **no** `Image upload failed` line above it. If that line appears, the pod's egress
+is still a datacenter IP — go back to step 3.
 
-1. `gh workflow run "LinkedIn drip" --ref main` (or wait for the CronJob).
-2. Job must be picked up by a `blog-runner` pod (check `kubectl get pods` during the run).
-3. Run log must show `Published drafts/... -> urn:li:share:...`
-   **without** a preceding `Image upload failed` line — that line means the WAF still
-   blocks and the egress IP (step 3) needs fixing.
-4. The published LinkedIn post shows the variant cover image.
-5. The run's last step pushed a `chore(linkedin): mark draft as published [skip ci]`
-   commit to `dev`.
+Then confirm on LinkedIn that the post carries its cover image, and that a
+`chore(linkedin): mark draft as published [skip ci]` commit landed on `dev`.
+
+Clean up: `kubectl delete job -n linkedin-drip drip-test`.
+
+### 5. Nothing to disable on GitHub
+
+Already done in this repo: `.github/workflows/linkedin-drip.yaml` no longer has a
+`schedule:` trigger, only `workflow_dispatch`. That prevents a GitHub run from beating
+the cluster to the next queued draft and publishing it without its image. It stays
+available as a manual fallback (`gh workflow run "LinkedIn drip" --ref main`) if the
+cluster is down — accepting a text-only post that day.
+
+## Monitoring
+
+The job is silent when healthy. Options, in order of effort:
+
+- `kubectl get cronjob -n linkedin-drip` — `LAST SCHEDULE` should be today
+- alert on `kube_job_status_failed` for the namespace if Prometheus is already scraping
+  kube-state-metrics
+- the blog repo shows daily `chore(linkedin): mark draft as published` commits on `dev`;
+  a gap of more than a day means the job stopped
 
 ## Rollback
 
-Revert `runs-on:` to `ubuntu-latest` on `main`. Publishing continues (text-only images
-fallback), nothing else depends on the cluster.
+Suspend the CronJob and hand the schedule back to GitHub:
 
-## Known dates
+```bash
+kubectl patch cronjob -n linkedin-drip linkedin-drip -p '{"spec":{"suspend":true}}'
+```
 
-- LinkedIn member token expires **2026-09-26** — renew locally
-  (`python linkedin/publish.py auth`), update repo secret `LINKEDIN_ACCESS_TOKEN`.
+then restore the `schedule:` block in `.github/workflows/linkedin-drip.yaml`
+(`47 7 * * 1-5` and `47 9 * * 1-5`, UTC). Posts resume text-only.
+
+## Optional hardening
+
+`apk add git` at every run is the one fragile point (needs Alpine repos reachable) and
+forces the container to start as root. Pre-baking a small image with `python:3.13-alpine`
+plus `git` removes both: publish it to the homelab registry, swap the `image:` field,
+drop the `apk` line, and add `runAsNonRoot: true`.
+
+## Out of scope: draft generation
+
+A separate workflow, `.github/workflows/linkedin-generate.yaml`, creates the drafts when
+a new blog post is pushed. It runs the `claude` CLI and needs the repo secret
+`CLAUDE_CODE_OAUTH_TOKEN` (produced by `claude setup-token`, one-year lifetime), which is
+**not set yet** — until it is, that workflow fails fast with an explicit error and
+generation stays manual:
+
+```bash
+python linkedin/generate.py generate   # writes drafts for any new blog post
+node linkedin/variant_covers.mjs       # renders the missing post_N.png covers
+```
+
+Both are idempotent and skip existing work. This is unrelated to the cluster job —
+the publisher only consumes what is already committed.

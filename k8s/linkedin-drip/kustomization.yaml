@@ -1,0 +1,8 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+resources:
+  - namespace.yaml
+  - cronjob.yaml
+  # secret.example.yaml is a template: add the encrypted secret from the
+  # homelab GitOps repo here instead of committing real values.
