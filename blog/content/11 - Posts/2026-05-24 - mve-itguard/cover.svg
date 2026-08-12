@@ -44,33 +44,33 @@
   <line x1="312" y1="148" x2="775" y2="148" stroke="#e9ecef" stroke-width="1.5"/>
 
   <!-- Service chips — row 1 -->
-  <rect x="312" y="163" width="130" height="28" fill="#e7f5ff" rx="14" stroke="#4dabf7" stroke-width="1.5"/>
-  <text x="377" y="181" font-family="Arial, sans-serif" font-size="12" fill="#1971c2" text-anchor="middle">Home Assistant</text>
+  <rect x="312" y="163" width="113" height="28" fill="#e7f5ff" rx="14" stroke="#4dabf7" stroke-width="1.5"/>
+  <text x="368.5" y="181" font-family="Arial, sans-serif" font-size="12" fill="#1971c2" text-anchor="middle">Home Assistant</text>
 
-  <rect x="452" y="163" width="72" height="28" fill="#ebfbee" rx="14" stroke="#51cf66" stroke-width="1.5"/>
-  <text x="488" y="181" font-family="Arial, sans-serif" font-size="12" fill="#2f9e44" text-anchor="middle">Frigate</text>
+  <rect x="435" y="163" width="60" height="28" fill="#ebfbee" rx="14" stroke="#51cf66" stroke-width="1.5"/>
+  <text x="465" y="181" font-family="Arial, sans-serif" font-size="12" fill="#2f9e44" text-anchor="middle">Frigate</text>
 
-  <rect x="534" y="163" width="84" height="28" fill="#fff9db" rx="14" stroke="#ffd43b" stroke-width="1.5"/>
-  <text x="576" y="181" font-family="Arial, sans-serif" font-size="12" fill="#e67700" text-anchor="middle">Mosquitto</text>
+  <rect x="505" y="163" width="78" height="28" fill="#fff9db" rx="14" stroke="#ffd43b" stroke-width="1.5"/>
+  <text x="544" y="181" font-family="Arial, sans-serif" font-size="12" fill="#e67700" text-anchor="middle">Mosquitto</text>
 
-  <rect x="628" y="163" width="96" height="28" fill="#fff4e6" rx="14" stroke="#ff922b" stroke-width="1.5"/>
-  <text x="676" y="181" font-family="Arial, sans-serif" font-size="12" fill="#d9480f" text-anchor="middle">Cloudflare</text>
+  <rect x="593" y="163" width="80" height="28" fill="#fff4e6" rx="14" stroke="#ff922b" stroke-width="1.5"/>
+  <text x="633" y="181" font-family="Arial, sans-serif" font-size="12" fill="#d9480f" text-anchor="middle">Cloudflare</text>
 
   <!-- Service chips — row 2 -->
-  <rect x="312" y="202" width="70" height="26" fill="#e7f5ff" rx="13" stroke="#74c0fc" stroke-width="1.5"/>
-  <text x="347" y="219" font-family="Arial, sans-serif" font-size="12" fill="#1971c2" text-anchor="middle">Docker</text>
+  <rect x="312" y="202" width="61" height="26" fill="#e7f5ff" rx="13" stroke="#74c0fc" stroke-width="1.5"/>
+  <text x="342.5" y="219" font-family="Arial, sans-serif" font-size="12" fill="#1971c2" text-anchor="middle">Docker</text>
 
-  <rect x="392" y="202" width="106" height="26" fill="#f8f0fc" rx="13" stroke="#cc5de8" stroke-width="1.5"/>
-  <text x="445" y="219" font-family="Arial, sans-serif" font-size="12" fill="#862e9c" text-anchor="middle">Zigbee2MQTT</text>
+  <rect x="383" y="202" width="103" height="26" fill="#f8f0fc" rx="13" stroke="#cc5de8" stroke-width="1.5"/>
+  <text x="434.5" y="219" font-family="Arial, sans-serif" font-size="12" fill="#862e9c" text-anchor="middle">Zigbee2MQTT</text>
 
-  <rect x="508" y="202" width="82" height="26" fill="#e6fcf5" rx="13" stroke="#20c997" stroke-width="1.5"/>
-  <text x="549" y="219" font-family="Arial, sans-serif" font-size="12" fill="#0ca678" text-anchor="middle">SOPS + AGE</text>
+  <rect x="496" y="202" width="93" height="26" fill="#e6fcf5" rx="13" stroke="#20c997" stroke-width="1.5"/>
+  <text x="542.5" y="219" font-family="Arial, sans-serif" font-size="12" fill="#0ca678" text-anchor="middle">SOPS + AGE</text>
 
-  <rect x="600" y="202" width="62" height="26" fill="#fff5f5" rx="13" stroke="#ff6b6b" stroke-width="1.5"/>
-  <text x="631" y="219" font-family="Arial, sans-serif" font-size="12" fill="#c92a2a" text-anchor="middle">Restic</text>
+  <rect x="599" y="202" width="55" height="26" fill="#fff5f5" rx="13" stroke="#ff6b6b" stroke-width="1.5"/>
+  <text x="626.5" y="219" font-family="Arial, sans-serif" font-size="12" fill="#c92a2a" text-anchor="middle">Restic</text>
 
-  <rect x="672" y="202" width="70" height="26" fill="#fff9db" rx="13" stroke="#ffd43b" stroke-width="1.5"/>
-  <text x="707" y="219" font-family="Arial, sans-serif" font-size="12" fill="#e67700" text-anchor="middle">Ansible</text>
+  <rect x="664" y="202" width="62" height="26" fill="#fff9db" rx="13" stroke="#ffd43b" stroke-width="1.5"/>
+  <text x="695" y="219" font-family="Arial, sans-serif" font-size="12" fill="#e67700" text-anchor="middle">Ansible</text>
 
   <!-- Bottom caption -->
   <text x="312" y="272" font-family="Arial, Helvetica, sans-serif" font-size="13" fill="#adb5bd">Deployed on Debian · GitHub Actions CI/CD · Encrypted secrets in Git</text>

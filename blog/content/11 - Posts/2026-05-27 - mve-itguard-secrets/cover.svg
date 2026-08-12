@@ -23,8 +23,8 @@
   <rect x="196" y="140" width="48" height="7" fill="#2d3561" rx="2"/>
 
   <!-- "ENC[...]" badge -->
-  <rect x="190" y="154" width="75" height="20" fill="#2c2c54" rx="4" stroke="#ffd43b" stroke-width="1.5"/>
-  <text x="227" y="167" font-family="'Courier New', Courier, monospace" font-size="9" fill="#ffd43b" text-anchor="middle">ENC[AES256_GCM]</text>
+  <rect x="181.5" y="154" width="92" height="20" fill="#2c2c54" rx="4" stroke="#ffd43b" stroke-width="1.5"/>
+  <text x="227.5" y="167" font-family="'Courier New', Courier, monospace" font-size="9" fill="#ffd43b" text-anchor="middle">ENC[AES256_GCM]</text>
 
   <!-- AGE key icon (bottom left) -->
   <!-- Key shaft -->
@@ -61,33 +61,33 @@
   <line x1="312" y1="168" x2="775" y2="168" stroke="#e9ecef" stroke-width="1.5"/>
 
   <!-- Concept chips row 1 -->
-  <rect x="312" y="182" width="52" height="28" fill="#fff3bf" rx="14" stroke="#ffd43b" stroke-width="1.5"/>
-  <text x="338" y="200" font-family="Arial, sans-serif" font-size="12" fill="#e67700" text-anchor="middle">SOPS</text>
+  <rect x="312" y="182" width="48" height="28" fill="#fff3bf" rx="14" stroke="#ffd43b" stroke-width="1.5"/>
+  <text x="336" y="200" font-family="Arial, sans-serif" font-size="11" fill="#e67700" text-anchor="middle">SOPS</text>
 
-  <rect x="374" y="182" width="46" height="28" fill="#ebfbee" rx="14" stroke="#51cf66" stroke-width="1.5"/>
-  <text x="397" y="200" font-family="Arial, sans-serif" font-size="12" fill="#2f9e44" text-anchor="middle">AGE</text>
+  <rect x="370" y="182" width="41" height="28" fill="#ebfbee" rx="14" stroke="#51cf66" stroke-width="1.5"/>
+  <text x="390.5" y="200" font-family="Arial, sans-serif" font-size="11" fill="#2f9e44" text-anchor="middle">AGE</text>
 
-  <rect x="430" y="182" width="100" height="28" fill="#e7f5ff" rx="14" stroke="#4dabf7" stroke-width="1.5"/>
-  <text x="480" y="200" font-family="Arial, sans-serif" font-size="12" fill="#1971c2" text-anchor="middle">Value-level encrypt</text>
+  <rect x="421" y="182" width="125" height="28" fill="#e7f5ff" rx="14" stroke="#4dabf7" stroke-width="1.5"/>
+  <text x="483.5" y="200" font-family="Arial, sans-serif" font-size="11" fill="#1971c2" text-anchor="middle">Value-level encrypt</text>
 
-  <rect x="540" y="182" width="88" height="28" fill="#f8f0fc" rx="14" stroke="#cc5de8" stroke-width="1.5"/>
-  <text x="584" y="200" font-family="Arial, sans-serif" font-size="12" fill="#862e9c" text-anchor="middle">Commit .enc files</text>
+  <rect x="556" y="182" width="115" height="28" fill="#f8f0fc" rx="14" stroke="#cc5de8" stroke-width="1.5"/>
+  <text x="613.5" y="200" font-family="Arial, sans-serif" font-size="11" fill="#862e9c" text-anchor="middle">Commit .enc files</text>
 
-  <rect x="638" y="182" width="70" height="28" fill="#fff4e6" rx="14" stroke="#ff922b" stroke-width="1.5"/>
-  <text x="673" y="200" font-family="Arial, sans-serif" font-size="12" fill="#d9480f" text-anchor="middle">.sops.yaml</text>
+  <rect x="681" y="182" width="78" height="28" fill="#fff4e6" rx="14" stroke="#ff922b" stroke-width="1.5"/>
+  <text x="720" y="200" font-family="Arial, sans-serif" font-size="11" fill="#d9480f" text-anchor="middle">.sops.yaml</text>
 
   <!-- Concept chips row 2 -->
-  <rect x="312" y="220" width="90" height="26" fill="#e6fcf5" rx="13" stroke="#20c997" stroke-width="1.5"/>
-  <text x="357" y="237" font-family="Arial, sans-serif" font-size="12" fill="#0ca678" text-anchor="middle">No plaintext CI</text>
+  <rect x="312" y="220" width="107" height="26" fill="#e6fcf5" rx="13" stroke="#20c997" stroke-width="1.5"/>
+  <text x="365.5" y="237" font-family="Arial, sans-serif" font-size="12" fill="#0ca678" text-anchor="middle">No plaintext CI</text>
 
-  <rect x="412" y="220" width="88" height="26" fill="#fff5f5" rx="13" stroke="#ff6b6b" stroke-width="1.5"/>
-  <text x="456" y="237" font-family="Arial, sans-serif" font-size="12" fill="#c92a2a" text-anchor="middle">Key rotation</text>
+  <rect x="429" y="220" width="91" height="26" fill="#fff5f5" rx="13" stroke="#ff6b6b" stroke-width="1.5"/>
+  <text x="474.5" y="237" font-family="Arial, sans-serif" font-size="12" fill="#c92a2a" text-anchor="middle">Key rotation</text>
 
-  <rect x="510" y="220" width="82" height="26" fill="#e7f5ff" rx="13" stroke="#74c0fc" stroke-width="1.5"/>
-  <text x="551" y="237" font-family="Arial, sans-serif" font-size="12" fill="#1971c2" text-anchor="middle">Root of trust</text>
+  <rect x="530" y="220" width="93" height="26" fill="#e7f5ff" rx="13" stroke="#74c0fc" stroke-width="1.5"/>
+  <text x="576.5" y="237" font-family="Arial, sans-serif" font-size="12" fill="#1971c2" text-anchor="middle">Root of trust</text>
 
-  <rect x="602" y="220" width="106" height="26" fill="#fff9db" rx="13" stroke="#ffd43b" stroke-width="1.5"/>
-  <text x="655" y="237" font-family="Arial, sans-serif" font-size="12" fill="#e67700" text-anchor="middle">Auditable in Git diff</text>
+  <rect x="633" y="220" width="135" height="26" fill="#fff9db" rx="13" stroke="#ffd43b" stroke-width="1.5"/>
+  <text x="700.5" y="237" font-family="Arial, sans-serif" font-size="12" fill="#e67700" text-anchor="middle">Auditable in Git diff</text>
 
   <!-- Bottom caption -->
   <text x="312" y="278" font-family="Arial, Helvetica, sans-serif" font-size="13" fill="#adb5bd">dev · server · CI/CD · all use same encrypted files from Git</text>

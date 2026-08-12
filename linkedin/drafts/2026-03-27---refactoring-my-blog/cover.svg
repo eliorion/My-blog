@@ -48,21 +48,21 @@
   <line x1="312" y1="148" x2="775" y2="148" stroke="#e9ecef" stroke-width="1.5"/>
 
   <!-- Chips row 1 -->
-  <rect x="312" y="163" width="53" height="28" fill="#e6fcf5" rx="14" stroke="#20c997" stroke-width="1.5"/>
-  <text x="338" y="181" font-family="'DejaVu Sans', sans-serif" font-size="12" fill="#0ca678" text-anchor="middle">Hugo</text>
+  <rect x="312" y="163" width="50" height="28" fill="#e6fcf5" rx="14" stroke="#20c997" stroke-width="1.5"/>
+  <text x="337" y="181" font-family="'DejaVu Sans', sans-serif" font-size="12" fill="#0ca678" text-anchor="middle">Hugo</text>
 
-  <rect x="375" y="163" width="120" height="28" fill="#e7f5ff" rx="14" stroke="#4dabf7" stroke-width="1.5"/>
-  <text x="435" y="181" font-family="'DejaVu Sans', sans-serif" font-size="12" fill="#1971c2" text-anchor="middle">GitHub Actions</text>
+  <rect x="372" y="163" width="108" height="28" fill="#e7f5ff" rx="14" stroke="#4dabf7" stroke-width="1.5"/>
+  <text x="426" y="181" font-family="'DejaVu Sans', sans-serif" font-size="12" fill="#1971c2" text-anchor="middle">GitHub Actions</text>
 
-  <rect x="505" y="163" width="60" height="28" fill="#fff4e6" rx="14" stroke="#ff922b" stroke-width="1.5"/>
-  <text x="535" y="181" font-family="'DejaVu Sans', sans-serif" font-size="12" fill="#d9480f" text-anchor="middle">CI/CD</text>
+  <rect x="490" y="163" width="52" height="28" fill="#fff4e6" rx="14" stroke="#ff922b" stroke-width="1.5"/>
+  <text x="516" y="181" font-family="'DejaVu Sans', sans-serif" font-size="12" fill="#d9480f" text-anchor="middle">CI/CD</text>
 
   <!-- Chips row 2 -->
-  <rect x="312" y="202" width="120" height="26" fill="#fff9db" rx="13" stroke="#ffd43b" stroke-width="1.5"/>
-  <text x="372" y="219" font-family="'DejaVu Sans', sans-serif" font-size="12" fill="#e67700" text-anchor="middle">Johnny Decimal</text>
+  <rect x="312" y="202" width="113" height="26" fill="#fff9db" rx="13" stroke="#ffd43b" stroke-width="1.5"/>
+  <text x="368.5" y="219" font-family="'DejaVu Sans', sans-serif" font-size="12" fill="#e67700" text-anchor="middle">Johnny Decimal</text>
 
-  <rect x="442" y="202" width="80" height="26" fill="#f8f0fc" rx="13" stroke="#cc5de8" stroke-width="1.5"/>
-  <text x="482" y="219" font-family="'DejaVu Sans', sans-serif" font-size="12" fill="#862e9c" text-anchor="middle">PaperMod</text>
+  <rect x="435" y="202" width="78" height="26" fill="#f8f0fc" rx="13" stroke="#cc5de8" stroke-width="1.5"/>
+  <text x="474" y="219" font-family="'DejaVu Sans', sans-serif" font-size="12" fill="#862e9c" text-anchor="middle">PaperMod</text>
 
   <!-- Bottom caption -->
   <text x="312" y="272" font-family="'DejaVu Sans', Arial, sans-serif" font-size="13" fill="#adb5bd">Hugo + PaperMod · Johnny Decimal · GitHub Actions</text>

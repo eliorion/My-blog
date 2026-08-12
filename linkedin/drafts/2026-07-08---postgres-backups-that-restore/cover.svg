@@ -46,31 +46,31 @@
   <line x1="312" y1="168" x2="775" y2="168" stroke="#e9ecef" stroke-width="1.5"/>
 
   <!-- Concept chips row 1 -->
-  <rect x="312" y="182" width="96" height="28" fill="#e7f5ff" rx="14" stroke="#4dabf7" stroke-width="1.5"/>
-  <text x="360" y="200" font-family="Arial, sans-serif" font-size="12" fill="#1971c2" text-anchor="middle">CNPG operator</text>
+  <rect x="312" y="182" width="101" height="28" fill="#e7f5ff" rx="14" stroke="#4dabf7" stroke-width="1.5"/>
+  <text x="362.5" y="200" font-family="Arial, sans-serif" font-size="11" fill="#1971c2" text-anchor="middle">CNPG operator</text>
 
-  <rect x="418" y="182" width="92" height="28" fill="#ebfbee" rx="14" stroke="#51cf66" stroke-width="1.5"/>
-  <text x="464" y="200" font-family="Arial, sans-serif" font-size="12" fill="#2f9e44" text-anchor="middle">Barman + WAL</text>
+  <rect x="423" y="182" width="103" height="28" fill="#ebfbee" rx="14" stroke="#51cf66" stroke-width="1.5"/>
+  <text x="474.5" y="200" font-family="Arial, sans-serif" font-size="11" fill="#2f9e44" text-anchor="middle">Barman + WAL</text>
 
-  <rect x="520" y="182" width="100" height="28" fill="#fff9db" rx="14" stroke="#ffd43b" stroke-width="1.5"/>
-  <text x="570" y="200" font-family="'Courier New', Courier, monospace" font-size="11" fill="#e67700" text-anchor="middle">immediate: true</text>
+  <rect x="536" y="182" width="118" height="28" fill="#fff9db" rx="14" stroke="#ffd43b" stroke-width="1.5"/>
+  <text x="595" y="200" font-family="'Courier New', Courier, monospace" font-size="11" fill="#e67700" text-anchor="middle">immediate: true</text>
 
-  <rect x="630" y="182" width="90" height="28" fill="#fff4e6" rx="14" stroke="#ff922b" stroke-width="1.5"/>
-  <text x="675" y="200" font-family="Arial, sans-serif" font-size="12" fill="#d9480f" text-anchor="middle">Cloudflare R2</text>
+  <rect x="664" y="182" width="93" height="28" fill="#fff4e6" rx="14" stroke="#ff922b" stroke-width="1.5"/>
+  <text x="710.5" y="200" font-family="Arial, sans-serif" font-size="11" fill="#d9480f" text-anchor="middle">Cloudflare R2</text>
 
   <!-- Concept chips row 2 -->
-  <rect x="312" y="220" width="80" height="26" fill="#fff5f5" rx="13" stroke="#ff6b6b" stroke-width="1.5"/>
-  <text x="352" y="237" font-family="Arial, sans-serif" font-size="12" fill="#c92a2a" text-anchor="middle">Volume loss</text>
+  <rect x="312" y="220" width="90" height="26" fill="#fff5f5" rx="13" stroke="#ff6b6b" stroke-width="1.5"/>
+  <text x="357" y="237" font-family="Arial, sans-serif" font-size="12" fill="#c92a2a" text-anchor="middle">Volume loss</text>
 
-  <rect x="402" y="220" width="122" height="26" fill="#e6fcf5" rx="13" stroke="#20c997" stroke-width="1.5"/>
-  <text x="463" y="237" font-family="Arial, sans-serif" font-size="12" fill="#0ca678" text-anchor="middle">Restore to asp-db-r1</text>
+  <rect x="412" y="220" width="141" height="26" fill="#e6fcf5" rx="13" stroke="#20c997" stroke-width="1.5"/>
+  <text x="482.5" y="237" font-family="Arial, sans-serif" font-size="12" fill="#0ca678" text-anchor="middle">Restore to asp-db-r1</text>
 
-  <rect x="534" y="220" width="88" height="26" fill="#f8f0fc" rx="13" stroke="#cc5de8" stroke-width="1.5"/>
-  <text x="578" y="237" font-family="Arial, sans-serif" font-size="12" fill="#862e9c" text-anchor="middle">WAL collision</text>
+  <rect x="563" y="220" width="97" height="26" fill="#f8f0fc" rx="13" stroke="#cc5de8" stroke-width="1.5"/>
+  <text x="611.5" y="237" font-family="Arial, sans-serif" font-size="12" fill="#862e9c" text-anchor="middle">WAL collision</text>
 
-  <rect x="632" y="220" width="94" height="26" fill="#e7f5ff" rx="13" stroke="#74c0fc" stroke-width="1.5"/>
-  <text x="679" y="237" font-family="Arial, sans-serif" font-size="12" fill="#1971c2" text-anchor="middle">Tested restore</text>
+  <rect x="670" y="220" width="104" height="26" fill="#e7f5ff" rx="13" stroke="#74c0fc" stroke-width="1.5"/>
+  <text x="722" y="237" font-family="Arial, sans-serif" font-size="12" fill="#1971c2" text-anchor="middle">Tested restore</text>
 
   <!-- Bottom caption -->
-  <text x="312" y="278" font-family="Arial, Helvetica, sans-serif" font-size="13" fill="#adb5bd">One database restored · one recreated empty · the config was the difference</text>
+  <text x="312" y="262" font-family="Arial, Helvetica, sans-serif" font-size="13" fill="#adb5bd"><tspan x="312">One database restored · one recreated empty · the config was the</tspan><tspan x="312" dy="16">difference</tspan></text>
 </svg>

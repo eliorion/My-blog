@@ -4,3 +4,13 @@ repos:
     hooks:
       - id: commitizen
         stages: [commit-msg]
+
+  - repo: local
+    hooks:
+      - id: svg-preview
+        name: render staged SVGs and lint them for visual defects
+        entry: node scripts/svg-preview.mjs
+        language: system
+        files: \.svg$
+        # themes/ is a submodule; .excalidraw.*.svg are tool exports, not hand-authored
+        exclude: ^blog/themes/|\.excalidraw\.[^/]*svg$

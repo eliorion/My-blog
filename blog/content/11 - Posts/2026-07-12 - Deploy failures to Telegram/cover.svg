@@ -54,30 +54,30 @@
   <line x1="312" y1="168" x2="775" y2="168" stroke="#e9ecef" stroke-width="1.5"/>
 
   <!-- Concept chips row 1 -->
-  <rect x="312" y="182" width="132" height="28" fill="#e7f5ff" rx="14" stroke="#4dabf7" stroke-width="1.5"/>
-  <text x="378" y="200" font-family="Arial, sans-serif" font-size="12" fill="#1971c2" text-anchor="middle">notification-controller</text>
+  <rect x="312" y="182" width="137" height="28" fill="#e7f5ff" rx="14" stroke="#4dabf7" stroke-width="1.5"/>
+  <text x="380.5" y="200" font-family="Arial, sans-serif" font-size="11" fill="#1971c2" text-anchor="middle">notification-controller</text>
 
-  <rect x="454" y="182" width="100" height="28" fill="#ebfbee" rx="14" stroke="#51cf66" stroke-width="1.5"/>
-  <text x="504" y="200" font-family="Arial, sans-serif" font-size="12" fill="#2f9e44" text-anchor="middle">PrometheusRule</text>
+  <rect x="459" y="182" width="108" height="28" fill="#ebfbee" rx="14" stroke="#51cf66" stroke-width="1.5"/>
+  <text x="513" y="200" font-family="Arial, sans-serif" font-size="11" fill="#2f9e44" text-anchor="middle">PrometheusRule</text>
 
-  <rect x="564" y="182" width="88" height="28" fill="#fff9db" rx="14" stroke="#ffd43b" stroke-width="1.5"/>
-  <text x="608" y="200" font-family="Arial, sans-serif" font-size="12" fill="#e67700" text-anchor="middle">Alertmanager</text>
+  <rect x="577" y="182" width="95" height="28" fill="#fff9db" rx="14" stroke="#ffd43b" stroke-width="1.5"/>
+  <text x="624.5" y="200" font-family="Arial, sans-serif" font-size="11" fill="#e67700" text-anchor="middle">Alertmanager</text>
 
-  <rect x="662" y="182" width="78" height="28" fill="#f8f0fc" rx="14" stroke="#cc5de8" stroke-width="1.5"/>
-  <text x="701" y="200" font-family="Arial, sans-serif" font-size="12" fill="#862e9c" text-anchor="middle">SOPS token</text>
+  <rect x="682" y="182" width="82" height="28" fill="#f8f0fc" rx="14" stroke="#cc5de8" stroke-width="1.5"/>
+  <text x="723" y="200" font-family="Arial, sans-serif" font-size="11" fill="#862e9c" text-anchor="middle">SOPS token</text>
 
   <!-- Concept chips row 2 -->
-  <rect x="312" y="220" width="74" height="26" fill="#fff4e6" rx="13" stroke="#ff922b" stroke-width="1.5"/>
-  <text x="349" y="237" font-family="Arial, sans-serif" font-size="12" fill="#d9480f" text-anchor="middle">Event path</text>
+  <rect x="312" y="220" width="84" height="26" fill="#fff4e6" rx="13" stroke="#ff922b" stroke-width="1.5"/>
+  <text x="354" y="237" font-family="Arial, sans-serif" font-size="12" fill="#d9480f" text-anchor="middle">Event path</text>
 
-  <rect x="396" y="220" width="84" height="26" fill="#e6fcf5" rx="13" stroke="#20c997" stroke-width="1.5"/>
-  <text x="438" y="237" font-family="Arial, sans-serif" font-size="12" fill="#0ca678" text-anchor="middle">Metrics path</text>
+  <rect x="406" y="220" width="93" height="26" fill="#e6fcf5" rx="13" stroke="#20c997" stroke-width="1.5"/>
+  <text x="452.5" y="237" font-family="Arial, sans-serif" font-size="12" fill="#0ca678" text-anchor="middle">Metrics path</text>
 
-  <rect x="490" y="220" width="84" height="26" fill="#fff5f5" rx="13" stroke="#ff6b6b" stroke-width="1.5"/>
-  <text x="532" y="237" font-family="'Courier New', Courier, monospace" font-size="11" fill="#c92a2a" text-anchor="middle">Ready=False</text>
+  <rect x="509" y="220" width="98" height="26" fill="#fff5f5" rx="13" stroke="#ff6b6b" stroke-width="1.5"/>
+  <text x="558" y="237" font-family="'Courier New', Courier, monospace" font-size="11" fill="#c92a2a" text-anchor="middle">Ready=False</text>
 
-  <rect x="584" y="220" width="88" height="26" fill="#e7f5ff" rx="13" stroke="#74c0fc" stroke-width="1.5"/>
-  <text x="628" y="237" font-family="Arial, sans-serif" font-size="12" fill="#1971c2" text-anchor="middle">Auto-rollback</text>
+  <rect x="617" y="220" width="98" height="26" fill="#e7f5ff" rx="13" stroke="#74c0fc" stroke-width="1.5"/>
+  <text x="666" y="237" font-family="Arial, sans-serif" font-size="12" fill="#1971c2" text-anchor="middle">Auto-rollback</text>
 
   <!-- Bottom caption -->
   <text x="312" y="278" font-family="Arial, Helvetica, sans-serif" font-size="13" fill="#adb5bd">Failures self-heal or self-announce · never silently broken</text>

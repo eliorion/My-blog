@@ -42,27 +42,27 @@
   <line x1="312" y1="148" x2="775" y2="148" stroke="#e9ecef" stroke-width="1.5"/>
 
   <!-- Chips row 1 -->
-  <rect x="312" y="163" width="73" height="28" fill="#e7f5ff" rx="14" stroke="#4dabf7" stroke-width="1.5"/>
-  <text x="348" y="181" font-family="'DejaVu Sans', sans-serif" font-size="12" fill="#1971c2" text-anchor="middle">TrueNAS</text>
+  <rect x="312" y="163" width="70" height="28" fill="#e7f5ff" rx="14" stroke="#4dabf7" stroke-width="1.5"/>
+  <text x="347" y="181" font-family="'DejaVu Sans', sans-serif" font-size="12" fill="#1971c2" text-anchor="middle">TrueNAS</text>
 
-  <rect x="395" y="163" width="46" height="28" fill="#fff4e6" rx="14" stroke="#ff922b" stroke-width="1.5"/>
-  <text x="418" y="181" font-family="'DejaVu Sans', sans-serif" font-size="12" fill="#d9480f" text-anchor="middle">NFS</text>
+  <rect x="392" y="163" width="42" height="28" fill="#fff4e6" rx="14" stroke="#ff922b" stroke-width="1.5"/>
+  <text x="413" y="181" font-family="'DejaVu Sans', sans-serif" font-size="12" fill="#d9480f" text-anchor="middle">NFS</text>
 
-  <rect x="451" y="163" width="46" height="28" fill="#ebfbee" rx="14" stroke="#51cf66" stroke-width="1.5"/>
-  <text x="474" y="181" font-family="'DejaVu Sans', sans-serif" font-size="12" fill="#2f9e44" text-anchor="middle">PVC</text>
+  <rect x="444" y="163" width="42" height="28" fill="#ebfbee" rx="14" stroke="#51cf66" stroke-width="1.5"/>
+  <text x="465" y="181" font-family="'DejaVu Sans', sans-serif" font-size="12" fill="#2f9e44" text-anchor="middle">PVC</text>
 
-  <rect x="507" y="163" width="46" height="28" fill="#ebfbee" rx="14" stroke="#51cf66" stroke-width="1.5"/>
-  <text x="530" y="181" font-family="'DejaVu Sans', sans-serif" font-size="12" fill="#2f9e44" text-anchor="middle">K8s</text>
+  <rect x="496" y="163" width="40" height="28" fill="#ebfbee" rx="14" stroke="#51cf66" stroke-width="1.5"/>
+  <text x="516" y="181" font-family="'DejaVu Sans', sans-serif" font-size="12" fill="#2f9e44" text-anchor="middle">K8s</text>
 
   <!-- Chips row 2 -->
-  <rect x="312" y="202" width="66" height="26" fill="#f8f0fc" rx="13" stroke="#cc5de8" stroke-width="1.5"/>
-  <text x="345" y="219" font-family="'DejaVu Sans', sans-serif" font-size="12" fill="#862e9c" text-anchor="middle">Pulumi</text>
+  <rect x="312" y="202" width="59" height="26" fill="#f8f0fc" rx="13" stroke="#cc5de8" stroke-width="1.5"/>
+  <text x="341.5" y="219" font-family="'DejaVu Sans', sans-serif" font-size="12" fill="#862e9c" text-anchor="middle">Pulumi</text>
 
-  <rect x="388" y="202" width="46" height="26" fill="#fff9db" rx="13" stroke="#ffd43b" stroke-width="1.5"/>
-  <text x="411" y="219" font-family="'DejaVu Sans', sans-serif" font-size="12" fill="#e67700" text-anchor="middle">IaC</text>
+  <rect x="381" y="202" width="38" height="26" fill="#fff9db" rx="13" stroke="#ffd43b" stroke-width="1.5"/>
+  <text x="400" y="219" font-family="'DejaVu Sans', sans-serif" font-size="12" fill="#e67700" text-anchor="middle">IaC</text>
 
-  <rect x="444" y="202" width="73" height="26" fill="#e6fcf5" rx="13" stroke="#20c997" stroke-width="1.5"/>
-  <text x="480" y="219" font-family="'DejaVu Sans', sans-serif" font-size="12" fill="#0ca678" text-anchor="middle">Storage</text>
+  <rect x="429" y="202" width="65" height="26" fill="#e6fcf5" rx="13" stroke="#20c997" stroke-width="1.5"/>
+  <text x="461.5" y="219" font-family="'DejaVu Sans', sans-serif" font-size="12" fill="#0ca678" text-anchor="middle">Storage</text>
 
   <!-- Bottom caption -->
   <text x="312" y="272" font-family="'DejaVu Sans', Arial, sans-serif" font-size="13" fill="#adb5bd">TrueNAS share · NFS provisioner · PVC/PV lifecycle</text>

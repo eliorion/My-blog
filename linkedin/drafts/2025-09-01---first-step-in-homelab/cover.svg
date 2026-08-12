@@ -49,24 +49,24 @@
   <line x1="312" y1="148" x2="775" y2="148" stroke="#e9ecef" stroke-width="1.5"/>
 
   <!-- Chips row 1 -->
-  <rect x="312" y="163" width="73" height="28" fill="#fff4e6" rx="14" stroke="#ff922b" stroke-width="1.5"/>
-  <text x="348" y="181" font-family="'DejaVu Sans', sans-serif" font-size="12" fill="#d9480f" text-anchor="middle">Proxmox</text>
+  <rect x="312" y="163" width="70" height="28" fill="#fff4e6" rx="14" stroke="#ff922b" stroke-width="1.5"/>
+  <text x="347" y="181" font-family="'DejaVu Sans', sans-serif" font-size="12" fill="#d9480f" text-anchor="middle">Proxmox</text>
 
-  <rect x="395" y="163" width="100" height="28" fill="#e7f5ff" rx="14" stroke="#4dabf7" stroke-width="1.5"/>
-  <text x="445" y="181" font-family="'DejaVu Sans', sans-serif" font-size="12" fill="#1971c2" text-anchor="middle">Talos Linux</text>
+  <rect x="392" y="163" width="85" height="28" fill="#e7f5ff" rx="14" stroke="#4dabf7" stroke-width="1.5"/>
+  <text x="434.5" y="181" font-family="'DejaVu Sans', sans-serif" font-size="12" fill="#1971c2" text-anchor="middle">Talos Linux</text>
 
-  <rect x="505" y="163" width="46" height="28" fill="#ebfbee" rx="14" stroke="#51cf66" stroke-width="1.5"/>
-  <text x="528" y="181" font-family="'DejaVu Sans', sans-serif" font-size="12" fill="#2f9e44" text-anchor="middle">K8s</text>
+  <rect x="487" y="163" width="40" height="28" fill="#ebfbee" rx="14" stroke="#51cf66" stroke-width="1.5"/>
+  <text x="507" y="181" font-family="'DejaVu Sans', sans-serif" font-size="12" fill="#2f9e44" text-anchor="middle">K8s</text>
 
   <!-- Chips row 2 -->
-  <rect x="312" y="202" width="46" height="26" fill="#ebfbee" rx="13" stroke="#51cf66" stroke-width="1.5"/>
-  <text x="335" y="219" font-family="'DejaVu Sans', sans-serif" font-size="12" fill="#2f9e44" text-anchor="middle">K3s</text>
+  <rect x="312" y="202" width="40" height="26" fill="#ebfbee" rx="13" stroke="#51cf66" stroke-width="1.5"/>
+  <text x="332" y="219" font-family="'DejaVu Sans', sans-serif" font-size="12" fill="#2f9e44" text-anchor="middle">K3s</text>
 
-  <rect x="368" y="202" width="80" height="26" fill="#e7f5ff" rx="13" stroke="#74c0fc" stroke-width="1.5"/>
-  <text x="408" y="219" font-family="'DejaVu Sans', sans-serif" font-size="12" fill="#1971c2" text-anchor="middle">talosctl</text>
+  <rect x="362" y="202" width="62" height="26" fill="#e7f5ff" rx="13" stroke="#74c0fc" stroke-width="1.5"/>
+  <text x="393" y="219" font-family="'DejaVu Sans', sans-serif" font-size="12" fill="#1971c2" text-anchor="middle">talosctl</text>
 
-  <rect x="458" y="202" width="80" height="26" fill="#fff9db" rx="13" stroke="#ffd43b" stroke-width="1.5"/>
-  <text x="498" y="219" font-family="'DejaVu Sans', sans-serif" font-size="12" fill="#e67700" text-anchor="middle">Hardware</text>
+  <rect x="434" y="202" width="76" height="26" fill="#fff9db" rx="13" stroke="#ffd43b" stroke-width="1.5"/>
+  <text x="472" y="219" font-family="'DejaVu Sans', sans-serif" font-size="12" fill="#e67700" text-anchor="middle">Hardware</text>
 
   <!-- Bottom caption -->
   <text x="312" y="272" font-family="'DejaVu Sans', Arial, sans-serif" font-size="13" fill="#adb5bd">Proxmox VE · Talos Linux · Kubernetes on bare metal</text>

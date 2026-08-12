@@ -42,24 +42,24 @@
   <line x1="312" y1="148" x2="775" y2="148" stroke="#e9ecef" stroke-width="1.5"/>
 
   <!-- Chips row 1 -->
-  <rect x="312" y="163" width="100" height="28" fill="#e7f5ff" rx="14" stroke="#4dabf7" stroke-width="1.5"/>
-  <text x="362" y="181" font-family="'DejaVu Sans', sans-serif" font-size="12" fill="#1971c2" text-anchor="middle">Talos Linux</text>
+  <rect x="312" y="163" width="85" height="28" fill="#e7f5ff" rx="14" stroke="#4dabf7" stroke-width="1.5"/>
+  <text x="354.5" y="181" font-family="'DejaVu Sans', sans-serif" font-size="12" fill="#1971c2" text-anchor="middle">Talos Linux</text>
 
-  <rect x="422" y="163" width="46" height="28" fill="#ebfbee" rx="14" stroke="#51cf66" stroke-width="1.5"/>
-  <text x="445" y="181" font-family="'DejaVu Sans', sans-serif" font-size="12" fill="#2f9e44" text-anchor="middle">K8s</text>
+  <rect x="407" y="163" width="40" height="28" fill="#ebfbee" rx="14" stroke="#51cf66" stroke-width="1.5"/>
+  <text x="427" y="181" font-family="'DejaVu Sans', sans-serif" font-size="12" fill="#2f9e44" text-anchor="middle">K8s</text>
 
-  <rect x="478" y="163" width="73" height="28" fill="#fff4e6" rx="14" stroke="#ff922b" stroke-width="1.5"/>
-  <text x="514" y="181" font-family="'DejaVu Sans', sans-serif" font-size="12" fill="#d9480f" text-anchor="middle">Proxmox</text>
+  <rect x="457" y="163" width="70" height="28" fill="#fff4e6" rx="14" stroke="#ff922b" stroke-width="1.5"/>
+  <text x="492" y="181" font-family="'DejaVu Sans', sans-serif" font-size="12" fill="#d9480f" text-anchor="middle">Proxmox</text>
 
   <!-- Chips row 2 -->
-  <rect x="312" y="202" width="80" height="26" fill="#fff9db" rx="13" stroke="#ffd43b" stroke-width="1.5"/>
-  <text x="352" y="219" font-family="'DejaVu Sans', sans-serif" font-size="12" fill="#e67700" text-anchor="middle">Hardware</text>
+  <rect x="312" y="202" width="76" height="26" fill="#fff9db" rx="13" stroke="#ffd43b" stroke-width="1.5"/>
+  <text x="350" y="219" font-family="'DejaVu Sans', sans-serif" font-size="12" fill="#e67700" text-anchor="middle">Hardware</text>
 
-  <rect x="402" y="202" width="66" height="26" fill="#e6fcf5" rx="13" stroke="#20c997" stroke-width="1.5"/>
-  <text x="435" y="219" font-family="'DejaVu Sans', sans-serif" font-size="12" fill="#0ca678" text-anchor="middle">Design</text>
+  <rect x="398" y="202" width="60" height="26" fill="#e6fcf5" rx="13" stroke="#20c997" stroke-width="1.5"/>
+  <text x="428" y="219" font-family="'DejaVu Sans', sans-serif" font-size="12" fill="#0ca678" text-anchor="middle">Design</text>
 
-  <rect x="478" y="202" width="73" height="26" fill="#f8f0fc" rx="13" stroke="#cc5de8" stroke-width="1.5"/>
-  <text x="514" y="219" font-family="'DejaVu Sans', sans-serif" font-size="12" fill="#862e9c" text-anchor="middle">Homelab</text>
+  <rect x="468" y="202" width="72" height="26" fill="#f8f0fc" rx="13" stroke="#cc5de8" stroke-width="1.5"/>
+  <text x="504" y="219" font-family="'DejaVu Sans', sans-serif" font-size="12" fill="#862e9c" text-anchor="middle">Homelab</text>
 
   <!-- Bottom caption -->
   <text x="312" y="272" font-family="'DejaVu Sans', Arial, sans-serif" font-size="13" fill="#adb5bd">Learning by building · Cluster topology · Hardware picks</text>

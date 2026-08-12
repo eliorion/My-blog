@@ -43,24 +43,24 @@
   <line x1="312" y1="148" x2="775" y2="148" stroke="#e9ecef" stroke-width="1.5"/>
 
   <!-- Chips row 1 -->
-  <rect x="312" y="163" width="66" height="28" fill="#fff9db" rx="14" stroke="#ffd43b" stroke-width="1.5"/>
-  <text x="345" y="181" font-family="'DejaVu Sans', sans-serif" font-size="12" fill="#e67700" text-anchor="middle">Python</text>
+  <rect x="312" y="163" width="60" height="28" fill="#fff9db" rx="14" stroke="#ffd43b" stroke-width="1.5"/>
+  <text x="342" y="181" font-family="'DejaVu Sans', sans-serif" font-size="12" fill="#e67700" text-anchor="middle">Python</text>
 
-  <rect x="388" y="163" width="66" height="28" fill="#e7f5ff" rx="14" stroke="#4dabf7" stroke-width="1.5"/>
-  <text x="421" y="181" font-family="'DejaVu Sans', sans-serif" font-size="12" fill="#1971c2" text-anchor="middle">Docker</text>
+  <rect x="382" y="163" width="61" height="28" fill="#e7f5ff" rx="14" stroke="#4dabf7" stroke-width="1.5"/>
+  <text x="412.5" y="181" font-family="'DejaVu Sans', sans-serif" font-size="12" fill="#1971c2" text-anchor="middle">Docker</text>
 
-  <rect x="464" y="163" width="46" height="28" fill="#fff4e6" rx="14" stroke="#ff922b" stroke-width="1.5"/>
-  <text x="487" y="181" font-family="'DejaVu Sans', sans-serif" font-size="12" fill="#d9480f" text-anchor="middle">Git</text>
+  <rect x="453" y="163" width="36" height="28" fill="#fff4e6" rx="14" stroke="#ff922b" stroke-width="1.5"/>
+  <text x="471" y="181" font-family="'DejaVu Sans', sans-serif" font-size="12" fill="#d9480f" text-anchor="middle">Git</text>
 
   <!-- Chips row 2 -->
-  <rect x="312" y="202" width="86" height="26" fill="#ebfbee" rx="13" stroke="#51cf66" stroke-width="1.5"/>
-  <text x="355" y="219" font-family="'DejaVu Sans', sans-serif" font-size="12" fill="#2f9e44" text-anchor="middle">DevSecOps</text>
+  <rect x="312" y="202" width="87" height="26" fill="#ebfbee" rx="13" stroke="#51cf66" stroke-width="1.5"/>
+  <text x="355.5" y="219" font-family="'DejaVu Sans', sans-serif" font-size="12" fill="#2f9e44" text-anchor="middle">DevSecOps</text>
 
-  <rect x="408" y="202" width="93" height="26" fill="#f8f0fc" rx="13" stroke="#cc5de8" stroke-width="1.5"/>
+  <rect x="409" y="202" width="90" height="26" fill="#f8f0fc" rx="13" stroke="#cc5de8" stroke-width="1.5"/>
   <text x="454" y="219" font-family="'DejaVu Sans', sans-serif" font-size="12" fill="#862e9c" text-anchor="middle">Commitizen</text>
 
-  <rect x="511" y="202" width="46" height="26" fill="#e6fcf5" rx="13" stroke="#20c997" stroke-width="1.5"/>
-  <text x="534" y="219" font-family="'DejaVu Sans', sans-serif" font-size="12" fill="#0ca678" text-anchor="middle">CI</text>
+  <rect x="509" y="202" width="30" height="26" fill="#e6fcf5" rx="13" stroke="#20c997" stroke-width="1.5"/>
+  <text x="524" y="219" font-family="'DejaVu Sans', sans-serif" font-size="12" fill="#0ca678" text-anchor="middle">CI</text>
 
   <!-- Bottom caption -->
   <text x="312" y="272" font-family="'DejaVu Sans', Arial, sans-serif" font-size="13" fill="#adb5bd">Multi-stage builds · Conventional commits · Security scans</text>

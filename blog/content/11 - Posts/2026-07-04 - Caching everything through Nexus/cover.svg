@@ -51,31 +51,31 @@
   <line x1="312" y1="168" x2="775" y2="168" stroke="#e9ecef" stroke-width="1.5"/>
 
   <!-- Concept chips row 1 -->
-  <rect x="312" y="182" width="90" height="28" fill="#fff5f5" rx="14" stroke="#ff6b6b" stroke-width="1.5"/>
-  <text x="357" y="200" font-family="Arial, sans-serif" font-size="12" fill="#c92a2a" text-anchor="middle">docker.io 429</text>
+  <rect x="312" y="182" width="99" height="28" fill="#fff5f5" rx="14" stroke="#ff6b6b" stroke-width="1.5"/>
+  <text x="361.5" y="200" font-family="Arial, sans-serif" font-size="12" fill="#c92a2a" text-anchor="middle">docker.io 429</text>
 
-  <rect x="412" y="182" width="90" height="28" fill="#e7f5ff" rx="14" stroke="#4dabf7" stroke-width="1.5"/>
-  <text x="457" y="200" font-family="Arial, sans-serif" font-size="12" fill="#1971c2" text-anchor="middle">Probe-gated</text>
+  <rect x="421" y="182" width="92" height="28" fill="#e7f5ff" rx="14" stroke="#4dabf7" stroke-width="1.5"/>
+  <text x="467" y="200" font-family="Arial, sans-serif" font-size="12" fill="#1971c2" text-anchor="middle">Probe-gated</text>
 
-  <rect x="512" y="182" width="102" height="28" fill="#ebfbee" rx="14" stroke="#51cf66" stroke-width="1.5"/>
-  <text x="563" y="200" font-family="Arial, sans-serif" font-size="12" fill="#2f9e44" text-anchor="middle">Upstream fallback</text>
+  <rect x="523" y="182" width="128" height="28" fill="#ebfbee" rx="14" stroke="#51cf66" stroke-width="1.5"/>
+  <text x="587" y="200" font-family="Arial, sans-serif" font-size="12" fill="#2f9e44" text-anchor="middle">Upstream fallback</text>
 
-  <rect x="624" y="182" width="88" height="28" fill="#fff9db" rx="14" stroke="#ffd43b" stroke-width="1.5"/>
-  <text x="668" y="200" font-family="Arial, sans-serif" font-size="12" fill="#e67700" text-anchor="middle">Net self-probe</text>
+  <rect x="661" y="182" width="103" height="28" fill="#fff9db" rx="14" stroke="#ffd43b" stroke-width="1.5"/>
+  <text x="712.5" y="200" font-family="Arial, sans-serif" font-size="12" fill="#e67700" text-anchor="middle">Net self-probe</text>
 
   <!-- Concept chips row 2 -->
-  <rect x="312" y="220" width="98" height="26" fill="#e6fcf5" rx="13" stroke="#20c997" stroke-width="1.5"/>
-  <text x="361" y="237" font-family="Arial, sans-serif" font-size="12" fill="#0ca678" text-anchor="middle">trivy DB via ghcr</text>
+  <rect x="312" y="220" width="103" height="26" fill="#e6fcf5" rx="13" stroke="#20c997" stroke-width="1.5"/>
+  <text x="363.5" y="237" font-family="Arial, sans-serif" font-size="10" fill="#0ca678" text-anchor="middle">trivy DB via ghcr</text>
 
-  <rect x="420" y="220" width="106" height="26" fill="#fff4e6" rx="13" stroke="#ff922b" stroke-width="1.5"/>
-  <text x="473" y="237" font-family="Arial, sans-serif" font-size="12" fill="#d9480f" text-anchor="middle">apk layer-cache bug</text>
+  <rect x="425" y="220" width="120" height="26" fill="#fff4e6" rx="13" stroke="#ff922b" stroke-width="1.5"/>
+  <text x="485" y="237" font-family="Arial, sans-serif" font-size="10" fill="#d9480f" text-anchor="middle">apk layer-cache bug</text>
 
-  <rect x="536" y="220" width="98" height="26" fill="#f8f0fc" rx="13" stroke="#cc5de8" stroke-width="1.5"/>
-  <text x="585" y="237" font-family="Arial, sans-serif" font-size="12" fill="#862e9c" text-anchor="middle">security-refresh</text>
+  <rect x="555" y="220" width="97" height="26" fill="#f8f0fc" rx="13" stroke="#cc5de8" stroke-width="1.5"/>
+  <text x="603.5" y="237" font-family="Arial, sans-serif" font-size="10" fill="#862e9c" text-anchor="middle">security-refresh</text>
 
-  <rect x="644" y="220" width="76" height="26" fill="#e7f5ff" rx="13" stroke="#74c0fc" stroke-width="1.5"/>
-  <text x="682" y="237" font-family="Arial, sans-serif" font-size="12" fill="#1971c2" text-anchor="middle">Zero hard dep</text>
+  <rect x="662" y="220" width="89" height="26" fill="#e7f5ff" rx="13" stroke="#74c0fc" stroke-width="1.5"/>
+  <text x="706.5" y="237" font-family="Arial, sans-serif" font-size="10" fill="#1971c2" text-anchor="middle">Zero hard dep</text>
 
   <!-- Bottom caption -->
-  <text x="312" y="278" font-family="Arial, Helvetica, sans-serif" font-size="13" fill="#adb5bd">A cache is a claim about the world — probe it, measure it, bust it on schedule</text>
+  <text x="312" y="262" font-family="Arial, Helvetica, sans-serif" font-size="13" fill="#adb5bd"><tspan x="312">A cache is a claim about the world — probe it, measure it, bust it on</tspan><tspan x="312" dy="16">schedule</tspan></text>
 </svg>

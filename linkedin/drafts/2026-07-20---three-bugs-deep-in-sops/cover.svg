@@ -48,25 +48,25 @@
   <line x1="312" y1="168" x2="775" y2="168" stroke="#e9ecef" stroke-width="1.5"/>
 
   <!-- Concept chips row 1 -->
-  <rect x="312" y="182" width="104" height="28" fill="#fff5f5" rx="14" stroke="#ff6b6b" stroke-width="1.5"/>
-  <text x="364" y="200" font-family="Arial, sans-serif" font-size="12" fill="#c92a2a" text-anchor="middle">ssh-to-age drift</text>
+  <rect x="312" y="182" width="111" height="28" fill="#fff5f5" rx="14" stroke="#ff6b6b" stroke-width="1.5"/>
+  <text x="367.5" y="200" font-family="Arial, sans-serif" font-size="12" fill="#c92a2a" text-anchor="middle">ssh-to-age drift</text>
 
-  <rect x="426" y="182" width="110" height="28" fill="#fff9db" rx="14" stroke="#ffd43b" stroke-width="1.5"/>
-  <text x="481" y="200" font-family="Arial, sans-serif" font-size="12" fill="#e67700" text-anchor="middle">Default won't die</text>
+  <rect x="433" y="182" width="121" height="28" fill="#fff9db" rx="14" stroke="#ffd43b" stroke-width="1.5"/>
+  <text x="493.5" y="200" font-family="Arial, sans-serif" font-size="12" fill="#e67700" text-anchor="middle">Default won't die</text>
 
-  <rect x="546" y="182" width="118" height="28" fill="#f8f0fc" rx="14" stroke="#cc5de8" stroke-width="1.5"/>
-  <text x="605" y="200" font-family="Arial, sans-serif" font-size="12" fill="#862e9c" text-anchor="middle">Rosetta breaks crypto</text>
+  <rect x="564" y="182" width="150" height="28" fill="#f8f0fc" rx="14" stroke="#cc5de8" stroke-width="1.5"/>
+  <text x="639" y="200" font-family="Arial, sans-serif" font-size="12" fill="#862e9c" text-anchor="middle">Rosetta breaks crypto</text>
 
   <!-- Concept chips row 2 -->
-  <rect x="312" y="220" width="112" height="26" fill="#e7f5ff" rx="13" stroke="#4dabf7" stroke-width="1.5"/>
-  <text x="368" y="237" font-family="Arial, sans-serif" font-size="12" fill="#1971c2" text-anchor="middle">Dedicated age keys</text>
+  <rect x="312" y="220" width="137" height="26" fill="#e7f5ff" rx="13" stroke="#4dabf7" stroke-width="1.5"/>
+  <text x="380.5" y="237" font-family="Arial, sans-serif" font-size="12" fill="#1971c2" text-anchor="middle">Dedicated age keys</text>
 
-  <rect x="434" y="220" width="106" height="26" fill="#ebfbee" rx="13" stroke="#51cf66" stroke-width="1.5"/>
-  <text x="487" y="237" font-family="Arial, sans-serif" font-size="12" fill="#2f9e44" text-anchor="middle">RFC 8439 KAT</text>
+  <rect x="459" y="220" width="103" height="26" fill="#ebfbee" rx="13" stroke="#51cf66" stroke-width="1.5"/>
+  <text x="510.5" y="237" font-family="Arial, sans-serif" font-size="12" fill="#2f9e44" text-anchor="middle">RFC 8439 KAT</text>
 
-  <rect x="550" y="220" width="98" height="26" fill="#e6fcf5" rx="13" stroke="#20c997" stroke-width="1.5"/>
-  <text x="599" y="237" font-family="Arial, sans-serif" font-size="12" fill="#0ca678" text-anchor="middle">purego builds</text>
+  <rect x="572" y="220" width="100" height="26" fill="#e6fcf5" rx="13" stroke="#20c997" stroke-width="1.5"/>
+  <text x="622" y="237" font-family="Arial, sans-serif" font-size="12" fill="#0ca678" text-anchor="middle">purego builds</text>
 
   <!-- Bottom caption -->
-  <text x="312" y="278" font-family="Arial, Helvetica, sans-serif" font-size="13" fill="#adb5bd">Every fix was correct · every fix revealed the next bug · test vectors don't have opinions</text>
+  <text x="312" y="262" font-family="Arial, Helvetica, sans-serif" font-size="13" fill="#adb5bd"><tspan x="312">Every fix was correct · every fix revealed the next bug · test vectors</tspan><tspan x="312" dy="16">don't have opinions</tspan></text>
 </svg>

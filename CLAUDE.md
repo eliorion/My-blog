@@ -18,6 +18,21 @@ To **see** the rendered site, use the `preview-blog` skill (`.claude/skills/prev
 it serves the blog and screenshots key pages at desktop/mobile widths into
 `screenshots/` for visual inspection.
 
+## SVG images (covers, diagrams)
+
+Never finish an SVG from the markup alone — render it and look at it:
+
+```bash
+node scripts/svg-preview.mjs path/to/cover.svg   # → cover.preview.png + lint
+node scripts/svg-fix.mjs path/to/cover.svg       # auto-fix chip rows + long captions
+```
+
+Lints text spilling off canvas, text overflowing its chip/badge rect, overlapping
+labels, and font stacks that resolve to nothing; then `Read` the PNG to judge the
+design itself. Enforced on staged `.svg` by pre-commit. Only `DejaVu Sans`,
+`DejaVu Sans Mono`, `DejaVu Serif` are installed — name one of those first in every
+`font-family`. `*.preview.png` is gitignored.
+
 ## Post location
 
 `blog/content/11 - Posts/YYYY-MM-DD - Title/`

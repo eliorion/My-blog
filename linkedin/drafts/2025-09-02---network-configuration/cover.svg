@@ -50,24 +50,24 @@
   <line x1="312" y1="148" x2="775" y2="148" stroke="#e9ecef" stroke-width="1.5"/>
 
   <!-- Chips row 1 -->
-  <rect x="312" y="163" width="53" height="28" fill="#f8f0fc" rx="14" stroke="#cc5de8" stroke-width="1.5"/>
-  <text x="338" y="181" font-family="'DejaVu Sans', sans-serif" font-size="12" fill="#862e9c" text-anchor="middle">VLAN</text>
+  <rect x="312" y="163" width="51" height="28" fill="#f8f0fc" rx="14" stroke="#cc5de8" stroke-width="1.5"/>
+  <text x="337.5" y="181" font-family="'DejaVu Sans', sans-serif" font-size="12" fill="#862e9c" text-anchor="middle">VLAN</text>
 
-  <rect x="375" y="163" width="73" height="28" fill="#e7f5ff" rx="14" stroke="#4dabf7" stroke-width="1.5"/>
-  <text x="411" y="181" font-family="'DejaVu Sans', sans-serif" font-size="12" fill="#1971c2" text-anchor="middle">Bridges</text>
+  <rect x="373" y="163" width="64" height="28" fill="#e7f5ff" rx="14" stroke="#4dabf7" stroke-width="1.5"/>
+  <text x="405" y="181" font-family="'DejaVu Sans', sans-serif" font-size="12" fill="#1971c2" text-anchor="middle">Bridges</text>
 
-  <rect x="458" y="163" width="80" height="28" fill="#fff5f5" rx="14" stroke="#ff6b6b" stroke-width="1.5"/>
-  <text x="498" y="181" font-family="'DejaVu Sans', sans-serif" font-size="12" fill="#c92a2a" text-anchor="middle">Firewall</text>
+  <rect x="447" y="163" width="64" height="28" fill="#fff5f5" rx="14" stroke="#ff6b6b" stroke-width="1.5"/>
+  <text x="479" y="181" font-family="'DejaVu Sans', sans-serif" font-size="12" fill="#c92a2a" text-anchor="middle">Firewall</text>
 
   <!-- Chips row 2 -->
-  <rect x="312" y="202" width="60" height="26" fill="#e7f5ff" rx="13" stroke="#74c0fc" stroke-width="1.5"/>
-  <text x="342" y="219" font-family="'DejaVu Sans', sans-serif" font-size="12" fill="#1971c2" text-anchor="middle">Talos</text>
+  <rect x="312" y="202" width="49" height="26" fill="#e7f5ff" rx="13" stroke="#74c0fc" stroke-width="1.5"/>
+  <text x="336.5" y="219" font-family="'DejaVu Sans', sans-serif" font-size="12" fill="#1971c2" text-anchor="middle">Talos</text>
 
-  <rect x="382" y="202" width="73" height="26" fill="#fff4e6" rx="13" stroke="#ff922b" stroke-width="1.5"/>
-  <text x="418" y="219" font-family="'DejaVu Sans', sans-serif" font-size="12" fill="#d9480f" text-anchor="middle">Proxmox</text>
+  <rect x="371" y="202" width="70" height="26" fill="#fff4e6" rx="13" stroke="#ff922b" stroke-width="1.5"/>
+  <text x="406" y="219" font-family="'DejaVu Sans', sans-serif" font-size="12" fill="#d9480f" text-anchor="middle">Proxmox</text>
 
-  <rect x="465" y="202" width="73" height="26" fill="#ebfbee" rx="13" stroke="#51cf66" stroke-width="1.5"/>
-  <text x="501" y="219" font-family="'DejaVu Sans', sans-serif" font-size="12" fill="#2f9e44" text-anchor="middle">Network</text>
+  <rect x="451" y="202" width="69" height="26" fill="#ebfbee" rx="13" stroke="#51cf66" stroke-width="1.5"/>
+  <text x="485.5" y="219" font-family="'DejaVu Sans', sans-serif" font-size="12" fill="#2f9e44" text-anchor="middle">Network</text>
 
   <!-- Bottom caption -->
   <text x="312" y="272" font-family="'DejaVu Sans', Arial, sans-serif" font-size="13" fill="#adb5bd">Static IPs · VLANs · Router and switch configuration</text>

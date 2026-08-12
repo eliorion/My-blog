@@ -44,30 +44,30 @@
   <line x1="312" y1="168" x2="775" y2="168" stroke="#e9ecef" stroke-width="1.5"/>
 
   <!-- Concept chips row 1 -->
-  <rect x="312" y="182" width="80" height="28" fill="#e7f5ff" rx="14" stroke="#4dabf7" stroke-width="1.5"/>
-  <text x="352" y="200" font-family="Arial, sans-serif" font-size="12" fill="#1971c2" text-anchor="middle">Render diff</text>
+  <rect x="312" y="182" width="85" height="28" fill="#e7f5ff" rx="14" stroke="#4dabf7" stroke-width="1.5"/>
+  <text x="354.5" y="200" font-family="Arial, sans-serif" font-size="12" fill="#1971c2" text-anchor="middle">Render diff</text>
 
-  <rect x="402" y="182" width="94" height="28" fill="#ebfbee" rx="14" stroke="#51cf66" stroke-width="1.5"/>
-  <text x="449" y="200" font-family="Arial, sans-serif" font-size="12" fill="#2f9e44" text-anchor="middle">Generated lanes</text>
+  <rect x="407" y="182" width="118" height="28" fill="#ebfbee" rx="14" stroke="#51cf66" stroke-width="1.5"/>
+  <text x="466" y="200" font-family="Arial, sans-serif" font-size="12" fill="#2f9e44" text-anchor="middle">Generated lanes</text>
 
-  <rect x="506" y="182" width="86" height="28" fill="#fff9db" rx="14" stroke="#ffd43b" stroke-width="1.5"/>
-  <text x="549" y="200" font-family="Arial, sans-serif" font-size="12" fill="#e67700" text-anchor="middle">bump-chart CI</text>
+  <rect x="535" y="182" width="104" height="28" fill="#fff9db" rx="14" stroke="#ffd43b" stroke-width="1.5"/>
+  <text x="587" y="200" font-family="Arial, sans-serif" font-size="12" fill="#e67700" text-anchor="middle">bump-chart CI</text>
 
-  <rect x="602" y="182" width="90" height="28" fill="#f8f0fc" rx="14" stroke="#cc5de8" stroke-width="1.5"/>
-  <text x="647" y="200" font-family="Arial, sans-serif" font-size="12" fill="#862e9c" text-anchor="middle">HelmRelease</text>
+  <rect x="649" y="182" width="97" height="28" fill="#f8f0fc" rx="14" stroke="#cc5de8" stroke-width="1.5"/>
+  <text x="697.5" y="200" font-family="Arial, sans-serif" font-size="12" fill="#862e9c" text-anchor="middle">HelmRelease</text>
 
   <!-- Concept chips row 2 -->
-  <rect x="312" y="220" width="92" height="26" fill="#fff5f5" rx="13" stroke="#ff6b6b" stroke-width="1.5"/>
-  <text x="358" y="237" font-family="Arial, sans-serif" font-size="12" fill="#c92a2a" text-anchor="middle">values split</text>
+  <rect x="312" y="220" width="82" height="26" fill="#fff5f5" rx="13" stroke="#ff6b6b" stroke-width="1.5"/>
+  <text x="353" y="237" font-family="Arial, sans-serif" font-size="11" fill="#c92a2a" text-anchor="middle">values split</text>
 
-  <rect x="414" y="220" width="104" height="26" fill="#e6fcf5" rx="13" stroke="#20c997" stroke-width="1.5"/>
-  <text x="466" y="237" font-family="Arial, sans-serif" font-size="12" fill="#0ca678" text-anchor="middle">Two-phase deploy</text>
+  <rect x="404" y="220" width="119" height="26" fill="#e6fcf5" rx="13" stroke="#20c997" stroke-width="1.5"/>
+  <text x="463.5" y="237" font-family="Arial, sans-serif" font-size="11" fill="#0ca678" text-anchor="middle">Two-phase deploy</text>
 
-  <rect x="528" y="220" width="98" height="26" fill="#fff4e6" rx="13" stroke="#ff922b" stroke-width="1.5"/>
-  <text x="577" y="237" font-family="Arial, sans-serif" font-size="12" fill="#d9480f" text-anchor="middle">helm lint + smoke</text>
+  <rect x="533" y="220" width="119" height="26" fill="#fff4e6" rx="13" stroke="#ff922b" stroke-width="1.5"/>
+  <text x="592.5" y="237" font-family="Arial, sans-serif" font-size="11" fill="#d9480f" text-anchor="middle">helm lint + smoke</text>
 
-  <rect x="636" y="220" width="86" height="26" fill="#e7f5ff" rx="13" stroke="#74c0fc" stroke-width="1.5"/>
-  <text x="679" y="237" font-family="Arial, sans-serif" font-size="12" fill="#1971c2" text-anchor="middle">Kustomize dev</text>
+  <rect x="662" y="220" width="99" height="26" fill="#e7f5ff" rx="13" stroke="#74c0fc" stroke-width="1.5"/>
+  <text x="711.5" y="237" font-family="Arial, sans-serif" font-size="11" fill="#1971c2" text-anchor="middle">Kustomize dev</text>
 
   <!-- Bottom caption -->
   <text x="312" y="278" font-family="Arial, Helvetica, sans-serif" font-size="13" fill="#adb5bd">Same rendered YAML · one chart for the fleet · each tool at its best</text>

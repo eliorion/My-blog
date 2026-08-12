@@ -10,3 +10,4 @@ __pycache__/
 .agents/
 linkedin/.linkedin_token.json
 linkedin/.env
+*.preview.png
