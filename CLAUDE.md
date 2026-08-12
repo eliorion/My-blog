@@ -33,6 +33,12 @@ design itself. Enforced on staged `.svg` by pre-commit. Only `DejaVu Sans`,
 `DejaVu Sans Mono`, `DejaVu Serif` are installed — name one of those first in every
 `font-family`. `*.preview.png` is gitignored.
 
+The homelab n8n workflow `Blog - Draft and PR` carries the same repair as a
+`Fix Cover SVG` Code node between `Build Post Files` and the commit — same algorithm,
+but with DejaVu metrics baked in, since n8n has no browser to measure with. It reports
+what it changed (and what it could not fix) in the PR body and in Telegram. Change one
+side and the other drifts.
+
 ## Post location
 
 `blog/content/11 - Posts/YYYY-MM-DD - Title/`
