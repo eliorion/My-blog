@@ -1,0 +1,14 @@
+{
+  "name": "svg-render",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Render an SVG to PNG and lint it, over HTTP, for the n8n cover review loop",
+  "main": "server.mjs",
+  "scripts": {
+    "start": "node server.mjs"
+  },
+  "dependencies": {
+    "playwright-core": "1.60.0"
+  }
+}

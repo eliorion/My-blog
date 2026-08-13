@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: svg-render
+  namespace: svg-render
+  labels:
+    app: svg-render
+spec:
+  type: ClusterIP
+  selector:
+    app: svg-render
+  ports:
+    - name: http
+      port: 8080
+      targetPort: http

@@ -1,0 +1,5 @@
+# node_modules is a symlink into the preview-blog skill when running locally.
+# Following it would drag a few hundred MB of Chromium into the build context.
+node_modules
+*.png
+README.md
