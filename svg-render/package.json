@@ -1,6 +1,6 @@
 {
   "name": "svg-render",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "private": true,
   "type": "module",
   "description": "Render an SVG to PNG and lint it, over HTTP, for the n8n cover review loop",
