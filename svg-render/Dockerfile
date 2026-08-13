@@ -7,7 +7,12 @@ FROM mcr.microsoft.com/playwright:v1.60.0-noble
 # The dev container has exactly three fonts, and the cover repair pass measures
 # text with DejaVu metrics. Strip every other family so a render here matches a
 # render there instead of quietly resolving Arial to Liberation Sans.
+# The Playwright image is rebuilt on its own schedule, so its Ubuntu packages
+# lag the security archive — openssl was two patch releases behind on the first
+# build. Take the updates at build time; the Trivy gate is what notices when
+# this stops being enough.
 RUN apt-get update \
+ && apt-get upgrade -y --no-install-recommends \
  && apt-get install -y --no-install-recommends fonts-dejavu-core \
  && rm -rf /var/lib/apt/lists/* \
  && mv /usr/share/fonts/truetype/dejavu /tmp/dejavu \
