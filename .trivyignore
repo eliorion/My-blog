@@ -1,0 +1,6 @@
+# CVEs accepted for the svg-render image, one per line, with a reason and a date.
+# The gate is CRITICAL + HIGH with --ignore-unfixed, so anything landing here is
+# a fixed vulnerability we are choosing to carry — say why, and revisit it.
+#
+# Example:
+# CVE-2024-0000  # only reachable through the CLI, image never runs it — 2026-08-13

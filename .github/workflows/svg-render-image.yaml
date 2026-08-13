@@ -1,0 +1,117 @@
+name: svg-render image
+
+# The only thing that pushes to ghcr.io. Nothing ships unscanned: the image is
+# built once into the local daemon, Trivy scans those exact bytes, and the push
+# step only runs if the scan passed.
+#
+# - pull request touching svg-render/  -> build + scan, no push
+# - tag svg-render-v*                  -> build + scan + push (release-please cuts the tag)
+# - workflow_dispatch                  -> same, at the version in the manifest
+on:
+  pull_request:
+    paths:
+      - svg-render/**
+      - .github/workflows/svg-render-image.yaml
+  push:
+    tags:
+      - svg-render-v*
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+env:
+  IMAGE: ghcr.io/eliorion/my-blog-svg-render
+
+jobs:
+  image:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+      security-events: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Work out the version, and whether this one ships
+        id: plan
+        run: |
+          case "${{ github.event_name }}" in
+            push)
+              echo "version=${GITHUB_REF_NAME#svg-render-v}" >> "$GITHUB_OUTPUT"
+              echo "ship=true" >> "$GITHUB_OUTPUT"
+              ;;
+            workflow_dispatch)
+              echo "version=$(jq -r '."svg-render"' .release-please-manifest.json)" >> "$GITHUB_OUTPUT"
+              echo "ship=true" >> "$GITHUB_OUTPUT"
+              ;;
+            *)
+              echo "version=pr-${{ github.event.number }}" >> "$GITHUB_OUTPUT"
+              echo "ship=false" >> "$GITHUB_OUTPUT"
+              ;;
+          esac
+
+      - uses: docker/setup-buildx-action@v3
+
+      # load, not push: the artifact has to exist locally before it is allowed
+      # anywhere near the registry.
+      - name: Build
+        uses: docker/build-push-action@v6
+        with:
+          context: svg-render
+          file: svg-render/Dockerfile
+          load: true
+          tags: svg-render:${{ steps.plan.outputs.version }}
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+
+      - name: Scan
+        uses: aquasecurity/trivy-action@0.28.0
+        with:
+          image-ref: svg-render:${{ steps.plan.outputs.version }}
+          scan-type: image
+          severity: CRITICAL,HIGH
+          ignore-unfixed: true
+          trivyignores: .trivyignore
+          format: table
+          exit-code: "1"
+
+      # Runs even when the gate above failed, so the findings are readable in
+      # the Security tab rather than only in a red log.
+      - name: Scan again for the Security tab
+        if: always()
+        uses: aquasecurity/trivy-action@0.28.0
+        with:
+          image-ref: svg-render:${{ steps.plan.outputs.version }}
+          scan-type: image
+          severity: CRITICAL,HIGH,MEDIUM
+          ignore-unfixed: true
+          format: sarif
+          output: trivy.sarif
+          exit-code: "0"
+
+      - name: Upload findings
+        if: always()
+        uses: github/codeql-action/upload-sarif@v3
+        with:
+          sarif_file: trivy.sarif
+          category: svg-render-image
+
+      - name: Log in to ghcr.io
+        if: steps.plan.outputs.ship == 'true'
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Push the scanned image
+        if: steps.plan.outputs.ship == 'true'
+        env:
+          V: ${{ steps.plan.outputs.version }}
+        run: |
+          docker tag "svg-render:${V}" "${IMAGE}:${V}"
+          docker tag "svg-render:${V}" "${IMAGE}:latest"
+          docker push "${IMAGE}:${V}"
+          docker push "${IMAGE}:latest"
+          echo "pushed ${IMAGE}:${V}" >> "$GITHUB_STEP_SUMMARY"
