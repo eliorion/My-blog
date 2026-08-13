@@ -96,4 +96,8 @@ node svg-render/server.mjs
   page tries to make, so the markup a model wrote cannot execute or phone home.
 - `/dev/shm` is an in-memory `emptyDir`. Chromium crashes on the 64 MiB a
   container gets by default.
+- npm is deleted from the image after `npm install`. The container runs
+  `node server.mjs` and nothing else, and npm's bundled dependencies were the
+  entire CRITICAL/HIGH surface Trivy found — vulnerable code that would never
+  have executed. Deleting it is cheaper than carrying it in `.trivyignore`.
 - Build context is this directory: `docker build -t svg-render svg-render`.

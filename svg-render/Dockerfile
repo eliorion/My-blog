@@ -18,8 +18,21 @@ RUN apt-get update \
 
 WORKDIR /app
 
+# npm is a build-time tool here — the container runs `node server.mjs` and
+# nothing else. Left in place it is the whole vulnerability surface of this
+# image: its bundled tar, sigstore, brace-expansion, ip-address and picomatch
+# are what Trivy flags, none of it ever executed. So install, then delete it.
 COPY package.json ./
-RUN npm install --omit=dev --no-audit --no-fund
+RUN npm install --omit=dev --no-audit --no-fund \
+ && npm cache clean --force \
+ && rm -rf /usr/local/lib/node_modules/npm /usr/lib/node_modules/npm \
+           /usr/local/lib/node_modules/corepack /usr/lib/node_modules/corepack \
+           /usr/local/lib/node_modules/yarn /opt/yarn* \
+           /usr/local/bin/npm /usr/local/bin/npx /usr/local/bin/corepack \
+           /usr/local/bin/yarn /usr/local/bin/yarnpkg \
+           /usr/bin/npm /usr/bin/npx /usr/bin/corepack \
+           /root/.npm /home/pwuser/.npm \
+ && node -e "require('playwright-core'); console.log('playwright-core resolves without npm')"
 
 COPY server.mjs ./
 COPY lib ./lib
