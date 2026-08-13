@@ -1,0 +1,27 @@
+name: release-please
+
+# Cuts a release only for what actually changed. Right now the only released
+# thing is svg-render/, so a post, a LinkedIn draft or a theme bump never
+# produces a release PR — release-please assigns commits by path, and everything
+# baked into the image (server, shared lint and repair, Dockerfile) lives under
+# that one directory.
+#
+# Merging the release PR tags svg-render-vX.Y.Z, which is what triggers
+# svg-render-image.yaml to scan and push the image.
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  release-please:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: googleapis/release-please-action@v4
+        with:
+          config-file: release-please-config.json
+          manifest-file: .release-please-manifest.json
