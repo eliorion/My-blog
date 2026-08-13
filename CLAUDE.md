@@ -33,11 +33,46 @@ design itself. Enforced on staged `.svg` by pre-commit. Only `DejaVu Sans`,
 `DejaVu Sans Mono`, `DejaVu Serif` are installed — name one of those first in every
 `font-family`. `*.preview.png` is gitignored.
 
+Both CLI tools are thin wrappers. The algorithms live in
+`svg-render/lib/svg-audit.mjs` (the lint) and `svg-render/lib/svg-repair.mjs`
+(the fix); the service imports the same two files — edit them once, not per
+caller. They sit under `svg-render/` so that changing either counts as changing
+the image, which is what release-please watches.
+
 The homelab n8n workflow `Blog - Draft and PR` carries the same repair as a
 `Fix Cover SVG` Code node between `Build Post Files` and the commit — same algorithm,
 but with DejaVu metrics baked in, since n8n has no browser to measure with. It reports
 what it changed (and what it could not fix) in the PR body and in Telegram. Change one
-side and the other drifts.
+side and the other drifts. `Blog - Cover Review` does not have this problem: it calls
+`svg-render` instead.
+
+## Changing a cover from Telegram
+
+`Blog - Cover Review` (n8n, `LE945sdy1heKIbJQ`) is a chat loop over a draft's
+`cover.svg`:
+
+| You send | What happens |
+| --- | --- |
+| `/review` | newest open `post/*` PR, its cover rendered back as a photo |
+| anything else | ai-gateway redraws the cover with that change, `svg-render` repairs and lints it, n8n commits to the draft branch and replies with the new PNG |
+| `/undo` | re-commits the previous version of the cover — read from git history, not a stack |
+| `/done` | deletes the session row, links the PR |
+
+Session state is one row per chat in the `cover_review` Data Table. Every proposal
+is a real commit on the draft branch, so the PR always shows the current cover.
+
+`svg-render/` is the service behind it — Playwright over HTTP, `/fix` and `/render`.
+It runs in the cluster (`k8s/svg-render/`). See `svg-render/README.md`.
+
+## Releases
+
+`release-please` (`.github/workflows/release-please.yaml`, config in
+`release-please-config.json`) watches `svg-render/` and nothing else. Commits are
+assigned by path, so posts and drafts never open a release PR. Merging one tags
+`svg-render-vX.Y.Z`, which is the only thing that runs
+`.github/workflows/svg-render-image.yaml`: build, **Trivy gate on CRITICAL + HIGH**,
+then push to `ghcr.io/eliorion/my-blog-svg-render`. Nothing unscanned reaches the
+registry. Accepted CVEs live in `.trivyignore` with a reason and a date.
 
 ## Post location
 
