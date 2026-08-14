@@ -53,13 +53,20 @@ side and the other drifts. `Blog - Cover Review` does not have this problem: it 
 
 | You send | What happens |
 | --- | --- |
-| `/review` | newest open `post/*` PR, its cover rendered back as a photo |
+| `/cover` | newest open `post/*` PR, its cover rendered back as a photo |
 | anything else | ai-gateway redraws the cover with that change, `svg-render` repairs and lints it, n8n commits to the draft branch and replies with the new PNG |
-| `/undo` | re-commits the previous version of the cover — read from git history, not a stack |
-| `/done` | deletes the session row, links the PR |
+| `/cover undo` | re-commits the previous version of the cover — read from git history, not a stack |
+| `/cover done` | deletes the session row, links the PR |
 
 Session state is one row per chat in the `cover_review` Data Table. Every proposal
 is a real commit on the draft branch, so the PR always shows the current cover.
+
+**It runs on its own bot.** Telegram allows one webhook per bot token, and the
+`LinkedIn` workflow already holds a Telegram Trigger on the main bot — activating
+a second one against the same token steals the webhook and the LinkedIn approval
+loop goes quiet with no error. That bot also already owns `/review` and treats
+bare text as "rewrite this post's commentary", which is why the cover commands are
+`/cover`, not `/review`. Two bots, two webhooks, no overlap.
 
 `svg-render/` is the service behind it — Playwright over HTTP, `/fix` and `/render`.
 It runs in the cluster (`k8s/svg-render/`). See `svg-render/README.md`.
