@@ -2,6 +2,7 @@
 title: 'Homelab architecture Learning Project'
 date: 2025-09-15T22:50:16+02:00
 draft: false
+aliases: ["/11---posts/2025-09-15---architecture-learning-project/"]
 topics: ["Homelab"]
 tags: ["talos.linux", "K8S", "K9S", "K3S", "talosctl", "proxmox", "hardware", "homelab", "network"]
 projects: ["HomeLab gitDevSecOps"]

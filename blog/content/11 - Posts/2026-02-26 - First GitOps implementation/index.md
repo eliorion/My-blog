@@ -2,6 +2,7 @@
 title: First GitOps implementation
 date: 2026-03-04T09:38:10+01:00
 draft: false
+aliases: ["/11---posts/2026-02-26---first-gitops-implementation/"]
 topics:
   - DevOps
   - Homelab

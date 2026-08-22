@@ -2,6 +2,7 @@
 title: "CI Runners Inside the Cluster: ARC on Talos"
 date: 2026-07-10T09:00:00+02:00
 draft: false
+aliases: ["/11---posts/2026-07-10---ci-runners-inside-the-cluster/"]
 topics:
   - Homelab
   - DevOps

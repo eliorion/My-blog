@@ -2,6 +2,7 @@
 title: "Why I Built a Self-Hosted Home Security Platform"
 date: 2026-05-24T09:00:00+02:00
 draft: false
+aliases: ["/11---posts/2026-05-24---mve-itguard/"]
 topics:
   - Homelab
   - Security

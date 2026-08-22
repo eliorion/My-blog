@@ -2,6 +2,7 @@
 title: "When a Deploy Fails, My Phone Buzzes: Flux Alerts to Telegram"
 date: 2026-07-12T09:00:00+02:00
 draft: false
+aliases: ["/11---posts/2026-07-12---deploy-failures-to-telegram/"]
 topics:
   - Homelab
   - DevOps

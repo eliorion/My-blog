@@ -2,6 +2,7 @@
 title: 'OpenClaw setup and security'
 date: '2026-05-14'
 draft: false
+aliases: ["/11---posts/2026-05-14---openclaw-setup-and-security/"]
 topics:
   - Homelab
   - Security

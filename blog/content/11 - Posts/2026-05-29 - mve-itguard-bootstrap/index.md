@@ -2,6 +2,7 @@
 title: "One Command to Provision a Server"
 date: 2026-05-29T09:00:00+02:00
 draft: false
+aliases: ["/11---posts/2026-05-29---mve-itguard-bootstrap/"]
 topics:
   - DevOps
   - Homelab

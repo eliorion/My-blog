@@ -2,6 +2,7 @@
 title: "CI Runners That Cannot Hurt Production"
 date: 2026-05-28T09:00:00+02:00
 draft: false
+aliases: ["/11---posts/2026-05-28---mve-itguard-runners/"]
 topics:
   - DevOps
   - Security

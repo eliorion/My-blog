@@ -2,6 +2,7 @@
 title: 'Refactoring My Blog'
 date: '2026-03-27'
 draft: false
+aliases: ["/11---posts/2026-03-27---refactoring-my-blog/"]
 topics:
   - blog
   - refactoring

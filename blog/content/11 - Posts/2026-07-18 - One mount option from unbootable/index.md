@@ -2,6 +2,7 @@
 title: "One Mount Option Away From an Unbootable Server"
 date: 2026-07-18T09:00:00+02:00
 draft: false
+aliases: ["/11---posts/2026-07-18---one-mount-option-from-unbootable/"]
 topics:
   - Homelab
   - DevOps

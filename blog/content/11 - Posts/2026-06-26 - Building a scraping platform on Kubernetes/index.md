@@ -2,6 +2,7 @@
 title: "Building a Scraping Platform on Kubernetes"
 date: 2026-06-26T09:00:00+02:00
 draft: false
+aliases: ["/11---posts/2026-06-26---building-a-scraping-platform-on-kubernetes/"]
 topics:
   - Homelab
   - DevOps

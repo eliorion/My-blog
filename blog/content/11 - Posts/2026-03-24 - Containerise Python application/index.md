@@ -2,6 +2,7 @@
 title: Containerise Python application
 date: 2026-03-27T09:38:10+01:00
 draft: false
+aliases: ["/11---posts/2026-03-24---containerise-python-application/"]
 topics:
   - Homelab
   - DevOps

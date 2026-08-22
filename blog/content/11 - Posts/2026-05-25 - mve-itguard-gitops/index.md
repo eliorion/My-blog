@@ -2,6 +2,7 @@
 title: "GitOps Without Kubernetes: Docker Compose + GitHub Actions"
 date: 2026-05-25T09:00:00+02:00
 draft: false
+aliases: ["/11---posts/2026-05-25---mve-itguard-gitops/"]
 topics:
   - Homelab
   - DevOps

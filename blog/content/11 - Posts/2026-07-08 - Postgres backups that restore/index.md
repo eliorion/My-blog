@@ -2,6 +2,7 @@
 title: "Postgres Backups That Actually Restore: CNPG + R2"
 date: 2026-07-08T09:00:00+02:00
 draft: false
+aliases: ["/11---posts/2026-07-08---postgres-backups-that-restore/"]
 topics:
   - Homelab
   - DevOps

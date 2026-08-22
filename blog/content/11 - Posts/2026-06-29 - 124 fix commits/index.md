@@ -2,6 +2,7 @@
 title: "124 Fix Commits: Learning Kubernetes by Breaking It"
 date: 2026-06-29T09:00:00+02:00
 draft: false
+aliases: ["/11---posts/2026-06-29---124-fix-commits/"]
 topics:
   - Homelab
   - DevOps

@@ -2,6 +2,7 @@
 title: 'Become a beginer again'
 date: 2025-12-11T09:38:10+01:00
 draft: false
+aliases: ["/11---posts/2026-01-01---become-beginer-again/"]
 topics: ["Homelab"]
 tags: ["Workflow", "Productivity", "Mindset"]
 projects: ["Personal improvement"]

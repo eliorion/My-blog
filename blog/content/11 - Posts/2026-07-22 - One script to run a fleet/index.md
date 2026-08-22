@@ -2,6 +2,7 @@
 title: "One Script to Run a Fleet"
 date: 2026-07-22T09:00:00+02:00
 draft: false
+aliases: ["/11---posts/2026-07-22---one-script-to-run-a-fleet/"]
 topics:
   - Homelab
   - DevOps

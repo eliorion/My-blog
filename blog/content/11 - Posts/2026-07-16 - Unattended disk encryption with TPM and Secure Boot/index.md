@@ -2,6 +2,7 @@
 title: "Unattended Disk Encryption: LUKS, TPM, and Secure Boot on NixOS"
 date: 2026-07-16T09:00:00+02:00
 draft: false
+aliases: ["/11---posts/2026-07-16---unattended-disk-encryption-with-tpm-and-secure-boot/"]
 topics:
   - Homelab
   - Security

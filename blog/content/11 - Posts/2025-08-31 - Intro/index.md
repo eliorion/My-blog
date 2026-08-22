@@ -1,6 +1,7 @@
 ---
 date: 2025-08-31T14:00:00+02:00
 draft: false
+aliases: ["/11---posts/2025-08-31---intro/"]
 title: 'Introduction to my blog'
 topics: ["Myself", "Overview"]
 categories: ["Generic"]

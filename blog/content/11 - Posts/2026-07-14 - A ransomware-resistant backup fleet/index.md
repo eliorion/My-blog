@@ -2,6 +2,7 @@
 title: "A Ransomware-Resistant Backup Fleet on NixOS"
 date: 2026-07-14T09:00:00+02:00
 draft: false
+aliases: ["/11---posts/2026-07-14---a-ransomware-resistant-backup-fleet/"]
 topics:
   - Homelab
   - Security

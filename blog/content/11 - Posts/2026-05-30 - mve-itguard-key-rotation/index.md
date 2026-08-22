@@ -2,6 +2,7 @@
 title: "Automated AGE Key Rotation in CI"
 date: 2026-05-30T09:00:00+02:00
 draft: false
+aliases: ["/11---posts/2026-05-30---mve-itguard-key-rotation/"]
 topics:
   - DevOps
   - Security

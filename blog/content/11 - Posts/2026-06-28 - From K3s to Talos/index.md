@@ -2,6 +2,7 @@
 title: "From K3s to Talos: Rebuilding the Homelab Cluster"
 date: 2026-06-28T09:00:00+02:00
 draft: false
+aliases: ["/11---posts/2026-06-28---from-k3s-to-talos/"]
 topics:
   - Homelab
   - DevOps

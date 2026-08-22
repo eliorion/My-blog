@@ -2,6 +2,7 @@
 title: "When CI Cannot Pull: Caching Everything Through Nexus"
 date: 2026-07-04T09:00:00+02:00
 draft: false
+aliases: ["/11---posts/2026-07-04---caching-everything-through-nexus/"]
 topics:
   - Homelab
   - DevOps

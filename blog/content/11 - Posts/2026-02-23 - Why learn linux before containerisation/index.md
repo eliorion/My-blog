@@ -2,6 +2,7 @@
 title: Why learn linux before containerisation
 date: 2026-02-23T09:38:10+01:00
 draft: false
+aliases: ["/11---posts/2026-02-23---why-learn-linux-before-containerisation/"]
 topics:
   - DevOps
 tags:

@@ -2,6 +2,7 @@
 title: "Three Bugs Deep: The Week sops Refused to Decrypt"
 date: 2026-07-20T09:00:00+02:00
 draft: false
+aliases: ["/11---posts/2026-07-20---three-bugs-deep-in-sops/"]
 topics:
   - Homelab
   - Security

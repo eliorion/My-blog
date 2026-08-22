@@ -2,6 +2,7 @@
 title: "From Kustomize to Helm: Migrating the Deploy Layer"
 date: 2026-06-30T09:00:00+02:00
 draft: false
+aliases: ["/11---posts/2026-06-30---from-kustomize-to-helm/"]
 topics:
   - Homelab
   - DevOps

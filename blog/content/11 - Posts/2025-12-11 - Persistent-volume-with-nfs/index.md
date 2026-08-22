@@ -2,6 +2,7 @@
 title: 'Persistence volume in Kubernetes'
 date: 2025-12-11T09:38:10+01:00
 draft: false
+aliases: ["/11---posts/2025-12-11---persistent-volume-with-nfs/"]
 topics: ["Homelab"]
 tags: ["talos.linux", "K8S", "TrueNAS", "pulumi", "talosctl", "proxmox", "hardware", "homelab", "IaC", "nfs", "pvc"]
 projects: ["HomeLab gitDevSecOps"]

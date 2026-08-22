@@ -2,6 +2,7 @@
 title: "Secrets in Git Without Fear: SOPS + AGE"
 date: 2026-05-27T09:00:00+02:00
 draft: false
+aliases: ["/11---posts/2026-05-27---mve-itguard-secrets/"]
 topics:
   - DevOps
   - Security

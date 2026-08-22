@@ -2,6 +2,7 @@
 title: "Multi-Node Backup with Restic"
 date: 2026-05-31T09:00:00+02:00
 draft: false
+aliases: ["/11---posts/2026-05-31---mve-itguard-backup/"]
 topics:
   - Homelab
   - DevOps

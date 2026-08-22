@@ -2,6 +2,7 @@
 title: "One Repo, Many Versions: Living with release-please"
 date: 2026-07-06T09:00:00+02:00
 draft: false
+aliases: ["/11---posts/2026-07-06---one-repo-many-versions/"]
 topics:
   - Homelab
   - DevOps

@@ -2,6 +2,7 @@
 title: "First Step in Homelab world"
 date: 2025-08-31T14:51:29+02:00
 draft: false
+aliases: ["/11---posts/2025-09-01---first-step-in-homelab/"]
 topics: ["Homelab"]
 tags: ["talos.linux", "K8S", "K9S", "K3S", "talosctl", "proxmox", "hardware", "homelab", "network"]
 projects: ["HomeLab gitDevSecOps"]
