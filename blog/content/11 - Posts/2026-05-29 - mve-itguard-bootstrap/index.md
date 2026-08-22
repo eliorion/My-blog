@@ -264,4 +264,4 @@ That is the property that matters most for a home server. Not high availability,
 
 ---
 
-*Next in this series: [Automated AGE Key Rotation in CI](/posts/mve-itguard-key-rotation) — how the pipeline detects a changed encryption key and re-encrypts all secrets automatically on every push.*
+*Next in this series: [Automated AGE Key Rotation in CI]({{< relref "2026-05-30 - mve-itguard-key-rotation/index.md" >}}) — how the pipeline detects a changed encryption key and re-encrypts all secrets automatically on every push.*

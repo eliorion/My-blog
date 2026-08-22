@@ -224,4 +224,4 @@ The trade-off is that the AGE private key is the single point of failure. Lose i
 
 ---
 
-*Next in this series: [CI Runners That Cannot Hurt Production](/posts/mve-itguard-runners) — how the self-hosted runners are structured to give the deploy pipeline Docker access without exposing production to untrusted code paths.*
+*Next in this series: [CI Runners That Cannot Hurt Production]({{< relref "2026-05-28 - mve-itguard-runners/index.md" >}}) — how the self-hosted runners are structured to give the deploy pipeline Docker access without exposing production to untrusted code paths.*

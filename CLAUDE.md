@@ -81,9 +81,22 @@ assigned by path, so posts and drafts never open a release PR. Merging one tags
 then push to `ghcr.io/eliorion/my-blog-svg-render`. Nothing unscanned reaches the
 registry. Accepted CVEs live in `.trivyignore` with a reason and a date.
 
+## Homepage
+
+`blog/layouts/index.html` + `blog/assets/css/extended/home.css`. Copy reads from
+`[languages.en.params.home]` in `hugo.toml` (tagline, intro, pillars, stack chips);
+latest posts and the post count come from the content. Every link goes through
+`relLangURL` — the site lives under the `/My-blog` sub-path, so a bare `/posts/`
+href 404s in production. Same trap in markdown: link `../posts/` or `{{< relref >}}`,
+never `/posts/`.
+
 ## Post location
 
 `blog/content/11 - Posts/YYYY-MM-DD - Title/`
+
+The section directory keeps its Obsidian ordering prefix, so Hugo slugifies it to
+`11---posts` — that, not `posts`, is the key in `[permalinks]`, and
+`11 - Posts/_index.md` carries `url: /posts/` to put the list page at `/posts/`.
 
 Each post = folder with:
 - `index.md` — content

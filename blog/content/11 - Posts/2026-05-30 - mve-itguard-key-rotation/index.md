@@ -202,4 +202,4 @@ The property this gives is that rotation actually happens. When rotation is fric
 
 ---
 
-*Next in this series: [Multi-Node Backup with Restic](/posts/mve-itguard-backup) — append-only backups across redundant nodes over Cloudflare Tunnel, with automatic daily scheduling and container-pause consistency.*
+*Next in this series: [Multi-Node Backup with Restic]({{< relref "2026-05-31 - mve-itguard-backup/index.md" >}}) — append-only backups across redundant nodes over Cloudflare Tunnel, with automatic daily scheduling and container-pause consistency.*

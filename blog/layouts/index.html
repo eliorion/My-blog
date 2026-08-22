@@ -1,0 +1,64 @@
+{{- define "main" }}
+{{- $home := site.Params.home }}
+{{- $posts := where site.RegularPages "Section" "11---posts" }}
+
+<section class="home-hero">
+  <h1>{{ $home.title | default site.Title }}</h1>
+  <p class="home-tagline">{{ $home.tagline | markdownify }}</p>
+  <div class="home-intro">{{ $home.intro | markdownify }}</div>
+  <div class="home-cta">
+    <a class="home-btn home-btn-primary" href="{{ "posts/" | relLangURL }}">Read the posts</a>
+    <a class="home-btn" href="{{ "topics/" | relLangURL }}">Browse topics</a>
+    <a class="home-btn" href="{{ "about/" | relLangURL }}">About me</a>
+  </div>
+</section>
+
+{{- with $home.pillars }}
+<section class="home-section">
+  <h2>What I'm building</h2>
+  <div class="home-pillars">
+    {{- range . }}
+    <a class="home-pillar" href="{{ (printf "topics/%s/" (urlize .topic)) | relLangURL }}">
+      <h3>{{ .title }}</h3>
+      <p>{{ .body }}</p>
+      <span class="home-pillar-more">{{ .topic }} &rarr;</span>
+    </a>
+    {{- end }}
+  </div>
+</section>
+{{- end }}
+
+{{- with $home.stack }}
+<section class="home-section">
+  <h2>The stack</h2>
+  <div class="home-stack">
+    {{- range . }}
+    <div class="home-stack-group">
+      <h3>{{ .group }}</h3>
+      <ul class="home-chips">
+        {{- range .tags }}
+        <li><a href="{{ (printf "tags/%s/" (urlize .)) | relLangURL }}">{{ . }}</a></li>
+        {{- end }}
+      </ul>
+    </div>
+    {{- end }}
+  </div>
+</section>
+{{- end }}
+
+<section class="home-section">
+  <h2>Latest posts</h2>
+  <ul class="home-posts">
+    {{- range first 5 ($posts.ByDate.Reverse) }}
+    <li>
+      <a href="{{ .Permalink }}">
+        <span class="home-post-date">{{ .Date.Format "2006-01-02" }}</span>
+        <span class="home-post-title">{{ .Title }}</span>
+      </a>
+      <p class="home-post-summary">{{ .Summary | plainify | truncate 160 }}</p>
+    </li>
+    {{- end }}
+  </ul>
+  <a class="home-btn" href="{{ "posts/" | relLangURL }}">All {{ len $posts }} posts &rarr;</a>
+</section>
+{{- end }}

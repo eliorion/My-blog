@@ -270,4 +270,4 @@ This is the GitOps principle applied to Docker Compose: Git drives everything, t
 
 ---
 
-*Next in this series: [Secrets in Git Without Fear: SOPS + AGE](/posts/mve-itguard-secrets) — how every secret in this project is encrypted and committed to version control, without ever exposing plaintext.*
+*Next in this series: [Secrets in Git Without Fear: SOPS + AGE]({{< relref "2026-05-27 - mve-itguard-secrets/index.md" >}}) — how every secret in this project is encrypted and committed to version control, without ever exposing plaintext.*

@@ -12,3 +12,4 @@ linkedin/.linkedin_token.json
 linkedin/.env
 *.preview.png
 node_modules/
+!blog/layouts/**/*.html

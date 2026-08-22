@@ -250,4 +250,4 @@ No individual runner has enough access to cause serious damage on its own. That 
 
 ---
 
-*Next in this series: [One Command to Provision a Server](/posts/mve-itguard-bootstrap) — how the bootstrap script provisions a fresh Debian server end-to-end with a single command.*
+*Next in this series: [One Command to Provision a Server]({{< relref "2026-05-29 - mve-itguard-bootstrap/index.md" >}}) — how the bootstrap script provisions a fresh Debian server end-to-end with a single command.*
