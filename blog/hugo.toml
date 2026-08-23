@@ -84,7 +84,7 @@ title = "Eliorion"
 tagline = "Homelab, Kubernetes, and everything that breaks in between."
 intro = """
 I run a homelab as a production system: real clusters, real GitOps, real backups,
-real 3 a.m. failures. This blog is the write-up of that — what I built, what broke,
+real 3 a.m. failures. This blog is the write-up of that: what I built, what broke,
 and what the fix actually was.
 """
 
@@ -95,7 +95,7 @@ topic = "Homelab"
 
 [[languages.en.params.home.pillars]]
 title = "Ship it like production"
-body = "GitOps with Flux, self-hosted runners, release automation — a merge is the only deploy button."
+body = "GitOps with Flux, self-hosted runners, release automation. A merge is the only deploy button."
 topic = "DevOps"
 
 [[languages.en.params.home.pillars]]

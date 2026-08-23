@@ -35,7 +35,7 @@ cover:
 
 ## The Problem with Commercial Solutions
 
-When I started thinking about home security cameras, the obvious path was a commercial solution — Ring, Nest, or one of the dozens of cloud-connected systems on the market. Plug it in, create an account, and you're done.
+When I started thinking about home security cameras, the obvious path was a commercial solution: Ring, Nest, or one of the dozens of cloud-connected systems on the market. Plug it in, create an account, and you're done.
 
 I did not go that route. Not because it is difficult to set up, but because of what it implies: your video footage lives on someone else's server, your access depends on a subscription, and if the company changes its pricing or shuts down, you lose everything you built around it.
 
@@ -60,7 +60,7 @@ The name comes from the project it was built for. The architecture was designed 
 
 ### Home Assistant
 
-[Home Assistant](https://www.home-assistant.io/) is the central hub. It handles automations, stores history, sends notifications, and provides the main user interface — accessible on mobile via its app.
+[Home Assistant](https://www.home-assistant.io/) is the central hub. It handles automations, stores history, sends notifications, and provides the main user interface, accessible on mobile via its app.
 
 I chose Home Assistant because it has become the de facto standard for self-hosted home automation. The ecosystem is massive: thousands of integrations, an active community, and regular releases. It is also the natural place to tie together cameras, Zigbee sensors, and automations in one interface.
 
@@ -70,13 +70,13 @@ I chose Home Assistant because it has become the de facto standard for self-host
 
 What makes Frigate the right choice here is the combination of real-time detection and local processing. No footage leaves the server. Detection results flow directly to Home Assistant through the message broker, enabling automations that respond to specific events rather than just motion.
 
-One important note: Frigate's AI detection requires enough CPU or a hardware accelerator. This is why a proof of concept on the target hardware was necessary before committing to the full setup. Object detection is not free — it has to be validated for the specific machine.
+One important note: Frigate's AI detection requires enough CPU or a hardware accelerator. This is why a proof of concept on the target hardware was necessary before committing to the full setup. Object detection is not free. It has to be validated for the specific machine.
 
 ### Mosquitto
 
 [Mosquitto](https://mosquitto.org/) is the MQTT broker. It sits between Frigate and Home Assistant, routing detection events as messages.
 
-MQTT is a lightweight publish/subscribe protocol designed for IoT. Frigate publishes detection events to topics. Home Assistant subscribes to those topics and triggers automations. This decoupling means Frigate and Home Assistant do not talk to each other directly — they communicate through the broker, which keeps the architecture clean and each component independent.
+MQTT is a lightweight publish/subscribe protocol designed for IoT. Frigate publishes detection events to topics. Home Assistant subscribes to those topics and triggers automations. This decoupling means Frigate and Home Assistant do not talk to each other directly. They communicate through the broker, which keeps the architecture clean and each component independent.
 
 ### Zigbee2MQTT
 
@@ -88,7 +88,7 @@ Rather than relying on proprietary hubs for each device brand, Zigbee2MQTT gives
 
 [Cloudflare Tunnel](https://developers.cloudflare.com/cloudflare-one/connections/connect-networks/) provides secure remote access to Home Assistant without opening any ports on the router.
 
-The tunnel establishes an outbound connection from the server to Cloudflare's network. Cloudflare handles the public-facing domain, TLS, and DDoS protection. From the server side, there is nothing exposed — no open ports, no port forwarding, no exposed IP address.
+The tunnel establishes an outbound connection from the server to Cloudflare's network. Cloudflare handles the public-facing domain, TLS, and DDoS protection. From the server side, there is nothing exposed: no open ports, no port forwarding, no exposed IP address.
 
 Only Home Assistant is accessible remotely. Frigate communicates internally through Docker networking and is never exposed.
 
@@ -101,7 +101,7 @@ The system runs on a single Debian server. The two network separation is an impo
 - A **local network** for cameras, sensors, and relays
 - A **remote access network** used exclusively for secure access to services
 
-Cameras stay on their own network segment. The server is the only bridge between them and the automation layer. This limits the blast radius if any device is compromised — a camera cannot reach the rest of the home network directly.
+Cameras stay on their own network segment. The server is the only bridge between them and the automation layer. This limits the blast radius if any device is compromised: a camera cannot reach the rest of the home network directly.
 
 ```
 Internet / Mobile app
@@ -122,7 +122,7 @@ Internet / Mobile app
 └───────────────────────────────────────┘
 ```
 
-Everything runs as Docker containers orchestrated with Docker Compose. The configuration is version-controlled in Git. Deployments happen automatically when code is pushed — no manual SSH, no running commands on the server by hand.
+Everything runs as Docker containers orchestrated with Docker Compose. The configuration is version-controlled in Git. Deployments happen automatically when code is pushed: no manual SSH, no running commands on the server by hand.
 
 ---
 
@@ -142,12 +142,12 @@ Using the right tool for the job, even when a more sophisticated tool exists, is
 
 This post is the first in a series covering how mve-itguard was designed and built. Each post focuses on a specific part of the system:
 
-1. **This post** — What it is and why
-2. **GitOps Without Kubernetes** — Docker Compose-based CI/CD with GitHub Actions
-3. **Secrets in Git Without Fear** — SOPS + AGE for encrypted secrets committed to version control
-4. **CI Runners That Cannot Hurt Production** — Isolated self-hosted runners with Docker socket proxy
-5. **One Command to Provision a Server** — The bootstrap script and Ansible provisioning
-6. **Automated AGE Key Rotation in CI** — Detecting and rotating encryption keys through the pipeline
-7. **Multi-Node Backup with Restic** — Append-only backups across redundant nodes via Cloudflare Tunnel
+1. **This post**, What it is and why
+2. **GitOps Without Kubernetes**, Docker Compose-based CI/CD with GitHub Actions
+3. **Secrets in Git Without Fear**, SOPS + AGE for encrypted secrets committed to version control
+4. **CI Runners That Cannot Hurt Production**, Isolated self-hosted runners with Docker socket proxy
+5. **One Command to Provision a Server**: The bootstrap script and Ansible provisioning
+6. **Automated AGE Key Rotation in CI**, Detecting and rotating encryption keys through the pipeline
+7. **Multi-Node Backup with Restic**, Append-only backups across redundant nodes via Cloudflare Tunnel
 
-The goal of this series is not just to document what was built, but to explain the reasoning behind each decision — so the design choices make sense, and so someone facing the same constraints can learn from them.
+The goal of this series is not just to document what was built, but to explain the reasoning behind each decision, so the design choices make sense, and so someone facing the same constraints can learn from them.

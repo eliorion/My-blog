@@ -60,7 +60,7 @@ Once a month, I review where I stand with my goals and perform a deeper analysis
 
 ### **Yearly note**
 
-This note is not about reviewing all the monthly notes, but about defining the vision for the year. It’s more about the main quests—the state I want to reach. This is the first step: defining the desired state, then using all the previous types of notes to answer one recurring question:
+This note is not about reviewing all the monthly notes, but about defining the vision for the year. It’s more about the main quests: the state I want to reach. This is the first step: defining the desired state, then using all the previous types of notes to answer one recurring question:
 
 How can I reach this vision and this state?
 

@@ -40,7 +40,7 @@ You can watch every tutorial in the world, but if you never get your hands dirty
 
 I needed a machine with enough RAM to run multiple services, a decent GPU so I could eventually build my own “mini Netflix,” and something small and quiet.
 
-After some research, I chose the Nipogi E3B with 16 GB of RAM. At less than 300 €, it felt like a perfect starting point. If needed, I can upgrade later—adding more RAM and up to 2 TB of storage.
+After some research, I chose the Nipogi E3B with 16 GB of RAM. At less than 300 €, it felt like a perfect starting point. If needed, I can upgrade later, adding more RAM and up to 2 TB of storage.
 
 ### Software
 
@@ -52,7 +52,7 @@ I chose Proxmox to run and manage all my VMs, as well as handle the internal net
 
 ### Architecture
 
-My main personal computer is a MacBook Air M2 with 256 GB of storage. It’s fast, but very limited in memory, and it was already full. That’s why I needed to design my home lab so that everything—my tools and my systems—lives on the dedicated server.
+My main personal computer is a MacBook Air M2 with 256 GB of storage. It’s fast, but very limited in memory, and it was already full. That’s why I needed to design my home lab so that everything, my tools and my systems, lives on the dedicated server.
 
 I also decided not to run services directly on the Proxmox host system. Instead, my first VM is an Ubuntu LTS server, which I use to install all the necessary tools to create and manage my Kubernetes cluster. 
 ![Homelab Diagram](diagram.png)

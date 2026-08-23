@@ -34,11 +34,11 @@ cover:
 
 GitHub-hosted runners are ephemeral virtual machines managed by GitHub. They have no access to your infrastructure, they disappear after each job, and any damage they could cause is contained to the workspace they checked out.
 
-Self-hosted runners are different. They are processes — or in this case, containers — that live on your own hardware, connected to GitHub and waiting for jobs. When a workflow runs on a self-hosted runner, it executes code on your machine with whatever permissions that runner has.
+Self-hosted runners are different. They are processes (or in this case, containers) that live on your own hardware, connected to GitHub and waiting for jobs. When a workflow runs on a self-hosted runner, it executes code on your machine with whatever permissions that runner has.
 
 For mve-itguard, the runners live on the production server. The deploy runner needs Docker access to bring services up and down. That is a significant capability: a process that can talk to Docker can read any container's environment variables, mount any volume, stop any service, or pull and run arbitrary images.
 
-The question is not whether to accept that risk — the deploy runner genuinely needs Docker access to do its job. The question is how to constrain it precisely, and how to ensure that the CI runner — which runs on pull requests and could execute untrusted code — has no access to any of that.
+The question is not whether to accept that risk: the deploy runner genuinely needs Docker access to do its job. The question is how to constrain it precisely, and how to ensure that the CI runner (which runs on pull requests and could execute untrusted code) has no access to any of that.
 
 ---
 
@@ -71,7 +71,7 @@ Each runner only has the permissions it needs for its specific job. Nothing more
 
 ## runner-ci: No Docker, No Excuses
 
-The CI runner handles lint and validation. It needs to run `yamllint`, `shellcheck`, `ansible-lint`, and `docker compose config`. None of those require a live Docker daemon connection — `docker compose config` only parses and validates the YAML, it does not contact Docker.
+The CI runner handles lint and validation. It needs to run `yamllint`, `shellcheck`, `ansible-lint`, and `docker compose config`. None of those require a live Docker daemon connection: `docker compose config` only parses and validates the YAML, it does not contact Docker.
 
 The runner has no Docker socket, no socket proxy, no prod volumes, no special mounts:
 
@@ -115,7 +115,7 @@ socket-proxy:
     - no-new-privileges:true
 ```
 
-The proxy exposes only what `docker compose` needs to deploy services. Everything else — the build API, exec into containers, Swarm endpoints, system events, registry auth — is blocked at the proxy layer.
+The proxy exposes only what `docker compose` needs to deploy services. Everything else (the build API, exec into containers, Swarm endpoints, system events, registry auth) is blocked at the proxy layer.
 
 The proxy is on a dedicated internal network (`proxy-net`) that only `runner-deploy` can reach. No other container on the host can speak to it. The Docker socket itself stays mounted only into the proxy, not into any runner.
 
@@ -124,13 +124,13 @@ runner-deploy ──TCP:2375──▶ socket-proxy ──unix socket──▶ ho
                              (proxy-net, internal)
 ```
 
-The practical effect: if someone obtained code execution inside `runner-deploy`, they could issue `docker compose` commands — they could not `exec` into a container to steal secrets, could not read environment variables from a running service, could not access the full Docker API surface.
+The practical effect: if someone obtained code execution inside `runner-deploy`, they could issue `docker compose` commands. They could not `exec` into a container to steal secrets, could not read environment variables from a running service, could not access the full Docker API surface.
 
 ---
 
 ## runner-deploy: Constrained Docker Access
 
-The deploy runner runs as user `1001:1001` — the `mve-itguard` service account that owns the application files. It is not root. It connects to Docker through the socket proxy only, not the raw socket.
+The deploy runner runs as user `1001:1001`: the `mve-itguard` service account that owns the application files. It is not root. It connects to Docker through the socket proxy only, not the raw socket.
 
 ```yaml
 runner-deploy:
@@ -152,7 +152,7 @@ runner-deploy:
 
 The volume mount requires explanation. When `runner-deploy` runs `docker compose up`, it passes volume paths to the Docker daemon. The daemon resolves those paths on the **host** filesystem, not inside the runner container. This is Docker-out-of-Docker (DooD): the runner is a container, but it is talking to the host's Docker daemon, which has no knowledge of the runner's internal filesystem.
 
-The workspace volume `/opt/mve-itguard-work` is mounted at the **same path** on both sides — inside the container and on the host. When Docker resolves `./config/homeassistant` to an absolute path like `/opt/mve-itguard-work/mve-itguard/mve-itguard/app/config/homeassistant`, that path exists on the host and Docker can bind-mount it into the target service container.
+The workspace volume `/opt/mve-itguard-work` is mounted at the **same path** on both sides, inside the container and on the host. When Docker resolves `./config/homeassistant` to an absolute path like `/opt/mve-itguard-work/mve-itguard/mve-itguard/app/config/homeassistant`, that path exists on the host and Docker can bind-mount it into the target service container.
 
 If the paths differed between host and container, the bind mounts would point to nonexistent locations on the host. Services would start but find empty config directories, or fail to start entirely. Identical mount paths on both sides is the requirement that makes DooD work for this use case.
 
@@ -160,7 +160,7 @@ If the paths differed between host and container, the bind mounts would point to
 
 ## runner-rotate: Root for a Reason
 
-The rotation runner needs to write `/etc/sops/age/keys.txt` on the host. That file is owned by root with mode 600. No privilege escalation trick can get around that — the runner genuinely needs root.
+The rotation runner needs to write `/etc/sops/age/keys.txt` on the host. That file is owned by root with mode 600. No privilege escalation trick can get around that: the runner genuinely needs root.
 
 ```yaml
 runner-rotate:
@@ -175,7 +175,7 @@ runner-rotate:
     - /etc/sops/age:/etc/sops/age
 ```
 
-`RUNNER_ALLOW_RUNASROOT` is required by the GitHub Actions runner binary — it refuses to start as root unless that variable is set. The rotation runner is the only place this is used.
+`RUNNER_ALLOW_RUNASROOT` is required by the GitHub Actions runner binary. It refuses to start as root unless that variable is set. The rotation runner is the only place this is used.
 
 This runner has no Docker access. It has one job: compare the AGE key hash and re-encrypt secrets if there is a mismatch. That job requires root access to one specific directory, and nothing else.
 
@@ -208,9 +208,9 @@ container stop
 ./config.sh remove --token ...  →  runner deregistered
 ```
 
-The credentials in `common.env.enc` are the GitHub App private key (base64-encoded), the App ID, and the Installation ID. These are used to generate a short-lived JWT, which is exchanged for an installation token, which is exchanged for a runner registration token. The registration token is valid for one hour and can only register runners — it has no other capabilities.
+The credentials in `common.env.enc` are the GitHub App private key (base64-encoded), the App ID, and the Installation ID. These are used to generate a short-lived JWT, which is exchanged for an installation token, which is exchanged for a runner registration token. The registration token is valid for one hour and can only register runners. It has no other capabilities.
 
-On shutdown, the runner deregisters itself using a freshly obtained removal token. If the container is killed unexpectedly, the runner entry in GitHub is left stale but harmless — the next startup uses `--replace` to overwrite it.
+On shutdown, the runner deregisters itself using a freshly obtained removal token. If the container is killed unexpectedly, the runner entry in GitHub is left stale but harmless: the next startup uses `--replace` to overwrite it.
 
 ---
 
@@ -230,7 +230,7 @@ COPY start /start
 ENTRYPOINT ["/start"]
 ```
 
-Every runner gets `docker-ce-cli` and `docker-compose-plugin` installed, even `runner-ci`. Having the CLI installed does not grant Docker access — without a valid `DOCKER_HOST` or socket mount, the `docker` command fails. `runner-ci` has neither, so the CLI is inert.
+Every runner gets `docker-ce-cli` and `docker-compose-plugin` installed, even `runner-ci`. Having the CLI installed does not grant Docker access: without a valid `DOCKER_HOST` or socket mount, the `docker` command fails. `runner-ci` has neither, so the CLI is inert.
 
 Building one image simplifies maintenance. Updating a dependency means rebuilding once, not maintaining parallel Dockerfiles. The capabilities each runner actually has come from the Compose configuration, not from what is installed in the image.
 
@@ -251,4 +251,4 @@ No individual runner has enough access to cause serious damage on its own. That 
 
 ---
 
-*Next in this series: [One Command to Provision a Server]({{< relref "2026-05-29 - mve-itguard-bootstrap/index.md" >}}) — how the bootstrap script provisions a fresh Debian server end-to-end with a single command.*
+*Next in this series: [One Command to Provision a Server]({{< relref "2026-05-29 - mve-itguard-bootstrap/index.md" >}}), how the bootstrap script provisions a fresh Debian server end-to-end with a single command.*

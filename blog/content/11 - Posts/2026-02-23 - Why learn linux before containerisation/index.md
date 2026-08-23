@@ -28,7 +28,7 @@ cover:
 
 One of my first real breakthroughs in learning Linux happened when I started working seriously with containers.
 
-At first, I struggled with the Docker CLI. It felt abstract and sometimes unintuitive. But the more I learned about Linux — processes, namespaces, cgroups, filesystems — the more containers started to make sense. Containerization is not magic. It is Linux.
+At first, I struggled with the Docker CLI. It felt abstract and sometimes unintuitive. But the more I learned about Linux (processes, namespaces, cgroups, filesystems) the more containers started to make sense. Containerization is not magic. It is Linux.
 
 Understanding that changed everything.
 

@@ -33,13 +33,13 @@ cover:
 
 ## The Problem Every Project Has
 
-Every project that deploys to a real server has secrets. Tokens, passwords, API keys — values that should not be publicly visible but that the application needs to run.
+Every project that deploys to a real server has secrets. Tokens, passwords, API keys, values that should not be publicly visible but that the application needs to run.
 
-The GitOps approach makes this harder to ignore. If Git is the single source of truth and all configuration lives in the repository, where do the secrets go? Committing them in plaintext is an obvious mistake. Leaving them outside Git means the repository is no longer the complete source of truth — some knowledge lives only in someone's head or in a separate system.
+The GitOps approach makes this harder to ignore. If Git is the single source of truth and all configuration lives in the repository, where do the secrets go? Committing them in plaintext is an obvious mistake. Leaving them outside Git means the repository is no longer the complete source of truth, some knowledge lives only in someone's head or in a separate system.
 
 There are several common answers to this problem, and each has trade-offs.
 
-**Environment variables injected at deploy time** keep secrets out of Git, but they live in the CI/CD configuration — a GitHub Actions secret, a Jenkins credential, or similar. This works, but it fragments the secret management. When you have many secrets, they accumulate in that external system, disconnected from the code that uses them.
+**Environment variables injected at deploy time** keep secrets out of Git, but they live in the CI/CD configuration: a GitHub Actions secret, a Jenkins credential, or similar. This works, but it fragments the secret management. When you have many secrets, they accumulate in that external system, disconnected from the code that uses them.
 
 **A secrets manager** like HashiCorp Vault or AWS Secrets Manager provides a proper audit trail and fine-grained access control. For a team managing a production SaaS product, that is the right choice. For a single-server homelab, it is significant infrastructure to operate just to store a handful of values.
 
@@ -49,7 +49,7 @@ There are several common answers to this problem, and each has trade-offs.
 
 ## The Approach: Encrypt, Then Commit
 
-The approach used in mve-itguard is different: secrets are encrypted and committed to the repository as `.enc` files. The ciphertext is safe to store in Git — without the private key, the data is unreadable.
+The approach used in mve-itguard is different: secrets are encrypted and committed to the repository as `.enc` files. The ciphertext is safe to store in Git: without the private key, the data is unreadable.
 
 ```
 app/security.env.enc          ← Cloudflare token, MQTT host, RTSP password
@@ -62,7 +62,7 @@ infrastructure/ansible/files/keys.txt.enc             ← the AGE private key it
 ops/github-app-key.b64.pem.enc                        ← GitHub App private key
 ```
 
-All of these are committed to the repository. None of them are secret in the Git sense — anyone can read the ciphertext. The secret is the key used to decrypt them.
+All of these are committed to the repository. None of them are secret in the Git sense, anyone can read the ciphertext. The secret is the key used to decrypt them.
 
 This means the repository is genuinely complete. Clone it on any machine with the right key, and you have everything needed to understand, modify, and operate the system.
 
@@ -90,7 +90,7 @@ Generating a key:
 age-keygen -o ~/.config/sops/age/keys.txt
 ```
 
-That file is the root of trust for everything in this project. Losing it means losing access to every encrypted file. It needs to be backed up carefully — in a password manager, on an encrypted USB, or in a secure offline location.
+That file is the root of trust for everything in this project. Losing it means losing access to every encrypted file. It needs to be backed up carefully, in a password manager, on an encrypted USB, or in a secure offline location.
 
 ---
 
@@ -110,9 +110,9 @@ sops_lastmodified=2026-04-04T20:47:32Z
 sops_version=3.12.2
 ```
 
-You can see which keys exist, when the file was last modified, and which encryption key was used — without being able to read any of the values. A Git diff of a changed secret shows exactly which key changed, nothing more.
+You can see which keys exist, when the file was last modified, and which encryption key was used, without being able to read any of the values. A Git diff of a changed secret shows exactly which key changed, nothing more.
 
-SOPS also adds a MAC (message authentication code) across all values. If the file is tampered with — even a single character changed — decryption fails with an integrity error.
+SOPS also adds a MAC (message authentication code) across all values. If the file is tampered with (even a single character changed) decryption fails with an integrity error.
 
 ---
 
@@ -128,7 +128,7 @@ creation_rules:
 
 When you run `sops -e file.env`, SOPS walks up the directory tree from the file's location until it finds a `.sops.yaml`. It picks up the AGE public key from that file and encrypts to it automatically.
 
-The project has four `.sops.yaml` files — one per directory that contains secrets:
+The project has four `.sops.yaml` files: one per directory that contains secrets:
 
 ```
 app/.sops.yaml
@@ -137,7 +137,7 @@ infrastructure/ansible/.sops.yaml
 ops/.sops.yaml
 ```
 
-All four currently point to the same AGE public key. Adding a second authorized machine would mean adding its public key to all four files and re-encrypting — SOPS handles that with `sops updatekeys`.
+All four currently point to the same AGE public key. Adding a second authorized machine would mean adding its public key to all four files and re-encrypting, SOPS handles that with `sops updatekeys`.
 
 ---
 
@@ -182,11 +182,11 @@ fi
 
 The AGE private key exists in three places, each corresponding to a context where decryption is needed:
 
-**Developer machine** — `~/.config/sops/age/keys.txt`. SOPS looks here by default when `SOPS_AGE_KEY_FILE` is not set. Anyone with this file can decrypt all secrets in the project.
+**Developer machine**, `~/.config/sops/age/keys.txt`. SOPS looks here by default when `SOPS_AGE_KEY_FILE` is not set. Anyone with this file can decrypt all secrets in the project.
 
-**Production server** — `/etc/sops/age/keys.txt`, owned by root with mode 600. The `runner-rotate` container mounts this path from the host to perform AGE key rotation. No other container touches it.
+**Production server**: `/etc/sops/age/keys.txt`, owned by root with mode 600. The `runner-rotate` container mounts this path from the host to perform AGE key rotation. No other container touches it.
 
-**CI/CD pipeline** — injected from the `SOPS_AGE_KEY` GitHub Actions secret as an environment variable. The deploy job writes it to disk for the duration of the run, uses it to decrypt `security.env.enc`, then immediately deletes it:
+**CI/CD pipeline**, injected from the `SOPS_AGE_KEY` GitHub Actions secret as an environment variable. The deploy job writes it to disk for the duration of the run, uses it to decrypt `security.env.enc`, then immediately deletes it:
 
 ```bash
 # Write
@@ -201,7 +201,7 @@ export $(sops -d --input-type dotenv --output-type dotenv app/security.env.enc)
 rm -f ~/.config/sops/age/keys.txt
 ```
 
-The `printf '%s'` is intentional — it avoids appending a trailing newline to the key file, which would cause decryption to fail silently.
+The `printf '%s'` is intentional. It avoids appending a trailing newline to the key file, which would cause decryption to fail silently.
 
 ---
 
@@ -209,7 +209,7 @@ The `printf '%s'` is intentional — it avoids appending a trailing newline to t
 
 There is one more detail worth explaining: the AGE private key itself is stored encrypted in the repository.
 
-`infrastructure/ansible/files/keys.txt.enc` contains the private key encrypted with... the private key. This sounds circular, but it has a practical use: if you have the key but cannot remember where you stored it or what filename you used, you can recover it by decrypting this file. It is a self-referential backup that costs nothing to maintain — it gets re-encrypted automatically during key rotation.
+`infrastructure/ansible/files/keys.txt.enc` contains the private key encrypted with... the private key. This sounds circular, but it has a practical use: if you have the key but cannot remember where you stored it or what filename you used, you can recover it by decrypting this file. It is a self-referential backup that costs nothing to maintain. It gets re-encrypted automatically during key rotation.
 
 ---
 
@@ -217,7 +217,7 @@ There is one more detail worth explaining: the AGE private key itself is stored 
 
 The result is a repository that is genuinely complete and auditable.
 
-Every secret is versioned in Git. If a value changes, the diff shows which key changed and when. If someone adds a new secret or removes an old one, that is visible in the history. Onboarding a new machine means sharing the private key — and nothing else.
+Every secret is versioned in Git. If a value changes, the diff shows which key changed and when. If someone adds a new secret or removes an old one, that is visible in the history. Onboarding a new machine means sharing the private key, and nothing else.
 
 There are no external secret systems to maintain. No Vault server to keep running. No separate credentials database to keep synchronized with the codebase.
 
@@ -225,4 +225,4 @@ The trade-off is that the AGE private key is the single point of failure. Lose i
 
 ---
 
-*Next in this series: [CI Runners That Cannot Hurt Production]({{< relref "2026-05-28 - mve-itguard-runners/index.md" >}}) — how the self-hosted runners are structured to give the deploy pipeline Docker access without exposing production to untrusted code paths.*
+*Next in this series: [CI Runners That Cannot Hurt Production]({{< relref "2026-05-28 - mve-itguard-runners/index.md" >}}), how the self-hosted runners are structured to give the deploy pipeline Docker access without exposing production to untrusted code paths.*

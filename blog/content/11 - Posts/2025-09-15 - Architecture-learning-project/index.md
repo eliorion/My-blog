@@ -18,7 +18,7 @@ cover:
 ---
 ## Building a Home Lab to Learn Kubernetes
 
-I wanted to learn Kubernetes—really learn it, not just follow a few tutorials.
+I wanted to learn Kubernetes: really learn it, not just follow a few tutorials.
 While researching, I noticed many people build their own home labs to run cloud services or custom applications.
 That inspired me to set up a complete home lab myself: first to run basic services like Nextcloud or OpenProject, and then to experiment with a full DevSecOps pipeline.
 
