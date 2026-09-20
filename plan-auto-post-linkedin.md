@@ -127,6 +127,14 @@ The job is silent when healthy.
   works even if n8n is unreachable.
 - `python linkedin/publish.py status` — queue depth and what is next, from anywhere.
 
+## Pausing from Telegram
+
+`/hold` on the main bot stops the 07:47 publish without touching n8n — the flag is the
+`hold` row in the `linkedin_control` Data Table, read before the token check, and the
+run says so in Telegram each morning it skips. `/resume` clears it. To pull a single
+post back instead, `/unapprove <text>` puts that approved row back to `queued`; `skip`
+only ever reached the row under review. `/help` lists all of it.
+
 ## Rollback
 
 Deactivate the `linkedin-drip` workflow in n8n, then restore the `schedule:` block in
